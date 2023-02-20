@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class Step : MonoBehaviour
 {
-
+    public float footPrintCloseTime;
     public GameObject[] steps;
     public int currentStepIndex;
+    private int prevStepIndex;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,12 +23,20 @@ public class Step : MonoBehaviour
 
     public void NextStep()
     {
-        steps[currentStepIndex].SetActive(false);
+        prevStepIndex = currentStepIndex;
+        StartCoroutine(CloseFootPrint());
+
         if (currentStepIndex != steps.Length - 1)
         {
             currentStepIndex++;
             steps[currentStepIndex].SetActive(true);
         }
+    }
+
+    private IEnumerator CloseFootPrint()
+    {
+        yield return new WaitForSeconds(footPrintCloseTime);
+        steps[prevStepIndex].SetActive(false);
     }
 
 }
