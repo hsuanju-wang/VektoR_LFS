@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class CloseGrid : Task
 {
-    public GameObject grid;
+    //public GameObject grid;
 
     public override void StartTask()
     {
         base.StartTask();
-        grid.SetActive(false);
+        Valve.VR.OpenVR.Chaperone.ForceBoundsVisible(false);
+        //grid.SetActive(false);
         EndTask();
     }
 }
