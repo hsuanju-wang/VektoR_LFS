@@ -1,0 +1,1897 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>EKTO-Unity-Plugin</name>
+    </assembly>
+    <members>
+        <member name="T:EKTO_Unity_Plugin.Handedness">
+             @brief Handedness (left or right), used to specify boots.
+            
+        </member>
+        <!-- Badly formed XML comment ignored for member "F:EKTO_Unity_Plugin.Handedness.RIGHT" -->
+        <member name="T:EKTO_Unity_Plugin.TrackerType">
+             @brief Tracker type, used to specify tracking devices.
+            
+        </member>
+        <!-- Badly formed XML comment ignored for member "F:EKTO_Unity_Plugin.TrackerType.RIGHT_FRONT_TRACKER" -->
+        <!-- Badly formed XML comment ignored for member "F:EKTO_Unity_Plugin.TrackerType.LEFT_BACK_TRACKER" -->
+        <!-- Badly formed XML comment ignored for member "F:EKTO_Unity_Plugin.TrackerType.RIGHT_BACK_TRACKER" -->
+        <!-- Badly formed XML comment ignored for member "F:EKTO_Unity_Plugin.TrackerType.HIP_TRACKER" -->
+        <!-- Badly formed XML comment ignored for member "F:EKTO_Unity_Plugin.TrackerType.HMD" -->
+        <member name="T:EKTO_Unity_Plugin.DriveModuleType">
+             @brief Drive module type, used to specify boot modules.
+            
+        </member>
+        <!-- Badly formed XML comment ignored for member "F:EKTO_Unity_Plugin.DriveModuleType.LEFT_HEEL_MODULE" -->
+        <!-- Badly formed XML comment ignored for member "F:EKTO_Unity_Plugin.DriveModuleType.RIGHT_TOE_MODULE" -->
+        <!-- Badly formed XML comment ignored for member "F:EKTO_Unity_Plugin.DriveModuleType.RIGHT_HEEL_MODULE" -->
+        <member name="T:EKTO_Unity_Plugin.BootStatus">
+             @brief Boot status, used to specify if the boot is ready to start or not
+            
+        </member>
+        <!-- Badly formed XML comment ignored for member "F:EKTO_Unity_Plugin.BootStatus.LOW_BATTERY" -->
+        <!-- Badly formed XML comment ignored for member "F:EKTO_Unity_Plugin.BootStatus.MODULE_ERROR" -->
+        <!-- Badly formed XML comment ignored for member "F:EKTO_Unity_Plugin.BootStatus.READY" -->
+        <!-- Badly formed XML comment ignored for member "F:EKTO_Unity_Plugin.BootStatus.UNKNOWN" -->
+        <member name="T:EKTO_Unity_Plugin.TrackerStatus">
+             @brief Tracker status.
+            
+        </member>
+        <!-- Badly formed XML comment ignored for member "F:EKTO_Unity_Plugin.TrackerStatus.UNTRACKED" -->
+        <!-- Badly formed XML comment ignored for member "F:EKTO_Unity_Plugin.TrackerStatus.DISCONNECTED" -->
+        <member name="T:EKTO_Unity_Plugin.LastBootRampdownError">
+             @brief Boot rampdown error during the last system run.
+            
+        </member>
+        <!-- Badly formed XML comment ignored for member "F:EKTO_Unity_Plugin.LastBootRampdownError.RADIO_TIMEOUT" -->
+        <!-- Badly formed XML comment ignored for member "F:EKTO_Unity_Plugin.LastBootRampdownError.MODULE_TIMEOUT" -->
+        <!-- Badly formed XML comment ignored for member "F:EKTO_Unity_Plugin.LastBootRampdownError.LOW_BATTERY" -->
+        <!-- Badly formed XML comment ignored for member "F:EKTO_Unity_Plugin.LastBootRampdownError.MODULE_SELF_RAMPDOWN" -->
+        <!-- Badly formed XML comment ignored for member "F:EKTO_Unity_Plugin.LastBootRampdownError.UNKNOWN" -->
+        <member name="T:EKTO_Unity_Plugin.RampdownReason">
+             @brief The cause for system ramping down.
+            
+        </member>
+        <!-- Badly formed XML comment ignored for member "F:EKTO_Unity_Plugin.RampdownReason.CONNNECTION_TO_LEFT_BOOT_LOST" -->
+        <!-- Badly formed XML comment ignored for member "F:EKTO_Unity_Plugin.RampdownReason.CONNNECTION_TO_RIGHT_BOOT_LOST" -->
+        <!-- Badly formed XML comment ignored for member "F:EKTO_Unity_Plugin.RampdownReason.LEFT_BOOT_TRACKING_LOST" -->
+        <!-- Badly formed XML comment ignored for member "F:EKTO_Unity_Plugin.RampdownReason.RIGHT_BOOT_TRACKING_LOST" -->
+        <!-- Badly formed XML comment ignored for member "F:EKTO_Unity_Plugin.RampdownReason.VR_MENU_ACTIVATED" -->
+        <!-- Badly formed XML comment ignored for member "F:EKTO_Unity_Plugin.RampdownReason.CRITICAL_ERROR_ON_LEFT_BOOT" -->
+        <!-- Badly formed XML comment ignored for member "F:EKTO_Unity_Plugin.RampdownReason.CRITICAL_ERROR_ON_RIGHT_BOOT" -->
+        <!-- Badly formed XML comment ignored for member "F:EKTO_Unity_Plugin.RampdownReason.USER_STOP" -->
+        <!-- Badly formed XML comment ignored for member "F:EKTO_Unity_Plugin.RampdownReason.OPERATOR_STOP" -->
+        <!-- Badly formed XML comment ignored for member "F:EKTO_Unity_Plugin.RampdownReason.UNKNOWN" -->
+        <member name="T:EKTO_Unity_Plugin.ModuleError">
+             @brief Boot module errors.
+            
+        </member>
+        <!-- Badly formed XML comment ignored for member "F:EKTO_Unity_Plugin.ModuleError.DISCONNECTED" -->
+        <!-- Badly formed XML comment ignored for member "F:EKTO_Unity_Plugin.ModuleError.DRIVE_MOTOR_1_ERROR" -->
+        <!-- Badly formed XML comment ignored for member "F:EKTO_Unity_Plugin.ModuleError.DRIVE_MOTOR_2_ERROR" -->
+        <!-- Badly formed XML comment ignored for member "F:EKTO_Unity_Plugin.ModuleError.SWIVEL_MOTOR_RPM_ERROR" -->
+        <!-- Badly formed XML comment ignored for member "F:EKTO_Unity_Plugin.ModuleError.SWIVEL_MOTOR_TIMEOUT" -->
+        <!-- Badly formed XML comment ignored for member "F:EKTO_Unity_Plugin.ModuleError.SWIVEL_MOTOR_OVERHEAT" -->
+        <!-- Badly formed XML comment ignored for member "F:EKTO_Unity_Plugin.ModuleError.ALIGNMENT_ERROR" -->
+        <!-- Badly formed XML comment ignored for member "F:EKTO_Unity_Plugin.ModuleError.VX_ERROR" -->
+        <!-- Badly formed XML comment ignored for member "F:EKTO_Unity_Plugin.ModuleError.SWIVEL_ENCODER_ERROR" -->
+        <!-- Badly formed XML comment ignored for member "F:EKTO_Unity_Plugin.ModuleError.UNKNOWN" -->
+        <member name="T:EKTO_Unity_Plugin.NotReadyToStartReason">
+             @brief Reasons for the system not being ready to start.
+            
+        </member>
+        <!-- Badly formed XML comment ignored for member "F:EKTO_Unity_Plugin.NotReadyToStartReason.SYSTEM_NOT_ARMED" -->
+        <!-- Badly formed XML comment ignored for member "F:EKTO_Unity_Plugin.NotReadyToStartReason.STEAMVR_NOT_FOUND" -->
+        <!-- Badly formed XML comment ignored for member "F:EKTO_Unity_Plugin.NotReadyToStartReason.VR_MENU_ACTIVATED" -->
+        <!-- Badly formed XML comment ignored for member "F:EKTO_Unity_Plugin.NotReadyToStartReason.HMD_NOT_TRACKED" -->
+        <!-- Badly formed XML comment ignored for member "F:EKTO_Unity_Plugin.NotReadyToStartReason.HIP_NOT_TRACKED" -->
+        <!-- Badly formed XML comment ignored for member "F:EKTO_Unity_Plugin.NotReadyToStartReason.LEFT_BOOT_NOT_TRACKED" -->
+        <!-- Badly formed XML comment ignored for member "F:EKTO_Unity_Plugin.NotReadyToStartReason.RIGHT_BOOT_NOT_TRACKED" -->
+        <!-- Badly formed XML comment ignored for member "F:EKTO_Unity_Plugin.NotReadyToStartReason.LEFT_BOOT_NOT_CONNECTED" -->
+        <!-- Badly formed XML comment ignored for member "F:EKTO_Unity_Plugin.NotReadyToStartReason.RIGHT_BOOT_NOT_CONNECTED" -->
+        <!-- Badly formed XML comment ignored for member "F:EKTO_Unity_Plugin.NotReadyToStartReason.BASE_STATION_NOT_CONNECTED" -->
+        <!-- Badly formed XML comment ignored for member "F:EKTO_Unity_Plugin.NotReadyToStartReason.BASE_STATION_NOT_READY" -->
+        <!-- Badly formed XML comment ignored for member "F:EKTO_Unity_Plugin.NotReadyToStartReason.CRITICAL_ERROR_ON_LEFT_BOOT" -->
+        <!-- Badly formed XML comment ignored for member "F:EKTO_Unity_Plugin.NotReadyToStartReason.CRITICAL_ERROR_ON_RIGHT_BOOT" -->
+        <!-- Badly formed XML comment ignored for member "F:EKTO_Unity_Plugin.NotReadyToStartReason.USER_NOT_IN_STARTING_ZONE" -->
+        <!-- Badly formed XML comment ignored for member "F:EKTO_Unity_Plugin.NotReadyToStartReason.LEFT_BOOT_NOT_IN_STARTING_ZONE" -->
+        <!-- Badly formed XML comment ignored for member "F:EKTO_Unity_Plugin.NotReadyToStartReason.RIGHT_BOOT_NOT_IN_STARTING_ZONE" -->
+        <!-- Badly formed XML comment ignored for member "F:EKTO_Unity_Plugin.NotReadyToStartReason.UNKNOWN" -->
+        <member name="T:EKTO_Unity_Plugin.NotReadyToArmReason">
+             @brief Reasons for the system not being ready to arm at the moment.
+            
+        </member>
+        <!-- Badly formed XML comment ignored for member "F:EKTO_Unity_Plugin.NotReadyToArmReason.LEFT_BOOT_NOT_CONNECTED" -->
+        <!-- Badly formed XML comment ignored for member "F:EKTO_Unity_Plugin.NotReadyToArmReason.RIGHT_BOOT_NOT_CONNECTED" -->
+        <!-- Badly formed XML comment ignored for member "F:EKTO_Unity_Plugin.NotReadyToArmReason.LEFT_BOOT_NOT_TRACKED" -->
+        <!-- Badly formed XML comment ignored for member "F:EKTO_Unity_Plugin.NotReadyToArmReason.RIGHT_BOOT_NOT_TRACKED" -->
+        <!-- Badly formed XML comment ignored for member "F:EKTO_Unity_Plugin.NotReadyToArmReason.USER_NOT_IN_STARTING_ZONE" -->
+        <!-- Badly formed XML comment ignored for member "F:EKTO_Unity_Plugin.NotReadyToArmReason.LEFT_BOOT_NOT_IN_STARTING_ZONE" -->
+        <!-- Badly formed XML comment ignored for member "F:EKTO_Unity_Plugin.NotReadyToArmReason.RIGHT_BOOT_NOT_IN_STARTING_ZONE" -->
+        <!-- Badly formed XML comment ignored for member "F:EKTO_Unity_Plugin.NotReadyToArmReason.VR_MENU_ACTIVATED" -->
+        <!-- Badly formed XML comment ignored for member "F:EKTO_Unity_Plugin.NotReadyToArmReason.CRITICAL_ERROR_ON_LEFT_BOOT" -->
+        <!-- Badly formed XML comment ignored for member "F:EKTO_Unity_Plugin.NotReadyToArmReason.CRITICAL_ERROR_ON_RIGHT_BOOT" -->
+        <!-- Badly formed XML comment ignored for member "F:EKTO_Unity_Plugin.NotReadyToArmReason.UNKNOWN" -->
+        <member name="T:EKTO_Unity_Plugin.BootRuntimeState">
+             @brief Boot runtime states.
+            
+        </member>
+        <!-- Badly formed XML comment ignored for member "F:EKTO_Unity_Plugin.BootRuntimeState.MOVING" -->
+        <!-- Badly formed XML comment ignored for member "F:EKTO_Unity_Plugin.BootRuntimeState.RAMPING_DOWN" -->
+        <!-- Badly formed XML comment ignored for member "F:EKTO_Unity_Plugin.BootRuntimeState.UNKNOWN" -->
+        <member name="T:EKTO_Unity_Plugin.SystemReadinessData">
+             @brief System readiness data, containing cause for the system not ready to start.
+            
+        </member>
+        <!-- Badly formed XML comment ignored for member "F:EKTO_Unity_Plugin.SystemReadinessData.notReadyToStartReason" -->
+        <member name="T:EKTO_Unity_Plugin.Ekto">
+             @brief The class that is the interface to the plugin that connects to the server and allows interactions with the system.
+             
+             The Ekto class 
+            
+        </member>
+        <member name="F:EKTO_Unity_Plugin.Ekto.S">
+             @brief The EKTO singleton. This prevents the creation of multiple plugin instances.
+            
+        </member>
+        <member name="F:EKTO_Unity_Plugin.Ekto.MAX_TIMEOUT">
+             @brief Defines the maximum wait time for server response before timeout
+            
+        </member>
+        <member name="M:EKTO_Unity_Plugin.Ekto.Awake">
+             @brief Awake runs before Start, called automatically by Unity upon play.
+            
+        </member>
+        <member name="M:EKTO_Unity_Plugin.Ekto.Start">
+             @brief Performs plugin intialization, called automatically by Unity upon play after Awake.
+            
+        </member>
+        <member name="M:EKTO_Unity_Plugin.Ekto.Restart">
+             @brief Restarts the plugin.
+            
+        </member>
+        <member name="M:EKTO_Unity_Plugin.Ekto.IsServerConnected">
+            <summary> Gets the current server connection status </summary>
+            <returns>
+            true if the plugin is connected to the server
+            false if the plugin is not connected to the server
+            </returns>
+        </member>
+        <member name="M:EKTO_Unity_Plugin.Ekto.CheckForEvents">
+             @brief Check whether any events are raised, and trigger the event listeners if so.
+             Can be called to check for events at a desired rate.
+            
+        </member>
+        <member name="M:EKTO_Unity_Plugin.Ekto.AddEventListener(EKTO_Unity_Plugin.EktoEventListener)">
+             @brief Subscribes a listener to the EKTO event system.
+             @param listener The subscribing event listener object.
+            
+        </member>
+        <member name="M:EKTO_Unity_Plugin.Ekto.Shutdown">
+             @brief Shuts down the plugin and performs cleanup.
+            
+        </member>
+        <member name="M:EKTO_Unity_Plugin.Ekto.GetBootBatteryChargeLevel(EKTO_Unity_Plugin.Handedness)">
+             @brief Returns batteyr level of a boot (0 to 100).
+             @param handedness Boot handedness
+             @return Boot battery level between 0 (empty) to 100 (full charge)
+            
+        </member>
+        <member name="M:EKTO_Unity_Plugin.Ekto.GetBootStatus(EKTO_Unity_Plugin.Handedness)">
+             @brief Returns currnet boot status (Ready, low battery, module error or disconnected).
+             @param handedness Boot handedness
+             @retval BootStatus.READY the boot is ready to start
+             @retval BootStatus.LOW_BATTERY the battery needs to be replaced
+             @retval BootStatus.MODULE_ERROR There is an error on a module, use GetModuleErrors to check
+             @retval BootStatus.DISCONNECTED there is no radio connection to the boot
+             @retval BootStatus.UNKNOWN unknown status
+            
+        </member>
+        <member name="M:EKTO_Unity_Plugin.Ekto.GetLastBootRampdownError(EKTO_Unity_Plugin.Handedness)">
+             @brief Returns the last rampdown cause for the boot.
+             @param handedness Boot handedness
+             @return Boot last rampdown cause.
+            
+        </member>
+        <member name="M:EKTO_Unity_Plugin.Ekto.GetHeelModuleErrors(EKTO_Unity_Plugin.Handedness)">
+             @brief Returns module errors of a boot heel module.
+             @param handedness Boot handedness
+             @return A list of the module errors
+            
+        </member>
+        <member name="M:EKTO_Unity_Plugin.Ekto.GetToeModuleErrors(EKTO_Unity_Plugin.Handedness)">
+             @brief Returns module errors of a boot toe module.
+             @param handedness Boot handedness
+             @return A list of the module errors
+            
+        </member>
+        <member name="M:EKTO_Unity_Plugin.Ekto.IsDriveModuleConnected(EKTO_Unity_Plugin.DriveModuleType)">
+             @brief Returns current drive module connection status.
+             @param driveModuleType drive module type (left heel, left toe, right heel, right toe)
+             @return Current drive module connection status
+            
+        </member>
+        <member name="M:EKTO_Unity_Plugin.Ekto.IsTrackerConnected(EKTO_Unity_Plugin.TrackerType)">
+             @brief Returns current tracker connection status
+             @param trackerType tracker type (left front, left back, right front, right back, hmd, hip)
+             @return Current tracker connection status
+            
+        </member>
+        <member name="M:EKTO_Unity_Plugin.Ekto.IsTrackerTracked(EKTO_Unity_Plugin.TrackerType)">
+             @brief Returns current tracker tracking status
+             @param trackerType tracker type (left front, left back, right front, right back, hmd, hip)
+             @return Current tracker tracking status
+            
+        </member>
+        <member name="M:EKTO_Unity_Plugin.Ekto.GetTrackerStatus(EKTO_Unity_Plugin.TrackerType)">
+             @brief Returns current tracker status (tracked, untracked, disconnected)
+             @param trackerType tracker type (left front, left back, right front, right back, hmd, hip)
+             @return Current tracker status
+            
+        </member>
+        <member name="M:EKTO_Unity_Plugin.Ekto.GetBootToFloorOffset">
+             @brief Returns the offset distance between the boot and the floor when the boot is placed on the floor.
+             @return Boot to floor offset distance (in UNIT)
+            
+        </member>
+        <member name="M:EKTO_Unity_Plugin.Ekto.GetStartingZoneRadius">
+             @brief Returns the radius of the starting zone.
+             @return Radius of the starting zone (in UNIT)
+            
+        </member>
+        <member name="M:EKTO_Unity_Plugin.Ekto.IsBootInStartingZone(EKTO_Unity_Plugin.Handedness)">
+             @brief Checks if the boot is in the starting zone.
+             @param handedness Boot handedness
+             @return Whether the boot is in the starting zone
+            
+        </member>
+        <member name="M:EKTO_Unity_Plugin.Ekto.IsHipInStartingZone">
+             @brief Checks if the hip tracker is in the starting zone.
+             @return Whether the hip is in the starting zone
+            
+        </member>
+        <member name="M:EKTO_Unity_Plugin.Ekto.GetSystemReadinessData">
+             @brief Gets the current system readiness data.
+             @return The current system readiness data.
+            
+        </member>
+        <member name="M:EKTO_Unity_Plugin.Ekto.IsSystemReadyToStart">
+             @brief Returns system start readiness status.
+             @return Whether the system is ready to start
+            
+        </member>
+        <member name="M:EKTO_Unity_Plugin.Ekto.GetSystemNotReadyToStartReason">
+             @brief Returns the reason causing the system to be not ready to start, or none if the system is ready to start.
+             @return System not ready to start reason.
+            
+        </member>
+        <member name="M:EKTO_Unity_Plugin.Ekto.IsSystemReadyToArm">
+             @brief Returns system arm readiness status.
+             @return Whether the system is ready to arm
+            
+        </member>
+        <member name="M:EKTO_Unity_Plugin.Ekto.GetRampdownReason">
+             @brief Returns system readiness status.
+             @return Whether the system is ready to start
+            
+        </member>
+        <member name="M:EKTO_Unity_Plugin.Ekto.IsSteamVRConnected">
+             @brief Returns SteamVR connection status.
+             @return SteamVR connection status
+            
+        </member>
+        <member name="M:EKTO_Unity_Plugin.Ekto.IsBaseStationConnected">
+             @brief Returns base station connection status.
+             @return base station connection status
+            
+        </member>
+        <member name="M:EKTO_Unity_Plugin.Ekto.IsDashboardActivated">
+             @brief Returns VR dashboard activation status.
+             @return VR dashboard activation status
+            
+        </member>
+        <member name="M:EKTO_Unity_Plugin.Ekto.GetPlaybackFileName">
+             @brief Retursn the playback CSV file name, if server is sending data based on past logs.
+             @return Playback CSV file name
+            
+        </member>
+        <member name="M:EKTO_Unity_Plugin.Ekto.ArmSystem">
+             @brief Attempts to arm the system
+             @return Success message if arm is successful, otherwise return the reason as to why arming failed.
+            
+        </member>
+        <member name="M:EKTO_Unity_Plugin.Ekto.DisarmSystem">
+             @brief Disarms the system
+            
+        </member>
+        <member name="M:EKTO_Unity_Plugin.Ekto.StartSystem">
+             @brief Attempts to start the system
+             @return Success message if start is successful, otherwise return the reason as to why starting failed.
+            
+        </member>
+        <member name="M:EKTO_Unity_Plugin.Ekto.StopSystem">
+             @brief Stops the system
+            
+        </member>
+        <member name="M:EKTO_Unity_Plugin.Ekto.PairBoot(EKTO_Unity_Plugin.Handedness)">
+             @brief Pairs a boot with the system.
+             @param handedness Boot handedness
+            
+        </member>
+        <member name="M:EKTO_Unity_Plugin.Ekto.PairTracker(EKTO_Unity_Plugin.TrackerType)">
+             @brief Pairs a tracker with the system.
+             @param trackerType Tracker type
+            
+        </member>
+        <member name="M:EKTO_Unity_Plugin.Ekto.IsSystemActivated">
+             @brief Returns current system activatioin status.
+             @return Current system activatioin status
+            
+        </member>
+        <member name="M:EKTO_Unity_Plugin.Ekto.GetBootTRSMatrix(EKTO_Unity_Plugin.Handedness)">
+             @brief Gets the boot's position and rotation data in the form of a 4x4 transformational matrix.
+             Check this link: https://forum.unity.com/threads/how-to-assign-matrix4x4-to-transform.121966/
+             @param handedness Boot handedness
+             @return Boot's transformational matrix
+            
+        </member>
+        <member name="M:EKTO_Unity_Plugin.Ekto.GetBootPosition(EKTO_Unity_Plugin.Handedness)">
+             @brief Gets the boot's position.
+             @param handedness Boot handedness
+             @return Boot's position in a 3D Unity vector
+            
+        </member>
+        <member name="M:EKTO_Unity_Plugin.Ekto.GetBootRotation(EKTO_Unity_Plugin.Handedness)">
+             @brief Gets the boot's rotation.
+             @param handedness Boot handedness
+             @return Boot's rotation in quaternions
+            
+        </member>
+        <member name="M:EKTO_Unity_Plugin.Ekto.GetBootVelocity(EKTO_Unity_Plugin.Handedness)">
+             @brief Gets the boot's velocity.
+             @param handedness Boot handedness
+             @return Boot's velocity in a 3D Unity vector
+            
+        </member>
+        <member name="M:EKTO_Unity_Plugin.Ekto.GetBootAngularVelocity(EKTO_Unity_Plugin.Handedness)">
+             @brief Gets the boot's angular velocity.
+             @param handedness Boot handedness
+             @return Boot's angular velocity in a 3D Unity vector
+            
+        </member>
+        <member name="M:EKTO_Unity_Plugin.Ekto.IsBootInAir(EKTO_Unity_Plugin.Handedness)">
+             @brief Gets whether the boot is in air. 
+             @param handedness Boot handedness
+             @return Whether the boot is in air or on the ground
+            
+        </member>
+        <member name="M:EKTO_Unity_Plugin.Ekto.GetBootRuntimeState(EKTO_Unity_Plugin.Handedness)">
+             @brief Gets the boot's current runtime state (braked, moving, rampdown).
+             @param handedness Boot handedness
+             @return Boot's runtime state
+            
+        </member>
+        <member name="M:EKTO_Unity_Plugin.Ekto.IsBootTracked(EKTO_Unity_Plugin.Handedness)">
+             @brief Gets the boot's tracking status.
+             @param handedness Boot handedness
+             @return Boot's tracking status
+            
+        </member>
+        <member name="M:EKTO_Unity_Plugin.Ekto.GetTargetBootVelocty(EKTO_Unity_Plugin.Handedness)">
+             @brief Gets the boot's target velocity.
+             @param handedness Boot handedness
+             @return Boot's target velocity in a 3D Unity vector
+            
+        </member>
+        <member name="M:EKTO_Unity_Plugin.Ekto.GetHeelModuleDirection(EKTO_Unity_Plugin.Handedness)">
+             @brief Gets the boot's heel module direction.
+             @param handedness Boot handedness
+             @return Boot's heel module direction in a 3D Unity vector
+            
+        </member>
+        <member name="M:EKTO_Unity_Plugin.Ekto.GetToeModuleDirection(EKTO_Unity_Plugin.Handedness)">
+             @brief Gets the boot's toe module direction.
+             @param handedness Boot handedness
+             @return Boot's toe module direction in a 3D Unity vector
+            
+        </member>
+        <member name="M:EKTO_Unity_Plugin.Ekto.GetUserHipTRSMatrix">
+             @brief Gets the hip tracker's position and rotation data in the form of a 4x4 transformational matrix.
+             @return Hip tracker's transformational matrix
+            
+        </member>
+        <member name="M:EKTO_Unity_Plugin.Ekto.GetUserHipPosition">
+             @brief Gets the hip tracker's position.
+             @return Hip tracker's position in a 3D Unity vector
+            
+        </member>
+        <member name="M:EKTO_Unity_Plugin.Ekto.GetUserHipRotation">
+             @brief Gets the hip tracker's rotation.
+             @return Hip tracker's rotation in a quaternion
+            
+        </member>
+        <member name="M:EKTO_Unity_Plugin.Ekto.GetUserHipVelocity">
+             @brief Gets the hip tracker's velocity.
+             @return Hip tracker's velocity in a 3D Unity vector
+            
+        </member>
+        <member name="M:EKTO_Unity_Plugin.Ekto.GetUserHipAngularVelocity">
+             @brief Gets the hip tracker's angular velocity.
+             @return Hip tracker's angular velocity in a 3D Unity vector
+            
+        </member>
+        <member name="M:EKTO_Unity_Plugin.Ekto.IsUserHipTracked">
+             @brief Gets the hip tracker's tracking status.
+             @return Hip tracker's tracking status
+            
+        </member>
+        <member name="M:EKTO_Unity_Plugin.Ekto.GetSystemUserVelocity">
+             @brief Gets the user current runtime velocity.
+             @return The user current runtime velocity in a 3D Unity vector
+            
+        </member>
+        <member name="M:EKTO_Unity_Plugin.Ekto.GetUserCentroidPosition">
+             @brief Gets the user centroid position.
+             @return The user centroid position in a 3D Unity vector
+            
+        </member>
+        <member name="M:EKTO_Unity_Plugin.Ekto.IsUserTooFast">
+             @brief Checks if the user is moving too quickly
+             @retval true the user is moving too quickly for the system
+             @retval false the user is moving in range for the system
+            
+        </member>
+        <member name="T:EKTO_Unity_Plugin.EktoEventListener">
+             @brief EKTO event listener interface. Implement event callbacks to catch events raised and execute some actions.
+            
+        </member>
+        <member name="M:EKTO_Unity_Plugin.EktoEventListener.OnBaseStationConnected">
+             @brief Fired when the base station is connected.
+             @warning Not implemented by the server
+            
+        </member>
+        <member name="M:EKTO_Unity_Plugin.EktoEventListener.OnBaseStationDisconnected">
+             @brief Fired when the base station is disconnected.
+             @warning Not implemented by the server
+            
+        </member>
+        <member name="M:EKTO_Unity_Plugin.EktoEventListener.OnSteamVRConnected">
+             @brief Fired when SteamVR is connected.
+             @warning Not implemented by the server
+            
+        </member>
+        <member name="M:EKTO_Unity_Plugin.EktoEventListener.OnSteamVRDisconnected">
+             @brief Fired when SteamVR is disconnected.
+             @warning Not implemented by the server
+            
+        </member>
+        <member name="M:EKTO_Unity_Plugin.EktoEventListener.OnDashboardActivated">
+             @brief Fired when VR dashboard is activated.
+             @warning Not implemented by the server
+            
+        </member>
+        <member name="M:EKTO_Unity_Plugin.EktoEventListener.OnDashboardDeactivated">
+             @brief Fired when VR dashboard is deactivated.
+             @warning Not implemented by the server
+            
+        </member>
+        <member name="M:EKTO_Unity_Plugin.EktoEventListener.OnBootConnected(EKTO_Unity_Plugin.Handedness)">
+             @brief Fired when a boot is connected.
+             @warning Not implemented by the server
+             @param handedness Boot handedness
+            
+        </member>
+        <member name="M:EKTO_Unity_Plugin.EktoEventListener.OnBootDisconnected(EKTO_Unity_Plugin.Handedness)">
+             @brief Fired when a boot is disconnected.
+             @warning Not implemented by the server
+             @param handedness Boot handedness
+            
+        </member>
+        <member name="M:EKTO_Unity_Plugin.EktoEventListener.OnTrackingDeviceDisconnected(EKTO_Unity_Plugin.TrackerType)">
+             @brief Fired when a tracker is disconnected.
+             @param trackerType Tracker type.
+            
+        </member>
+        <member name="M:EKTO_Unity_Plugin.EktoEventListener.OnTrackingDeviceTracked(EKTO_Unity_Plugin.TrackerType)">
+             @brief Fired when a tracker is tracked.
+             @param trackerType Tracker type.
+            
+        </member>
+        <member name="M:EKTO_Unity_Plugin.EktoEventListener.OnTrackingDeviceUntracked(EKTO_Unity_Plugin.TrackerType)">
+             @brief Fired when a tracker is untracked.
+             @param trackerType Tracker type.
+            
+        </member>
+        <member name="M:EKTO_Unity_Plugin.EktoEventListener.OnDriveModuleConnected(EKTO_Unity_Plugin.DriveModuleType)">
+             @brief Fired when a drive module is connected.
+             @warning Not implemented by the server
+             @param driveModuleType Drive module type.
+            
+        </member>
+        <member name="M:EKTO_Unity_Plugin.EktoEventListener.OnDriveModuleDisconnected(EKTO_Unity_Plugin.DriveModuleType)">
+             @brief Fired when a drive module is disconnected.
+             @warning Not implemented by the server
+             @param driveModuleType Drive module type.
+            
+        </member>
+        <member name="M:EKTO_Unity_Plugin.EktoEventListener.OnSystemReady">
+             @brief Fired when the system is ready to be started.
+             @warning Not implemented by the server
+            
+        </member>
+        <member name="M:EKTO_Unity_Plugin.EktoEventListener.OnSystemNotReady(System.String)">
+            @brief Fired when the system turns from ready to not ready to be started.
+            @warning Not implemented by the server
+            @param notReadyReason A string that contains why the system is no longer ready
+        </member>
+        <member name="M:EKTO_Unity_Plugin.EktoEventListener.OnSystemActivated">
+             @brief Fired when the system is started/activated.
+            
+        </member>
+        <member name="M:EKTO_Unity_Plugin.EktoEventListener.OnSystemDeactivated(System.String)">
+             @brief Fired when the system is stopped/deactivated.
+             @param deactivationReason A string with the cause for the system deactivation
+            
+        </member>
+        <member name="M:EKTO_Unity_Plugin.EktoEventListener.OnBootBraked(EKTO_Unity_Plugin.Handedness)">
+             @brief Fired when a boot is braked.
+             @param handedness Boot handedness
+            
+        </member>
+        <member name="M:EKTO_Unity_Plugin.EktoEventListener.OnBootStartMoving(EKTO_Unity_Plugin.Handedness)">
+             @brief Fired when a boot is starting to move.
+             @param handedness Boot handedness
+            
+        </member>
+        <member name="M:EKTO_Unity_Plugin.EktoEventListener.OnBootStartRampingDown(EKTO_Unity_Plugin.Handedness)">
+             @brief Fired when a boot is starting the rampdown.
+             @param handedness Boot handedness
+            
+        </member>
+        <member name="M:EKTO_Unity_Plugin.EktoEventListener.OnBootLiftOff(EKTO_Unity_Plugin.Handedness)">
+             @brief Fired when a boot is lifted off the ground.
+             @warning Not implemented by the server
+             @param handedness Boot handedness
+            
+        </member>
+        <member name="M:EKTO_Unity_Plugin.EktoEventListener.OnBootPutDown(EKTO_Unity_Plugin.Handedness)">
+             @brief Fired when a boot is put down to the floor.
+             @warning Not implemented by the server
+             @param handedness Boot handedness
+            
+        </member>
+        <member name="M:EKTO_Unity_Plugin.EktoEventListener.OnUserOverSpeed(System.Boolean)">
+             @brief Fired when the user starts/stops moving faster than the system can handle
+             @param overSpeed 
+            
+        </member>
+        <member name="M:EKTO_Unity_Plugin.EktoEventListener.OnServerConnected">
+             @brief Fired when the server is connected
+            
+        </member>
+        <member name="M:EKTO_Unity_Plugin.EktoEventListener.OnServerDisconnected">
+             @brief Fired when the server is disconnected
+            
+        </member>
+        <member name="T:HighPrecisionTimer.MultimediaTimer">
+            <summary>
+            A timer based on the multimedia timer API with 1ms precision.
+            </summary>
+        </member>
+        <member name="P:HighPrecisionTimer.MultimediaTimer.Interval">
+            <summary>
+            The period of the timer in milliseconds.
+            </summary>
+        </member>
+        <member name="P:HighPrecisionTimer.MultimediaTimer.Resolution">
+            <summary>
+            The resolution of the timer in milliseconds. The minimum resolution is 0, meaning highest possible resolution.
+            </summary>
+        </member>
+        <member name="P:HighPrecisionTimer.MultimediaTimer.IsRunning">
+            <summary>
+            Gets whether the timer has been started yet.
+            </summary>
+        </member>
+        <member name="T:EktoApiRuntime.RuntimeReflection">
+            <summary>Holder for reflection information generated from Runtime.proto</summary>
+        </member>
+        <member name="P:EktoApiRuntime.RuntimeReflection.Descriptor">
+            <summary>File descriptor for Runtime.proto</summary>
+        </member>
+        <member name="T:EktoApiRuntime.Handedness">
+             <summary>
+            *
+            Describe left and right handedness.
+             </summary>
+        </member>
+        <member name="T:EktoApiRuntime.SystemActivationStatus">
+             <summary>
+            *
+            Describe whether current system is running or not.
+             </summary>
+        </member>
+        <member name="T:EktoApiRuntime.SystemDeactivationReason">
+             <summary>
+            *
+            The reason as to why the system has stopped running.
+             </summary>
+        </member>
+        <member name="T:EktoApiRuntime.BootRuntimeState">
+             <summary>
+            *
+            Current running state of the boot (Braked is the default state of the boots)
+             </summary>
+        </member>
+        <member name="T:EktoApiRuntime.BootLiftStatus">
+             <summary>
+            *
+            Describe whether the boot is lifed off the ground or not
+             </summary>
+        </member>
+        <member name="T:EktoApiRuntime.TrackingResult">
+             <summary>
+            *
+            Describe whether the boot is currently being tracked
+             </summary>
+        </member>
+        <member name="T:EktoApiRuntime.SystemActivationEventData">
+             <summary>
+            *
+            System Activation Event Data, sent when the system starts and when it stops, also includes the reason for stopping.
+             </summary>
+        </member>
+        <member name="F:EktoApiRuntime.SystemActivationEventData.SystemActivationStatusFieldNumber">
+            <summary>Field number for the "systemActivationStatus" field.</summary>
+        </member>
+        <member name="F:EktoApiRuntime.SystemActivationEventData.SystemDeactivationReasonFieldNumber">
+            <summary>Field number for the "systemDeactivationReason" field.</summary>
+        </member>
+        <member name="T:EktoApiRuntime.BootRuntimeStateChangeEventData">
+             <summary>
+            *
+            Boot Runtime State Change Event Data, sent when the boot (left or right) changes state while running, 
+            includes the boot's previous and current state.
+             </summary>
+        </member>
+        <member name="F:EktoApiRuntime.BootRuntimeStateChangeEventData.HandednessFieldNumber">
+            <summary>Field number for the "handedness" field.</summary>
+        </member>
+        <member name="F:EktoApiRuntime.BootRuntimeStateChangeEventData.PrevStateFieldNumber">
+            <summary>Field number for the "prevState" field.</summary>
+        </member>
+        <member name="F:EktoApiRuntime.BootRuntimeStateChangeEventData.NewStateFieldNumber">
+            <summary>Field number for the "newState" field.</summary>
+        </member>
+        <member name="T:EktoApiRuntime.BootGroundEventData">
+             <summary>
+            *
+            Boot Ground Event Data, sent when the boot (left or right) is on/off the ground.
+             </summary>
+        </member>
+        <member name="F:EktoApiRuntime.BootGroundEventData.HandednessFieldNumber">
+            <summary>Field number for the "handedness" field.</summary>
+        </member>
+        <member name="F:EktoApiRuntime.BootGroundEventData.BootLiftStatusFieldNumber">
+            <summary>Field number for the "bootLiftStatus" field.</summary>
+        </member>
+        <member name="F:EktoApiRuntime.SlowDownEventData.ActiveFieldNumber">
+            <summary>Field number for the "active" field.</summary>
+        </member>
+        <member name="T:EktoApiRuntime.RuntimeData">
+             <summary>
+            *
+            Data at runtime (sent upon request)
+             </summary>
+        </member>
+        <member name="F:EktoApiRuntime.RuntimeData.SystemActiveStatusFieldNumber">
+            <summary>Field number for the "systemActiveStatus" field.</summary>
+        </member>
+        <member name="F:EktoApiRuntime.RuntimeData.PoseDataFieldNumber">
+            <summary>Field number for the "poseData" field.</summary>
+        </member>
+        <member name="F:EktoApiRuntime.RuntimeData.SystemUserVelocityVectorFieldNumber">
+            <summary>Field number for the "systemUserVelocityVector" field.</summary>
+        </member>
+        <member name="F:EktoApiRuntime.RuntimeData.SlowDownDataFieldNumber">
+            <summary>Field number for the "slowDownData" field.</summary>
+        </member>
+        <member name="T:EktoApiRuntime.Vector">
+             <summary>
+            *
+            A 3-D Cartesian vector
+             </summary>
+        </member>
+        <member name="F:EktoApiRuntime.Vector.XFieldNumber">
+            <summary>Field number for the "x" field.</summary>
+        </member>
+        <member name="F:EktoApiRuntime.Vector.YFieldNumber">
+            <summary>Field number for the "y" field.</summary>
+        </member>
+        <member name="F:EktoApiRuntime.Vector.ZFieldNumber">
+            <summary>Field number for the "z" field.</summary>
+        </member>
+        <member name="T:EktoApiRuntime.Vector2D">
+             <summary>
+            *
+            A 2-D Cartesian vector
+             </summary>
+        </member>
+        <member name="F:EktoApiRuntime.Vector2D.XFieldNumber">
+            <summary>Field number for the "x" field.</summary>
+        </member>
+        <member name="F:EktoApiRuntime.Vector2D.YFieldNumber">
+            <summary>Field number for the "y" field.</summary>
+        </member>
+        <member name="T:EktoApiRuntime.Matrix">
+             <summary>
+            *
+            A matrix structure, represented by row*column and its entries in 1-D.
+             </summary>
+        </member>
+        <member name="F:EktoApiRuntime.Matrix.RowFieldNumber">
+            <summary>Field number for the "row" field.</summary>
+        </member>
+        <member name="F:EktoApiRuntime.Matrix.ColumnFieldNumber">
+            <summary>Field number for the "column" field.</summary>
+        </member>
+        <member name="F:EktoApiRuntime.Matrix.EntriesFieldNumber">
+            <summary>Field number for the "entries" field.</summary>
+        </member>
+        <member name="T:EktoApiRuntime.BootPose">
+             <summary>
+            *
+            Boot pose data
+             </summary>
+        </member>
+        <member name="F:EktoApiRuntime.BootPose.HandednessFieldNumber">
+            <summary>Field number for the "handedness" field.</summary>
+        </member>
+        <member name="F:EktoApiRuntime.BootPose.TransMatrixFieldNumber">
+            <summary>Field number for the "transMatrix" field.</summary>
+        </member>
+        <member name="P:EktoApiRuntime.BootPose.TransMatrix">
+            <summary>
+            Boot's position and rotation as represented in a 4x4 matrix
+            </summary>
+        </member>
+        <member name="F:EktoApiRuntime.BootPose.VelocityFieldNumber">
+            <summary>Field number for the "velocity" field.</summary>
+        </member>
+        <member name="F:EktoApiRuntime.BootPose.AngularVelocityFieldNumber">
+            <summary>Field number for the "angularVelocity" field.</summary>
+        </member>
+        <member name="F:EktoApiRuntime.BootPose.TargetBootVelocityFieldNumber">
+            <summary>Field number for the "targetBootVelocity" field.</summary>
+        </member>
+        <member name="F:EktoApiRuntime.BootPose.HeelModuleDirectionFieldNumber">
+            <summary>Field number for the "heelModuleDirection" field.</summary>
+        </member>
+        <member name="F:EktoApiRuntime.BootPose.ToeModuleDirectionFieldNumber">
+            <summary>Field number for the "toeModuleDirection" field.</summary>
+        </member>
+        <member name="F:EktoApiRuntime.BootPose.BootLiftStatusFieldNumber">
+            <summary>Field number for the "bootLiftStatus" field.</summary>
+        </member>
+        <member name="F:EktoApiRuntime.BootPose.StateFieldNumber">
+            <summary>Field number for the "state" field.</summary>
+        </member>
+        <member name="F:EktoApiRuntime.BootPose.TrackingResultFieldNumber">
+            <summary>Field number for the "trackingResult" field.</summary>
+        </member>
+        <member name="T:EktoApiRuntime.UserHipPose">
+             <summary>
+            *
+            Hip tracker pose data
+             </summary>
+        </member>
+        <member name="F:EktoApiRuntime.UserHipPose.TransMatrixFieldNumber">
+            <summary>Field number for the "transMatrix" field.</summary>
+        </member>
+        <member name="P:EktoApiRuntime.UserHipPose.TransMatrix">
+            <summary>
+            Hip tracker's position and rotation as represented in a 4x4 matrix
+            </summary>
+        </member>
+        <member name="F:EktoApiRuntime.UserHipPose.VelocityFieldNumber">
+            <summary>Field number for the "velocity" field.</summary>
+        </member>
+        <member name="F:EktoApiRuntime.UserHipPose.AngularVelocityFieldNumber">
+            <summary>Field number for the "angularVelocity" field.</summary>
+        </member>
+        <member name="F:EktoApiRuntime.UserHipPose.TrackingResultFieldNumber">
+            <summary>Field number for the "trackingResult" field.</summary>
+        </member>
+        <member name="T:EktoApiRuntime.PoseData">
+             <summary>
+            *
+            Overall message containing both boots and the hip tracker's pose data
+             </summary>
+        </member>
+        <member name="F:EktoApiRuntime.PoseData.LeftBootPoseFieldNumber">
+            <summary>Field number for the "leftBootPose" field.</summary>
+        </member>
+        <member name="F:EktoApiRuntime.PoseData.RightBootPoseFieldNumber">
+            <summary>Field number for the "rightBootPose" field.</summary>
+        </member>
+        <member name="F:EktoApiRuntime.PoseData.UserHipPoseFieldNumber">
+            <summary>Field number for the "userHipPose" field.</summary>
+        </member>
+        <member name="F:EktoApiRuntime.PoseData.UserCentroidPositionFieldNumber">
+            <summary>Field number for the "userCentroidPosition" field.</summary>
+        </member>
+        <member name="T:EktoApiRuntime.Runtime">
+             <summary>
+            *
+            Events: Called once (by sending an empty message) to open the stream. The stream will then send 
+            the appropriate data when the corresponding event is being raised by the server
+            
+            Polling: Two-way streaming. User can send a request on their stream when they want the current
+            data snapshot, and the server will return the snapshot on their stream back to the user. 
+            
+            Interaction: Called by the user to interact with the system/to change the system's state. 
+             </summary>
+        </member>
+        <member name="P:EktoApiRuntime.Runtime.Descriptor">
+            <summary>Service descriptor</summary>
+        </member>
+        <member name="T:EktoApiRuntime.Runtime.RuntimeClient">
+            <summary>Client for Runtime</summary>
+        </member>
+        <member name="M:EktoApiRuntime.Runtime.RuntimeClient.#ctor(Grpc.Core.ChannelBase)">
+            <summary>Creates a new client for Runtime</summary>
+            <param name="channel">The channel to use to make remote calls.</param>
+        </member>
+        <member name="M:EktoApiRuntime.Runtime.RuntimeClient.#ctor(Grpc.Core.CallInvoker)">
+            <summary>Creates a new client for Runtime that uses a custom <c>CallInvoker</c>.</summary>
+            <param name="callInvoker">The callInvoker to use to make remote calls.</param>
+        </member>
+        <member name="M:EktoApiRuntime.Runtime.RuntimeClient.#ctor">
+            <summary>Protected parameterless constructor to allow creation of test doubles.</summary>
+        </member>
+        <member name="M:EktoApiRuntime.Runtime.RuntimeClient.#ctor(Grpc.Core.ClientBase.ClientBaseConfiguration)">
+            <summary>Protected constructor to allow creation of configured clients.</summary>
+            <param name="configuration">The client configuration.</param>
+        </member>
+        <member name="M:EktoApiRuntime.Runtime.RuntimeClient.ListenToSystemActivation(EktoApiRuntime.Empty,Grpc.Core.Metadata,System.Nullable{System.DateTime},System.Threading.CancellationToken)">
+             <summary>
+            *
+            Listen to server dispatched messages when the system starts and when it stops
+            @return SystemActivationEventData - snapshot of the system activation status when the event is raised (whether activated or not activated)
+            , including the reason of deactivation.
+             </summary>
+             <param name="request">The request to send to the server.</param>
+             <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+             <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+             <param name="cancellationToken">An optional token for canceling the call.</param>
+             <returns>The call object.</returns>
+        </member>
+        <member name="M:EktoApiRuntime.Runtime.RuntimeClient.ListenToSystemActivation(EktoApiRuntime.Empty,Grpc.Core.CallOptions)">
+             <summary>
+            *
+            Listen to server dispatched messages when the system starts and when it stops
+            @return SystemActivationEventData - snapshot of the system activation status when the event is raised (whether activated or not activated)
+            , including the reason of deactivation.
+             </summary>
+             <param name="request">The request to send to the server.</param>
+             <param name="options">The options for the call.</param>
+             <returns>The call object.</returns>
+        </member>
+        <member name="M:EktoApiRuntime.Runtime.RuntimeClient.ListenToBootRuntimeStateChange(EktoApiRuntime.Empty,Grpc.Core.Metadata,System.Nullable{System.DateTime},System.Threading.CancellationToken)">
+             <summary>
+            *
+            Listen to server dispatched messages when the boots change state
+            @return BootRuntimeStateChangeEventData - snapshot of the current boot state when the runtime state has changed.
+             </summary>
+             <param name="request">The request to send to the server.</param>
+             <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+             <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+             <param name="cancellationToken">An optional token for canceling the call.</param>
+             <returns>The call object.</returns>
+        </member>
+        <member name="M:EktoApiRuntime.Runtime.RuntimeClient.ListenToBootRuntimeStateChange(EktoApiRuntime.Empty,Grpc.Core.CallOptions)">
+             <summary>
+            *
+            Listen to server dispatched messages when the boots change state
+            @return BootRuntimeStateChangeEventData - snapshot of the current boot state when the runtime state has changed.
+             </summary>
+             <param name="request">The request to send to the server.</param>
+             <param name="options">The options for the call.</param>
+             <returns>The call object.</returns>
+        </member>
+        <member name="M:EktoApiRuntime.Runtime.RuntimeClient.ListenToBootGroundEvent(EktoApiRuntime.Empty,Grpc.Core.Metadata,System.Nullable{System.DateTime},System.Threading.CancellationToken)">
+             <summary>
+            *
+            Listen to server dispatched messages when a boot is on or off the ground
+            @return BootGroundEventData - snapshot of the current boot state when the boot is raised from or put down onto the ground.
+             </summary>
+             <param name="request">The request to send to the server.</param>
+             <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+             <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+             <param name="cancellationToken">An optional token for canceling the call.</param>
+             <returns>The call object.</returns>
+        </member>
+        <member name="M:EktoApiRuntime.Runtime.RuntimeClient.ListenToBootGroundEvent(EktoApiRuntime.Empty,Grpc.Core.CallOptions)">
+             <summary>
+            *
+            Listen to server dispatched messages when a boot is on or off the ground
+            @return BootGroundEventData - snapshot of the current boot state when the boot is raised from or put down onto the ground.
+             </summary>
+             <param name="request">The request to send to the server.</param>
+             <param name="options">The options for the call.</param>
+             <returns>The call object.</returns>
+        </member>
+        <member name="M:EktoApiRuntime.Runtime.RuntimeClient.StreamRuntimeData(Grpc.Core.Metadata,System.Nullable{System.DateTime},System.Threading.CancellationToken)">
+             <summary>
+            *
+            Runtime data stream, which sends various data during system runtime upon request
+            @param StreamRequest - a request an empty body, to signal that the caller is requesting data
+            @return RuntimeData - a message containing various runtime data.
+             </summary>
+             <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+             <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+             <param name="cancellationToken">An optional token for canceling the call.</param>
+             <returns>The call object.</returns>
+        </member>
+        <member name="M:EktoApiRuntime.Runtime.RuntimeClient.StreamRuntimeData(Grpc.Core.CallOptions)">
+             <summary>
+            *
+            Runtime data stream, which sends various data during system runtime upon request
+            @param StreamRequest - a request an empty body, to signal that the caller is requesting data
+            @return RuntimeData - a message containing various runtime data.
+             </summary>
+             <param name="options">The options for the call.</param>
+             <returns>The call object.</returns>
+        </member>
+        <member name="M:EktoApiRuntime.Runtime.RuntimeClient.NewInstance(Grpc.Core.ClientBase.ClientBaseConfiguration)">
+            <summary>Creates a new instance of client from given <c>ClientBaseConfiguration</c>.</summary>
+        </member>
+        <member name="T:EktoApiSystemManagement.SystemManagementReflection">
+            <summary>Holder for reflection information generated from SystemManagement.proto</summary>
+        </member>
+        <member name="P:EktoApiSystemManagement.SystemManagementReflection.Descriptor">
+            <summary>File descriptor for SystemManagement.proto</summary>
+        </member>
+        <member name="T:EktoApiSystemManagement.ConnectionStatus">
+             <summary>
+            *
+            Connection status (connected/disconnected)
+             </summary>
+        </member>
+        <member name="T:EktoApiSystemManagement.TrackerStatus">
+             <summary>
+            *
+            Tracking status (tracked, connected but untracked, and disconnected)
+             </summary>
+        </member>
+        <member name="T:EktoApiSystemManagement.ActivationStatus">
+             <summary>
+            *
+            Activation status
+             </summary>
+        </member>
+        <member name="T:EktoApiSystemManagement.TrackingDeviceType">
+             <summary>
+            *
+            Different tracker type, including the HMD.
+             </summary>
+        </member>
+        <member name="T:EktoApiSystemManagement.DriveModuleType">
+             <summary>
+            *
+            Different drive module type.
+             </summary>
+        </member>
+        <member name="T:EktoApiSystemManagement.BootStatus">
+             <summary>
+            *
+            Boot status (disconencted, low battery, error in drive module, ready)
+             </summary>
+        </member>
+        <member name="T:EktoApiSystemManagement.LastBootRampdownError">
+             <summary>
+            *
+            Various errors that caused the boot to be ramped down in the last system run
+             </summary>
+        </member>
+        <member name="F:EktoApiSystemManagement.LastBootRampdownError.ModuleSelfRampdown">
+            <summary>
+            swerve enabled, wrong direction, disabledwhenmoving
+            </summary>
+        </member>
+        <member name="T:EktoApiSystemManagement.NotReadyToStartReason">
+             <summary>
+            *
+            Various reasons why the system is not ready to start
+             </summary>
+        </member>
+        <member name="T:EktoApiSystemManagement.NotReadyToArmReason">
+             <summary>
+            *
+            Various reasons why the system cannot be armed.
+             </summary>
+        </member>
+        <member name="T:EktoApiSystemManagement.RampdownReason">
+             <summary>
+            *
+            Various reasons why the system ramped down
+             </summary>
+        </member>
+        <member name="T:EktoApiSystemManagement.ModuleError">
+             <summary>
+            *
+            Module errors
+             </summary>
+        </member>
+        <member name="T:EktoApiSystemManagement.Handedness">
+             <summary>
+            *
+            Describe left and right handedness.
+             </summary>
+        </member>
+        <member name="T:EktoApiSystemManagement.Position">
+             <summary>
+            *
+            Describe position (including handedness and hip)
+             </summary>
+        </member>
+        <member name="T:EktoApiSystemManagement.BootRequest">
+             <summary>
+            *
+            Message containing the queried boot handedness.
+             </summary>
+        </member>
+        <member name="F:EktoApiSystemManagement.BootRequest.HandednessFieldNumber">
+            <summary>Field number for the "handedness" field.</summary>
+        </member>
+        <member name="T:EktoApiSystemManagement.TrackingDeviceRequest">
+             <summary>
+            *
+            Message containing the queried tracker type.
+             </summary>
+        </member>
+        <member name="F:EktoApiSystemManagement.TrackingDeviceRequest.TrackingDeviceTypeFieldNumber">
+            <summary>Field number for the "trackingDeviceType" field.</summary>
+        </member>
+        <member name="T:EktoApiSystemManagement.DriveModuleRequest">
+             <summary>
+            *
+            Message containing the queried drive module type.
+             </summary>
+        </member>
+        <member name="F:EktoApiSystemManagement.DriveModuleRequest.DriveModuleTypeFieldNumber">
+            <summary>Field number for the "driveModuleType" field.</summary>
+        </member>
+        <member name="T:EktoApiSystemManagement.BaseStationConnectionEventData">
+             <summary>
+            *
+            Base Station Connection Event Data, sent when the base station is connected/disconnected.
+             </summary>
+        </member>
+        <member name="F:EktoApiSystemManagement.BaseStationConnectionEventData.ConnectionStatusFieldNumber">
+            <summary>Field number for the "connectionStatus" field.</summary>
+        </member>
+        <member name="T:EktoApiSystemManagement.BootConnectionEventData">
+             <summary>
+            *
+            Boot Connection Event Data, sent when the boot (left or right) is connected/disconnected.
+             </summary>
+        </member>
+        <member name="F:EktoApiSystemManagement.BootConnectionEventData.ConnectionStatusFieldNumber">
+            <summary>Field number for the "connectionStatus" field.</summary>
+        </member>
+        <member name="F:EktoApiSystemManagement.BootConnectionEventData.HandednessFieldNumber">
+            <summary>Field number for the "handedness" field.</summary>
+        </member>
+        <member name="T:EktoApiSystemManagement.TrackingDeviceStatusEventData">
+             <summary>
+            *
+            Tracking Device Status Data, sent when the tracker is tracked/untracked/connected/disconnected.
+             </summary>
+        </member>
+        <member name="F:EktoApiSystemManagement.TrackingDeviceStatusEventData.TrackerStatusFieldNumber">
+            <summary>Field number for the "trackerStatus" field.</summary>
+        </member>
+        <member name="F:EktoApiSystemManagement.TrackingDeviceStatusEventData.PrevTrackerStatusFieldNumber">
+            <summary>Field number for the "prevTrackerStatus" field.</summary>
+        </member>
+        <member name="F:EktoApiSystemManagement.TrackingDeviceStatusEventData.TrackingDeviceTypeFieldNumber">
+            <summary>Field number for the "trackingDeviceType" field.</summary>
+        </member>
+        <member name="T:EktoApiSystemManagement.DriveModuleConnectionEventData">
+             <summary>
+            *
+            Drive Module Connection Event Data, sent when the drive module is connected/disconnected.
+             </summary>
+        </member>
+        <member name="F:EktoApiSystemManagement.DriveModuleConnectionEventData.ConnectionStatusFieldNumber">
+            <summary>Field number for the "connectionStatus" field.</summary>
+        </member>
+        <member name="F:EktoApiSystemManagement.DriveModuleConnectionEventData.DriveModuleTypeFieldNumber">
+            <summary>Field number for the "driveModuleType" field.</summary>
+        </member>
+        <member name="T:EktoApiSystemManagement.SteamVRConnectionEventData">
+             <summary>
+            *
+            SteamVR Connection Event Data, sent when SteamVR is connected/disconnected.
+             </summary>
+        </member>
+        <member name="F:EktoApiSystemManagement.SteamVRConnectionEventData.ConnectionStatusFieldNumber">
+            <summary>Field number for the "connectionStatus" field.</summary>
+        </member>
+        <member name="T:EktoApiSystemManagement.DashboardActivationEventData">
+             <summary>
+            *
+            Dashboard Activation Event Data, sent when the VR dashboard is shown/hidden.
+             </summary>
+        </member>
+        <member name="F:EktoApiSystemManagement.DashboardActivationEventData.ActivationStatusFieldNumber">
+            <summary>Field number for the "activationStatus" field.</summary>
+        </member>
+        <member name="T:EktoApiSystemManagement.SystemReadinessEventData">
+             <summary>
+            *
+            System Readiness Event Data, sent when the system is ready/not ready to start, including the reason 
+            if system is not ready to start.
+             </summary>
+        </member>
+        <member name="F:EktoApiSystemManagement.SystemReadinessEventData.IsReadyToStartFieldNumber">
+            <summary>Field number for the "isReadyToStart" field.</summary>
+        </member>
+        <member name="F:EktoApiSystemManagement.SystemReadinessEventData.NotReadyToStartReasonFieldNumber">
+            <summary>Field number for the "notReadyToStartReason" field.</summary>
+        </member>
+        <member name="T:EktoApiSystemManagement.SystemManagementData">
+             <summary>
+            *
+            Current system status (sent upon request)
+             </summary>
+        </member>
+        <member name="F:EktoApiSystemManagement.SystemManagementData.LeftBootDataFieldNumber">
+            <summary>Field number for the "leftBootData" field.</summary>
+        </member>
+        <member name="F:EktoApiSystemManagement.SystemManagementData.RightBootDataFieldNumber">
+            <summary>Field number for the "rightBootData" field.</summary>
+        </member>
+        <member name="F:EktoApiSystemManagement.SystemManagementData.BootToFloorOffsetFieldNumber">
+            <summary>Field number for the "bootToFloorOffset" field.</summary>
+        </member>
+        <member name="F:EktoApiSystemManagement.SystemManagementData.StartingZoneDataFieldNumber">
+            <summary>Field number for the "startingZoneData" field.</summary>
+        </member>
+        <member name="F:EktoApiSystemManagement.SystemManagementData.ReadyToStartStatusFieldNumber">
+            <summary>Field number for the "readyToStartStatus" field.</summary>
+        </member>
+        <member name="F:EktoApiSystemManagement.SystemManagementData.ReadyToArmStatusFieldNumber">
+            <summary>Field number for the "readyToArmStatus" field.</summary>
+        </member>
+        <member name="F:EktoApiSystemManagement.SystemManagementData.RampdownCausesFieldNumber">
+            <summary>Field number for the "rampdownCauses" field.</summary>
+        </member>
+        <member name="F:EktoApiSystemManagement.SystemManagementData.HmdTrackerStatusFieldNumber">
+            <summary>Field number for the "hmdTrackerStatus" field.</summary>
+        </member>
+        <member name="F:EktoApiSystemManagement.SystemManagementData.HipTrackerStatusFieldNumber">
+            <summary>Field number for the "hipTrackerStatus" field.</summary>
+        </member>
+        <member name="F:EktoApiSystemManagement.SystemManagementData.SteamVRConnectionStatusFieldNumber">
+            <summary>Field number for the "steamVRConnectionStatus" field.</summary>
+        </member>
+        <member name="F:EktoApiSystemManagement.SystemManagementData.DashboardActivationStatusFieldNumber">
+            <summary>Field number for the "dashboardActivationStatus" field.</summary>
+        </member>
+        <member name="F:EktoApiSystemManagement.SystemManagementData.BaseStationConnectionStatusFieldNumber">
+            <summary>Field number for the "baseStationConnectionStatus" field.</summary>
+        </member>
+        <member name="F:EktoApiSystemManagement.SystemManagementData.PlayBackFileNameFieldNumber">
+            <summary>Field number for the "playBackFileName" field.</summary>
+        </member>
+        <member name="T:EktoApiSystemManagement.BootData">
+             <summary>
+            *
+            Message containing data about specific boot
+             </summary>
+        </member>
+        <member name="F:EktoApiSystemManagement.BootData.HandednessFieldNumber">
+            <summary>Field number for the "handedness" field.</summary>
+        </member>
+        <member name="F:EktoApiSystemManagement.BootData.BatteryChargeLevelFieldNumber">
+            <summary>Field number for the "batteryChargeLevel" field.</summary>
+        </member>
+        <member name="F:EktoApiSystemManagement.BootData.BootStatusFieldNumber">
+            <summary>Field number for the "bootStatus" field.</summary>
+        </member>
+        <member name="F:EktoApiSystemManagement.BootData.LastBootRampdownErrorFieldNumber">
+            <summary>Field number for the "lastBootRampdownError" field.</summary>
+        </member>
+        <member name="F:EktoApiSystemManagement.BootData.ToeModuleErrorsFieldNumber">
+            <summary>Field number for the "toeModuleErrors" field.</summary>
+        </member>
+        <member name="F:EktoApiSystemManagement.BootData.HeelModuleErrorsFieldNumber">
+            <summary>Field number for the "heelModuleErrors" field.</summary>
+        </member>
+        <member name="F:EktoApiSystemManagement.BootData.ToeModuleConnectionStatusFieldNumber">
+            <summary>Field number for the "toeModuleConnectionStatus" field.</summary>
+        </member>
+        <member name="F:EktoApiSystemManagement.BootData.HeelModuleConnectionStatusFieldNumber">
+            <summary>Field number for the "heelModuleConnectionStatus" field.</summary>
+        </member>
+        <member name="F:EktoApiSystemManagement.BootData.FrontTrackerStatusFieldNumber">
+            <summary>Field number for the "frontTrackerStatus" field.</summary>
+        </member>
+        <member name="F:EktoApiSystemManagement.BootData.BackTrackerStatusFieldNumber">
+            <summary>Field number for the "backTrackerStatus" field.</summary>
+        </member>
+        <member name="T:EktoApiSystemManagement.StartingZonePositionData">
+             <summary>
+            *
+            Data about whether the boots &amp; hip tracker are in the starting zone
+             </summary>
+        </member>
+        <member name="F:EktoApiSystemManagement.StartingZonePositionData.PositionFieldNumber">
+            <summary>Field number for the "position" field.</summary>
+        </member>
+        <member name="F:EktoApiSystemManagement.StartingZonePositionData.IsInStartingZoneFieldNumber">
+            <summary>Field number for the "isInStartingZone" field.</summary>
+        </member>
+        <member name="T:EktoApiSystemManagement.StartingZoneData">
+             <summary>
+            *
+            Data about the starting zone
+             </summary>
+        </member>
+        <member name="F:EktoApiSystemManagement.StartingZoneData.StartingZoneRadiusFieldNumber">
+            <summary>Field number for the "startingZoneRadius" field.</summary>
+        </member>
+        <member name="F:EktoApiSystemManagement.StartingZoneData.LeftBootFieldNumber">
+            <summary>Field number for the "leftBoot" field.</summary>
+        </member>
+        <member name="F:EktoApiSystemManagement.StartingZoneData.RightBootFieldNumber">
+            <summary>Field number for the "rightBoot" field.</summary>
+        </member>
+        <member name="F:EktoApiSystemManagement.StartingZoneData.HipFieldNumber">
+            <summary>Field number for the "hip" field.</summary>
+        </member>
+        <member name="T:EktoApiSystemManagement.ReadyToStartStatus">
+             <summary>
+            *
+            Current status on whether the system can start, or reason if system is not ready to start
+             </summary>
+        </member>
+        <member name="F:EktoApiSystemManagement.ReadyToStartStatus.IsReadyToStartFieldNumber">
+            <summary>Field number for the "isReadyToStart" field.</summary>
+        </member>
+        <member name="F:EktoApiSystemManagement.ReadyToStartStatus.NotReadyToStartReasonFieldNumber">
+            <summary>Field number for the "notReadyToStartReason" field.</summary>
+        </member>
+        <member name="T:EktoApiSystemManagement.ReadyToArmStatus">
+             <summary>
+            *
+            Current status on whether the system can be armed, or reason if system is not ready to arm
+             </summary>
+        </member>
+        <member name="F:EktoApiSystemManagement.ReadyToArmStatus.IsReadyToArmFieldNumber">
+            <summary>Field number for the "isReadyToArm" field.</summary>
+        </member>
+        <member name="F:EktoApiSystemManagement.ReadyToArmStatus.NotReadyToArmReasonFieldNumber">
+            <summary>Field number for the "notReadyToArmReason" field.</summary>
+        </member>
+        <member name="T:EktoApiSystemManagement.RampdownCauses">
+             <summary>
+            *
+            Rampdown reason
+             </summary>
+        </member>
+        <member name="F:EktoApiSystemManagement.RampdownCauses.RampdownReasonFieldNumber">
+            <summary>Field number for the "rampdownReason" field.</summary>
+        </member>
+        <member name="T:EktoApiSystemManagement.SystemArmingStatus">
+             <summary>
+            *
+            Current status on whether the system can be armed, or reason if system is not ready to arm
+             </summary>
+        </member>
+        <member name="F:EktoApiSystemManagement.SystemArmingStatus.IsArmSuccessFieldNumber">
+            <summary>Field number for the "isArmSuccess" field.</summary>
+        </member>
+        <member name="F:EktoApiSystemManagement.SystemArmingStatus.NotReadyToArmReasonFieldNumber">
+            <summary>Field number for the "notReadyToArmReason" field.</summary>
+        </member>
+        <member name="T:EktoApiSystemManagement.SystemStartingStatus">
+             <summary>
+            *
+            Current status on whether the system can start, or reason if system is not ready to start
+             </summary>
+        </member>
+        <member name="F:EktoApiSystemManagement.SystemStartingStatus.IsStartSuccessFieldNumber">
+            <summary>Field number for the "isStartSuccess" field.</summary>
+        </member>
+        <member name="F:EktoApiSystemManagement.SystemStartingStatus.NotReadyToStartReasonFieldNumber">
+            <summary>Field number for the "notReadyToStartReason" field.</summary>
+        </member>
+        <member name="T:EktoApiSystemManagement.SystemManagement">
+             <summary>
+            *
+            Events: Called once (by sending an empty message) to open the stream. The stream will then send 
+            the appropriate data when the corresponding event is being raised by the server
+            
+            Polling: Two-way streaming. User can send a request on their stream when they want the current
+            data snapshot, and the server will return the snapshot on their stream back to the user. 
+            
+            Interaction: Called by the user to interact with the system/to change the system's state. 
+             </summary>
+        </member>
+        <member name="P:EktoApiSystemManagement.SystemManagement.Descriptor">
+            <summary>Service descriptor</summary>
+        </member>
+        <member name="T:EktoApiSystemManagement.SystemManagement.SystemManagementClient">
+            <summary>Client for SystemManagement</summary>
+        </member>
+        <member name="M:EktoApiSystemManagement.SystemManagement.SystemManagementClient.#ctor(Grpc.Core.ChannelBase)">
+            <summary>Creates a new client for SystemManagement</summary>
+            <param name="channel">The channel to use to make remote calls.</param>
+        </member>
+        <member name="M:EktoApiSystemManagement.SystemManagement.SystemManagementClient.#ctor(Grpc.Core.CallInvoker)">
+            <summary>Creates a new client for SystemManagement that uses a custom <c>CallInvoker</c>.</summary>
+            <param name="callInvoker">The callInvoker to use to make remote calls.</param>
+        </member>
+        <member name="M:EktoApiSystemManagement.SystemManagement.SystemManagementClient.#ctor">
+            <summary>Protected parameterless constructor to allow creation of test doubles.</summary>
+        </member>
+        <member name="M:EktoApiSystemManagement.SystemManagement.SystemManagementClient.#ctor(Grpc.Core.ClientBase.ClientBaseConfiguration)">
+            <summary>Protected constructor to allow creation of configured clients.</summary>
+            <param name="configuration">The client configuration.</param>
+        </member>
+        <member name="M:EktoApiSystemManagement.SystemManagement.SystemManagementClient.ListenToBaseStationConnection(EktoApiSystemManagement.Empty,Grpc.Core.Metadata,System.Nullable{System.DateTime},System.Threading.CancellationToken)">
+             <summary>
+            *
+            Listen to server dispatched messages when the base station is connected/disconnected
+            @return BaseStationConnectionEventData - snapshot of base station's connection status
+            when the event is raised.
+             </summary>
+             <param name="request">The request to send to the server.</param>
+             <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+             <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+             <param name="cancellationToken">An optional token for canceling the call.</param>
+             <returns>The call object.</returns>
+        </member>
+        <member name="M:EktoApiSystemManagement.SystemManagement.SystemManagementClient.ListenToBaseStationConnection(EktoApiSystemManagement.Empty,Grpc.Core.CallOptions)">
+             <summary>
+            *
+            Listen to server dispatched messages when the base station is connected/disconnected
+            @return BaseStationConnectionEventData - snapshot of base station's connection status
+            when the event is raised.
+             </summary>
+             <param name="request">The request to send to the server.</param>
+             <param name="options">The options for the call.</param>
+             <returns>The call object.</returns>
+        </member>
+        <member name="M:EktoApiSystemManagement.SystemManagement.SystemManagementClient.ListenToBootConnection(EktoApiSystemManagement.BootRequest,Grpc.Core.Metadata,System.Nullable{System.DateTime},System.Threading.CancellationToken)">
+             <summary>
+            *
+            Listen to server dispatched messages when a boot connects or disconnects from the base
+            @param BootRequest - request message specifying the boot's handedness
+            @return BootConnectionEventData - snapshot of boot's connection status
+            when the event is raised.
+             </summary>
+             <param name="request">The request to send to the server.</param>
+             <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+             <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+             <param name="cancellationToken">An optional token for canceling the call.</param>
+             <returns>The call object.</returns>
+        </member>
+        <member name="M:EktoApiSystemManagement.SystemManagement.SystemManagementClient.ListenToBootConnection(EktoApiSystemManagement.BootRequest,Grpc.Core.CallOptions)">
+             <summary>
+            *
+            Listen to server dispatched messages when a boot connects or disconnects from the base
+            @param BootRequest - request message specifying the boot's handedness
+            @return BootConnectionEventData - snapshot of boot's connection status
+            when the event is raised.
+             </summary>
+             <param name="request">The request to send to the server.</param>
+             <param name="options">The options for the call.</param>
+             <returns>The call object.</returns>
+        </member>
+        <member name="M:EktoApiSystemManagement.SystemManagement.SystemManagementClient.ListenToSteamVRConnection(EktoApiSystemManagement.Empty,Grpc.Core.Metadata,System.Nullable{System.DateTime},System.Threading.CancellationToken)">
+             <summary>
+            *
+            Listen to server dispatched messages when SteamVR is connected/disconnected
+            @return SteamVRConnectionEventData - snapshot of SteamVR connection status
+            when the event is raised.
+             </summary>
+             <param name="request">The request to send to the server.</param>
+             <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+             <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+             <param name="cancellationToken">An optional token for canceling the call.</param>
+             <returns>The call object.</returns>
+        </member>
+        <member name="M:EktoApiSystemManagement.SystemManagement.SystemManagementClient.ListenToSteamVRConnection(EktoApiSystemManagement.Empty,Grpc.Core.CallOptions)">
+             <summary>
+            *
+            Listen to server dispatched messages when SteamVR is connected/disconnected
+            @return SteamVRConnectionEventData - snapshot of SteamVR connection status
+            when the event is raised.
+             </summary>
+             <param name="request">The request to send to the server.</param>
+             <param name="options">The options for the call.</param>
+             <returns>The call object.</returns>
+        </member>
+        <member name="M:EktoApiSystemManagement.SystemManagement.SystemManagementClient.ListenToDashboardActivation(EktoApiSystemManagement.Empty,Grpc.Core.Metadata,System.Nullable{System.DateTime},System.Threading.CancellationToken)">
+             <summary>
+            *
+            Listen to server dispatched messages when VR dashboard is activated/deactivated
+            @return DashboardActivationEventData - snapshot of VR dashboard activation status
+            when the event is raised.
+             </summary>
+             <param name="request">The request to send to the server.</param>
+             <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+             <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+             <param name="cancellationToken">An optional token for canceling the call.</param>
+             <returns>The call object.</returns>
+        </member>
+        <member name="M:EktoApiSystemManagement.SystemManagement.SystemManagementClient.ListenToDashboardActivation(EktoApiSystemManagement.Empty,Grpc.Core.CallOptions)">
+             <summary>
+            *
+            Listen to server dispatched messages when VR dashboard is activated/deactivated
+            @return DashboardActivationEventData - snapshot of VR dashboard activation status
+            when the event is raised.
+             </summary>
+             <param name="request">The request to send to the server.</param>
+             <param name="options">The options for the call.</param>
+             <returns>The call object.</returns>
+        </member>
+        <member name="M:EktoApiSystemManagement.SystemManagement.SystemManagementClient.ListenToTrackingDeviceStatus(EktoApiSystemManagement.TrackingDeviceRequest,Grpc.Core.Metadata,System.Nullable{System.DateTime},System.Threading.CancellationToken)">
+             <summary>
+            *
+            Listen to server dispatched messages when a tracker or hmd is connected or disconnected from SteamVR
+            @param TrackingDeviceRequest - request message specifying the queried tracker type (or hmd)
+            @return TrackingDeviceStatusEventData - snapshot of tracker connection/tracking status
+            when the event is raised.
+             </summary>
+             <param name="request">The request to send to the server.</param>
+             <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+             <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+             <param name="cancellationToken">An optional token for canceling the call.</param>
+             <returns>The call object.</returns>
+        </member>
+        <member name="M:EktoApiSystemManagement.SystemManagement.SystemManagementClient.ListenToTrackingDeviceStatus(EktoApiSystemManagement.TrackingDeviceRequest,Grpc.Core.CallOptions)">
+             <summary>
+            *
+            Listen to server dispatched messages when a tracker or hmd is connected or disconnected from SteamVR
+            @param TrackingDeviceRequest - request message specifying the queried tracker type (or hmd)
+            @return TrackingDeviceStatusEventData - snapshot of tracker connection/tracking status
+            when the event is raised.
+             </summary>
+             <param name="request">The request to send to the server.</param>
+             <param name="options">The options for the call.</param>
+             <returns>The call object.</returns>
+        </member>
+        <member name="M:EktoApiSystemManagement.SystemManagement.SystemManagementClient.ListenToDriveModuleConnection(EktoApiSystemManagement.DriveModuleRequest,Grpc.Core.Metadata,System.Nullable{System.DateTime},System.Threading.CancellationToken)">
+             <summary>
+            *
+            Listen to server dispatched messages when boot drive module is connected/disconnected
+            @param DriveModuleRequest - request message specifying the queried drive module type
+            @return DriveModuleConnectionEventData - snapshot of drive module's connection status
+            when the event is raised.
+             </summary>
+             <param name="request">The request to send to the server.</param>
+             <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+             <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+             <param name="cancellationToken">An optional token for canceling the call.</param>
+             <returns>The call object.</returns>
+        </member>
+        <member name="M:EktoApiSystemManagement.SystemManagement.SystemManagementClient.ListenToDriveModuleConnection(EktoApiSystemManagement.DriveModuleRequest,Grpc.Core.CallOptions)">
+             <summary>
+            *
+            Listen to server dispatched messages when boot drive module is connected/disconnected
+            @param DriveModuleRequest - request message specifying the queried drive module type
+            @return DriveModuleConnectionEventData - snapshot of drive module's connection status
+            when the event is raised.
+             </summary>
+             <param name="request">The request to send to the server.</param>
+             <param name="options">The options for the call.</param>
+             <returns>The call object.</returns>
+        </member>
+        <member name="M:EktoApiSystemManagement.SystemManagement.SystemManagementClient.ListenToSystemReadiness(EktoApiSystemManagement.Empty,Grpc.Core.Metadata,System.Nullable{System.DateTime},System.Threading.CancellationToken)">
+             <summary>
+            *
+            Listen to server dispatched messages when the system is ready or not ready to start
+            @return SystemReadinessEventData - snapshot of system's readiness
+            when the event is raised, including the reason as to the system not being ready, if it's not ready.
+             </summary>
+             <param name="request">The request to send to the server.</param>
+             <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+             <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+             <param name="cancellationToken">An optional token for canceling the call.</param>
+             <returns>The call object.</returns>
+        </member>
+        <member name="M:EktoApiSystemManagement.SystemManagement.SystemManagementClient.ListenToSystemReadiness(EktoApiSystemManagement.Empty,Grpc.Core.CallOptions)">
+             <summary>
+            *
+            Listen to server dispatched messages when the system is ready or not ready to start
+            @return SystemReadinessEventData - snapshot of system's readiness
+            when the event is raised, including the reason as to the system not being ready, if it's not ready.
+             </summary>
+             <param name="request">The request to send to the server.</param>
+             <param name="options">The options for the call.</param>
+             <returns>The call object.</returns>
+        </member>
+        <member name="M:EktoApiSystemManagement.SystemManagement.SystemManagementClient.StreamSystemManagementData(Grpc.Core.Metadata,System.Nullable{System.DateTime},System.Threading.CancellationToken)">
+             <summary>
+            *
+            System management data stream, which sends data about the current status of the system
+            @param StreamRequest - a request an empty body, to signal that the caller is requesting data
+            @return SystemManagementData - a message containing various system data.
+             </summary>
+             <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+             <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+             <param name="cancellationToken">An optional token for canceling the call.</param>
+             <returns>The call object.</returns>
+        </member>
+        <member name="M:EktoApiSystemManagement.SystemManagement.SystemManagementClient.StreamSystemManagementData(Grpc.Core.CallOptions)">
+             <summary>
+            *
+            System management data stream, which sends data about the current status of the system
+            @param StreamRequest - a request an empty body, to signal that the caller is requesting data
+            @return SystemManagementData - a message containing various system data.
+             </summary>
+             <param name="options">The options for the call.</param>
+             <returns>The call object.</returns>
+        </member>
+        <member name="M:EktoApiSystemManagement.SystemManagement.SystemManagementClient.ArmSystem(EktoApiSystemManagement.Empty,Grpc.Core.Metadata,System.Nullable{System.DateTime},System.Threading.CancellationToken)">
+             <summary>
+            *
+            Arms the system so it can be started by a user
+            @return SystemArmingStatus - current system arm status. If not armed, also contains the reason as to why
+            the system cannot be armed.
+             </summary>
+             <param name="request">The request to send to the server.</param>
+             <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+             <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+             <param name="cancellationToken">An optional token for canceling the call.</param>
+             <returns>The response received from the server.</returns>
+        </member>
+        <member name="M:EktoApiSystemManagement.SystemManagement.SystemManagementClient.ArmSystem(EktoApiSystemManagement.Empty,Grpc.Core.CallOptions)">
+             <summary>
+            *
+            Arms the system so it can be started by a user
+            @return SystemArmingStatus - current system arm status. If not armed, also contains the reason as to why
+            the system cannot be armed.
+             </summary>
+             <param name="request">The request to send to the server.</param>
+             <param name="options">The options for the call.</param>
+             <returns>The response received from the server.</returns>
+        </member>
+        <member name="M:EktoApiSystemManagement.SystemManagement.SystemManagementClient.ArmSystemAsync(EktoApiSystemManagement.Empty,Grpc.Core.Metadata,System.Nullable{System.DateTime},System.Threading.CancellationToken)">
+             <summary>
+            *
+            Arms the system so it can be started by a user
+            @return SystemArmingStatus - current system arm status. If not armed, also contains the reason as to why
+            the system cannot be armed.
+             </summary>
+             <param name="request">The request to send to the server.</param>
+             <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+             <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+             <param name="cancellationToken">An optional token for canceling the call.</param>
+             <returns>The call object.</returns>
+        </member>
+        <member name="M:EktoApiSystemManagement.SystemManagement.SystemManagementClient.ArmSystemAsync(EktoApiSystemManagement.Empty,Grpc.Core.CallOptions)">
+             <summary>
+            *
+            Arms the system so it can be started by a user
+            @return SystemArmingStatus - current system arm status. If not armed, also contains the reason as to why
+            the system cannot be armed.
+             </summary>
+             <param name="request">The request to send to the server.</param>
+             <param name="options">The options for the call.</param>
+             <returns>The call object.</returns>
+        </member>
+        <member name="M:EktoApiSystemManagement.SystemManagement.SystemManagementClient.DisarmSystem(EktoApiSystemManagement.Empty,Grpc.Core.Metadata,System.Nullable{System.DateTime},System.Threading.CancellationToken)">
+            <summary>
+            Disarms the system so it cannot be started by a user. 
+            If called by when the system is running, will act like a system stopping
+            </summary>
+            <param name="request">The request to send to the server.</param>
+            <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+            <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+            <param name="cancellationToken">An optional token for canceling the call.</param>
+            <returns>The response received from the server.</returns>
+        </member>
+        <member name="M:EktoApiSystemManagement.SystemManagement.SystemManagementClient.DisarmSystem(EktoApiSystemManagement.Empty,Grpc.Core.CallOptions)">
+            <summary>
+            Disarms the system so it cannot be started by a user. 
+            If called by when the system is running, will act like a system stopping
+            </summary>
+            <param name="request">The request to send to the server.</param>
+            <param name="options">The options for the call.</param>
+            <returns>The response received from the server.</returns>
+        </member>
+        <member name="M:EktoApiSystemManagement.SystemManagement.SystemManagementClient.DisarmSystemAsync(EktoApiSystemManagement.Empty,Grpc.Core.Metadata,System.Nullable{System.DateTime},System.Threading.CancellationToken)">
+            <summary>
+            Disarms the system so it cannot be started by a user. 
+            If called by when the system is running, will act like a system stopping
+            </summary>
+            <param name="request">The request to send to the server.</param>
+            <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+            <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+            <param name="cancellationToken">An optional token for canceling the call.</param>
+            <returns>The call object.</returns>
+        </member>
+        <member name="M:EktoApiSystemManagement.SystemManagement.SystemManagementClient.DisarmSystemAsync(EktoApiSystemManagement.Empty,Grpc.Core.CallOptions)">
+            <summary>
+            Disarms the system so it cannot be started by a user. 
+            If called by when the system is running, will act like a system stopping
+            </summary>
+            <param name="request">The request to send to the server.</param>
+            <param name="options">The options for the call.</param>
+            <returns>The call object.</returns>
+        </member>
+        <member name="M:EktoApiSystemManagement.SystemManagement.SystemManagementClient.StartSystem(EktoApiSystemManagement.Empty,Grpc.Core.Metadata,System.Nullable{System.DateTime},System.Threading.CancellationToken)">
+             <summary>
+            *
+            Starts the system so the boots will move when a user walks
+            @return SystemStartingingStatus - current system activation status. If not started, also contains the reason as to why
+            the system cannot be started.
+             </summary>
+             <param name="request">The request to send to the server.</param>
+             <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+             <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+             <param name="cancellationToken">An optional token for canceling the call.</param>
+             <returns>The response received from the server.</returns>
+        </member>
+        <member name="M:EktoApiSystemManagement.SystemManagement.SystemManagementClient.StartSystem(EktoApiSystemManagement.Empty,Grpc.Core.CallOptions)">
+             <summary>
+            *
+            Starts the system so the boots will move when a user walks
+            @return SystemStartingingStatus - current system activation status. If not started, also contains the reason as to why
+            the system cannot be started.
+             </summary>
+             <param name="request">The request to send to the server.</param>
+             <param name="options">The options for the call.</param>
+             <returns>The response received from the server.</returns>
+        </member>
+        <member name="M:EktoApiSystemManagement.SystemManagement.SystemManagementClient.StartSystemAsync(EktoApiSystemManagement.Empty,Grpc.Core.Metadata,System.Nullable{System.DateTime},System.Threading.CancellationToken)">
+             <summary>
+            *
+            Starts the system so the boots will move when a user walks
+            @return SystemStartingingStatus - current system activation status. If not started, also contains the reason as to why
+            the system cannot be started.
+             </summary>
+             <param name="request">The request to send to the server.</param>
+             <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+             <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+             <param name="cancellationToken">An optional token for canceling the call.</param>
+             <returns>The call object.</returns>
+        </member>
+        <member name="M:EktoApiSystemManagement.SystemManagement.SystemManagementClient.StartSystemAsync(EktoApiSystemManagement.Empty,Grpc.Core.CallOptions)">
+             <summary>
+            *
+            Starts the system so the boots will move when a user walks
+            @return SystemStartingingStatus - current system activation status. If not started, also contains the reason as to why
+            the system cannot be started.
+             </summary>
+             <param name="request">The request to send to the server.</param>
+             <param name="options">The options for the call.</param>
+             <returns>The call object.</returns>
+        </member>
+        <member name="M:EktoApiSystemManagement.SystemManagement.SystemManagementClient.StopSystem(EktoApiSystemManagement.Empty,Grpc.Core.Metadata,System.Nullable{System.DateTime},System.Threading.CancellationToken)">
+             <summary>
+            * 
+            Stops and ramps the system down
+             </summary>
+             <param name="request">The request to send to the server.</param>
+             <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+             <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+             <param name="cancellationToken">An optional token for canceling the call.</param>
+             <returns>The response received from the server.</returns>
+        </member>
+        <member name="M:EktoApiSystemManagement.SystemManagement.SystemManagementClient.StopSystem(EktoApiSystemManagement.Empty,Grpc.Core.CallOptions)">
+             <summary>
+            * 
+            Stops and ramps the system down
+             </summary>
+             <param name="request">The request to send to the server.</param>
+             <param name="options">The options for the call.</param>
+             <returns>The response received from the server.</returns>
+        </member>
+        <member name="M:EktoApiSystemManagement.SystemManagement.SystemManagementClient.StopSystemAsync(EktoApiSystemManagement.Empty,Grpc.Core.Metadata,System.Nullable{System.DateTime},System.Threading.CancellationToken)">
+             <summary>
+            * 
+            Stops and ramps the system down
+             </summary>
+             <param name="request">The request to send to the server.</param>
+             <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+             <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+             <param name="cancellationToken">An optional token for canceling the call.</param>
+             <returns>The call object.</returns>
+        </member>
+        <member name="M:EktoApiSystemManagement.SystemManagement.SystemManagementClient.StopSystemAsync(EktoApiSystemManagement.Empty,Grpc.Core.CallOptions)">
+             <summary>
+            * 
+            Stops and ramps the system down
+             </summary>
+             <param name="request">The request to send to the server.</param>
+             <param name="options">The options for the call.</param>
+             <returns>The call object.</returns>
+        </member>
+        <member name="M:EktoApiSystemManagement.SystemManagement.SystemManagementClient.PairBoot(EktoApiSystemManagement.BootRequest,Grpc.Core.Metadata,System.Nullable{System.DateTime},System.Threading.CancellationToken)">
+             <summary>
+            *
+            Pairs boot to base station
+            @param BootRequest - request message specifying the boot's handedness
+             </summary>
+             <param name="request">The request to send to the server.</param>
+             <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+             <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+             <param name="cancellationToken">An optional token for canceling the call.</param>
+             <returns>The response received from the server.</returns>
+        </member>
+        <member name="M:EktoApiSystemManagement.SystemManagement.SystemManagementClient.PairBoot(EktoApiSystemManagement.BootRequest,Grpc.Core.CallOptions)">
+             <summary>
+            *
+            Pairs boot to base station
+            @param BootRequest - request message specifying the boot's handedness
+             </summary>
+             <param name="request">The request to send to the server.</param>
+             <param name="options">The options for the call.</param>
+             <returns>The response received from the server.</returns>
+        </member>
+        <member name="M:EktoApiSystemManagement.SystemManagement.SystemManagementClient.PairBootAsync(EktoApiSystemManagement.BootRequest,Grpc.Core.Metadata,System.Nullable{System.DateTime},System.Threading.CancellationToken)">
+             <summary>
+            *
+            Pairs boot to base station
+            @param BootRequest - request message specifying the boot's handedness
+             </summary>
+             <param name="request">The request to send to the server.</param>
+             <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+             <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+             <param name="cancellationToken">An optional token for canceling the call.</param>
+             <returns>The call object.</returns>
+        </member>
+        <member name="M:EktoApiSystemManagement.SystemManagement.SystemManagementClient.PairBootAsync(EktoApiSystemManagement.BootRequest,Grpc.Core.CallOptions)">
+             <summary>
+            *
+            Pairs boot to base station
+            @param BootRequest - request message specifying the boot's handedness
+             </summary>
+             <param name="request">The request to send to the server.</param>
+             <param name="options">The options for the call.</param>
+             <returns>The call object.</returns>
+        </member>
+        <member name="M:EktoApiSystemManagement.SystemManagement.SystemManagementClient.UnpairBoot(EktoApiSystemManagement.BootRequest,Grpc.Core.Metadata,System.Nullable{System.DateTime},System.Threading.CancellationToken)">
+             <summary>
+            *
+            Unpairs boot to base station
+            @param BootRequest - request message specifying the boot's handedness
+             </summary>
+             <param name="request">The request to send to the server.</param>
+             <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+             <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+             <param name="cancellationToken">An optional token for canceling the call.</param>
+             <returns>The response received from the server.</returns>
+        </member>
+        <member name="M:EktoApiSystemManagement.SystemManagement.SystemManagementClient.UnpairBoot(EktoApiSystemManagement.BootRequest,Grpc.Core.CallOptions)">
+             <summary>
+            *
+            Unpairs boot to base station
+            @param BootRequest - request message specifying the boot's handedness
+             </summary>
+             <param name="request">The request to send to the server.</param>
+             <param name="options">The options for the call.</param>
+             <returns>The response received from the server.</returns>
+        </member>
+        <member name="M:EktoApiSystemManagement.SystemManagement.SystemManagementClient.UnpairBootAsync(EktoApiSystemManagement.BootRequest,Grpc.Core.Metadata,System.Nullable{System.DateTime},System.Threading.CancellationToken)">
+             <summary>
+            *
+            Unpairs boot to base station
+            @param BootRequest - request message specifying the boot's handedness
+             </summary>
+             <param name="request">The request to send to the server.</param>
+             <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+             <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+             <param name="cancellationToken">An optional token for canceling the call.</param>
+             <returns>The call object.</returns>
+        </member>
+        <member name="M:EktoApiSystemManagement.SystemManagement.SystemManagementClient.UnpairBootAsync(EktoApiSystemManagement.BootRequest,Grpc.Core.CallOptions)">
+             <summary>
+            *
+            Unpairs boot to base station
+            @param BootRequest - request message specifying the boot's handedness
+             </summary>
+             <param name="request">The request to send to the server.</param>
+             <param name="options">The options for the call.</param>
+             <returns>The call object.</returns>
+        </member>
+        <member name="M:EktoApiSystemManagement.SystemManagement.SystemManagementClient.PairTracker(EktoApiSystemManagement.TrackingDeviceRequest,Grpc.Core.Metadata,System.Nullable{System.DateTime},System.Threading.CancellationToken)">
+             <summary>
+            *
+            Pairs tracker to base station
+            @param TrackingDeviceRequest - request message specifying the queried tracker type (or hmd)
+             </summary>
+             <param name="request">The request to send to the server.</param>
+             <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+             <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+             <param name="cancellationToken">An optional token for canceling the call.</param>
+             <returns>The response received from the server.</returns>
+        </member>
+        <member name="M:EktoApiSystemManagement.SystemManagement.SystemManagementClient.PairTracker(EktoApiSystemManagement.TrackingDeviceRequest,Grpc.Core.CallOptions)">
+             <summary>
+            *
+            Pairs tracker to base station
+            @param TrackingDeviceRequest - request message specifying the queried tracker type (or hmd)
+             </summary>
+             <param name="request">The request to send to the server.</param>
+             <param name="options">The options for the call.</param>
+             <returns>The response received from the server.</returns>
+        </member>
+        <member name="M:EktoApiSystemManagement.SystemManagement.SystemManagementClient.PairTrackerAsync(EktoApiSystemManagement.TrackingDeviceRequest,Grpc.Core.Metadata,System.Nullable{System.DateTime},System.Threading.CancellationToken)">
+             <summary>
+            *
+            Pairs tracker to base station
+            @param TrackingDeviceRequest - request message specifying the queried tracker type (or hmd)
+             </summary>
+             <param name="request">The request to send to the server.</param>
+             <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+             <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+             <param name="cancellationToken">An optional token for canceling the call.</param>
+             <returns>The call object.</returns>
+        </member>
+        <member name="M:EktoApiSystemManagement.SystemManagement.SystemManagementClient.PairTrackerAsync(EktoApiSystemManagement.TrackingDeviceRequest,Grpc.Core.CallOptions)">
+             <summary>
+            *
+            Pairs tracker to base station
+            @param TrackingDeviceRequest - request message specifying the queried tracker type (or hmd)
+             </summary>
+             <param name="request">The request to send to the server.</param>
+             <param name="options">The options for the call.</param>
+             <returns>The call object.</returns>
+        </member>
+        <member name="M:EktoApiSystemManagement.SystemManagement.SystemManagementClient.UnpairTracker(EktoApiSystemManagement.TrackingDeviceRequest,Grpc.Core.Metadata,System.Nullable{System.DateTime},System.Threading.CancellationToken)">
+             <summary>
+            *
+            Unpairs tracker to base station
+            @param TrackingDeviceRequest - request message specifying the queried tracker type (or hmd)
+             </summary>
+             <param name="request">The request to send to the server.</param>
+             <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+             <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+             <param name="cancellationToken">An optional token for canceling the call.</param>
+             <returns>The response received from the server.</returns>
+        </member>
+        <member name="M:EktoApiSystemManagement.SystemManagement.SystemManagementClient.UnpairTracker(EktoApiSystemManagement.TrackingDeviceRequest,Grpc.Core.CallOptions)">
+             <summary>
+            *
+            Unpairs tracker to base station
+            @param TrackingDeviceRequest - request message specifying the queried tracker type (or hmd)
+             </summary>
+             <param name="request">The request to send to the server.</param>
+             <param name="options">The options for the call.</param>
+             <returns>The response received from the server.</returns>
+        </member>
+        <member name="M:EktoApiSystemManagement.SystemManagement.SystemManagementClient.UnpairTrackerAsync(EktoApiSystemManagement.TrackingDeviceRequest,Grpc.Core.Metadata,System.Nullable{System.DateTime},System.Threading.CancellationToken)">
+             <summary>
+            *
+            Unpairs tracker to base station
+            @param TrackingDeviceRequest - request message specifying the queried tracker type (or hmd)
+             </summary>
+             <param name="request">The request to send to the server.</param>
+             <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+             <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+             <param name="cancellationToken">An optional token for canceling the call.</param>
+             <returns>The call object.</returns>
+        </member>
+        <member name="M:EktoApiSystemManagement.SystemManagement.SystemManagementClient.UnpairTrackerAsync(EktoApiSystemManagement.TrackingDeviceRequest,Grpc.Core.CallOptions)">
+             <summary>
+            *
+            Unpairs tracker to base station
+            @param TrackingDeviceRequest - request message specifying the queried tracker type (or hmd)
+             </summary>
+             <param name="request">The request to send to the server.</param>
+             <param name="options">The options for the call.</param>
+             <returns>The call object.</returns>
+        </member>
+        <member name="M:EktoApiSystemManagement.SystemManagement.SystemManagementClient.NewInstance(Grpc.Core.ClientBase.ClientBaseConfiguration)">
+            <summary>Creates a new instance of client from given <c>ClientBaseConfiguration</c>.</summary>
+        </member>
+    </members>
+</doc>
