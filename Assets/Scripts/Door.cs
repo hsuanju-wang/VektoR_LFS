@@ -33,7 +33,6 @@ public class Door : MonoBehaviour
         yield return new WaitForSeconds(timeDelayed);
         while (Vector3.Distance(leftDoor.transform.position, rightDoor.transform.position) < doorOpenWidth)
         {
-            float step = speed * Time.deltaTime;
             leftDoor.transform.position -= new Vector3(speed * Time.deltaTime, 0f, 0f);
             rightDoor.transform.position += new Vector3(speed * Time.deltaTime, 0f, 0f);
             // move sprite towards the target location
