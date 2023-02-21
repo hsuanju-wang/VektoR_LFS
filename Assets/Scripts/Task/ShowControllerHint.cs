@@ -5,14 +5,14 @@ using UnityEngine;
 public class ShowControllerHint : Task
 {
     public GameObject rightControllerHint;
-    public GameObject leftControllerHint;
+    //public GameObject leftControllerHint;
 
     // have an early activated dialogue
     public override void StartTask()
     {
         base.StartTask();
         rightControllerHint.SetActive(true);
-        leftControllerHint.SetActive(true);
+        //leftControllerHint.SetActive(true);
         PlayerPrefs.SetString("ShowControllerHint", "Done");
     }
 
@@ -20,7 +20,7 @@ public class ShowControllerHint : Task
     {
         // Check status and Change dialogue piece to early activated dialogue
         rightControllerHint.SetActive(false);
-        leftControllerHint.SetActive(false);
+        //leftControllerHint.SetActive(false);
         base.EndTask();
     }
 }
