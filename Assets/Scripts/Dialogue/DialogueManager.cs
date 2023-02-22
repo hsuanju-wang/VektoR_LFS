@@ -35,12 +35,12 @@ public class DialogueManager : MonoBehaviour
     }
 
     /// Start DialogueDisplay Coroutine 
-    public void StartDialogue(GameObject dialogueObj, bool hasNextDialogue)
+    public void StartDialogue(GameObject dialogueObj)
     {
         if (!isDisplayingDialogue)
         {
             isDisplayingDialogue = true;
-            StartCoroutine(DialogueDisplay(dialogueObj, hasNextDialogue));
+            StartCoroutine(DialogueDisplay(dialogueObj));
         }
         else
         {
@@ -48,7 +48,7 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
-    private IEnumerator DialogueDisplay(GameObject dialogueObj, bool hasNextDialogue)
+    private IEnumerator DialogueDisplay(GameObject dialogueObj)
     {
         OpenDialoguePanel();
 
@@ -89,7 +89,7 @@ public class DialogueManager : MonoBehaviour
 
                 if (dialoguePiece.task == null) 
                 {
-                    if (hasNextDialogue) {
+                    if (dialoguePiece.autoNextDialogue) {
                         NextDialoguePiece();
                     }
                 }
@@ -111,7 +111,7 @@ public class DialogueManager : MonoBehaviour
                 dialogueImage = null;
             }
             currentDialoguesIndex++;
-            StartDialogue(dialogues[currentDialoguesIndex], true);
+            StartDialogue(dialogues[currentDialoguesIndex]);
         }
     }
 
@@ -125,7 +125,7 @@ public class DialogueManager : MonoBehaviour
     {
         yield return new WaitForSeconds(introDelayedTime);
 
-        StartDialogue(GameObject.Find("IntroDialogues"), true);
+        StartDialogue(GameObject.Find("IntroDialogues"));
     }
 
 }

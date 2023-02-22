@@ -5,18 +5,21 @@ using UnityEngine;
 public class ShowTask : Task
 {
     public GameObject taskStep;
+    public bool isStepShowed;
 
-    // Start is called before the first frame update
     public override void StartTask()
     {
         base.StartTask();
-        taskStep.SetActive(true);
+        if (!isStepShowed)
+        {
+            taskStep.SetActive(true);
+        }
     }
 
     public override void EndTask()
     {
         base.EndTask();
-        taskStep.SetActive(false);
+        taskStep.GetComponent<ParticleSystem>().Stop();
     }
 
 }

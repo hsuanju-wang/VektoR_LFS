@@ -34,21 +34,7 @@ public class StatusHud : MonoBehaviour
                 prevSystemActiveState = true;
                 Debug.Log("System On!");
                 statusText.text = "Boots are Enabled and Active!";
-                startFadeout = true;
-
-
-                PlayerPrefs.SetString("BootStatus", "Activated");
-                if (PlayerPrefs.GetString("ShowControllerHint") == "Done" )
-                {
-                    taskManager.CurrentTask.EndTask();
-                }               
-            }
-            else
-            {
-                if (PlayerPrefs.GetString("ShowControllerHint") == "Done")
-                {
-                    taskManager.CurrentTask.EndTask();
-                }
+                startFadeout = true;            
             }
         }
 

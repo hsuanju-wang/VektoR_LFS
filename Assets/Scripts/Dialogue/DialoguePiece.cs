@@ -9,6 +9,7 @@ using UnityEngine;
 [System.Serializable]
 public class DialoguePiece: MonoBehaviour
 {
+    public bool autoNextDialogue;
     public string[] dialogues;
     public GameObject task;
 

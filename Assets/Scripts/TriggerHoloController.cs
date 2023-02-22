@@ -9,7 +9,7 @@ public class TriggerHoloController : MonoBehaviour
     public GameObject holo_controller;
 
 
-    private GameObject task;
+    public GameObject task;
     private float height;
 
     // Start is called before the first frame update

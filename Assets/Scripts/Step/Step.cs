@@ -7,7 +7,9 @@ public class Step : MonoBehaviour
     public float footPrintCloseTime;
     public GameObject[] steps;
     public int currentStepIndex;
-    private int prevStepIndex;
+
+    public GameObject task1Step;
+    //public GameObject task;
 
     // Start is called before the first frame update
     void Start()
@@ -23,20 +25,24 @@ public class Step : MonoBehaviour
 
     public void NextStep()
     {
-        prevStepIndex = currentStepIndex;
-        StartCoroutine(CloseFootPrint());
+        StartCoroutine(CloseFootPrint(steps[currentStepIndex]));
 
         if (currentStepIndex != steps.Length - 1)
         {
             currentStepIndex++;
             steps[currentStepIndex].SetActive(true);
         }
+        else // last step, show task 1 step
+        {
+            //task.GetComponent<ShowTask>().ShowTaskStep();
+            task1Step.SetActive(true);
+        }
     }
 
-    private IEnumerator CloseFootPrint()
+    private IEnumerator CloseFootPrint(GameObject closingStep)
     {
         yield return new WaitForSeconds(footPrintCloseTime);
-        steps[prevStepIndex].SetActive(false);
+        closingStep.SetActive(false);
     }
 
 }

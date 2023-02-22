@@ -15,6 +15,7 @@ public class StepTrigger : MonoBehaviour
     {
         if (other.CompareTag("foot"))
         {
+            GetComponent<Collider>().enabled = false;
             step.NextStep();
         }
     }

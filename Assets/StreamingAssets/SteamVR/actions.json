@@ -54,6 +54,14 @@
       "type": "boolean"
     },
     {
+      "name": "/actions/default/in/rightTriggerClicked",
+      "type": "boolean"
+    },
+    {
+      "name": "/actions/default/in/leftTriggerClicked",
+      "type": "boolean"
+    },
+    {
       "name": "/actions/default/out/Haptic",
       "type": "vibration"
     },
