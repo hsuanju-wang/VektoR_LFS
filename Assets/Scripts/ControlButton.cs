@@ -9,7 +9,7 @@ public class ControlButton : MonoBehaviour
 
     public GameObject teleportHint;
 
-    public GameObject dialoguePiece;
+    //public GameObject dialoguePiece;
     private DialogueManager dialogueManager;
     // Start is called before the first frame update
     void Start()
@@ -27,11 +27,12 @@ public class ControlButton : MonoBehaviour
     {
         if (other.CompareTag("hand"))
         {
+            GetComponent<Collider>().enabled = false;
             lightDim.SetActive(false);
             lightActive.SetActive(true);
             teleportHint.SetActive(true);
-            dialogueManager.StartDialogue(dialoguePiece, true);
-            GetComponent<Collider>().enabled = false;
+            dialogueManager.NextDialoguePiece();
+            //dialogueManager.StartDialogue(dialoguePiece, true);
         }
     }
 

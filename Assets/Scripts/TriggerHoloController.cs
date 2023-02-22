@@ -8,12 +8,15 @@ public class TriggerHoloController : MonoBehaviour
     public float speed;
     public GameObject holo_controller;
 
+
+    private GameObject task;
     private float height;
 
     // Start is called before the first frame update
     void Start()
     {
         height = 0;
+        //dialogueManager = FindObjectOfType<DialogueManager>();
         //StartCoroutine(controllerRise());
     }
 
@@ -27,8 +30,10 @@ public class TriggerHoloController : MonoBehaviour
     {
         if (other.CompareTag("foot"))
         {
+            GetComponent<Collider>().enabled = false;
             StartCoroutine(controllerRise());
-            
+            //dialogueManager.NextDialoguePiece();
+            task.GetComponent<Task>().EndTask();
         }
     }
 
