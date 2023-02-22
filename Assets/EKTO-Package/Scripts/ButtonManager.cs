@@ -19,7 +19,7 @@ public class ButtonManager : MonoBehaviour
         }
         else
         {
-            //EktoVRManager.S.ekto.StopSystem();
+            EktoVRManager.S.ekto.StopSystem();
         }
     }
 }

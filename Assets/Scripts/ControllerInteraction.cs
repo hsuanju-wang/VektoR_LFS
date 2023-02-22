@@ -10,6 +10,8 @@ public class ControllerInteraction : MonoBehaviour
     public SteamVR_Input_Sources inputSource;
     public GameObject task;
     public TextMeshProUGUI debugTxt;
+
+    public GameObject notInCircleDialogue;
     [HideInInspector] public DialogueManager dialogueManager;
 
 
@@ -43,8 +45,12 @@ public class ControllerInteraction : MonoBehaviour
         }
         else
         {
-            dialogueManager.dialogueUITxt.text = "Boots not in circle";
-            //audio
+            if (!EktoVRManager.S.ekto.IsSystemActivated())
+            {
+                dialogueManager.StartDialogue(notInCircleDialogue, false);
+                debugTxt.text  = "Boots not in circle";
+            }
+            
         }
         Debug.Log("Trigger was pressed or released");
 

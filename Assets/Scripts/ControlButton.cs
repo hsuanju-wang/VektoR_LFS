@@ -30,7 +30,7 @@ public class ControlButton : MonoBehaviour
             lightDim.SetActive(false);
             lightActive.SetActive(true);
             teleportHint.SetActive(true);
-            dialogueManager.StartDialogue(dialoguePiece);
+            dialogueManager.StartDialogue(dialoguePiece, true);
             GetComponent<Collider>().enabled = false;
         }
     }

@@ -21,9 +21,11 @@ public class DialogueManager : MonoBehaviour
     public GameObject dialogueImage;
 
     AudioSource audioSource;
+    public bool isDisplayingDialogue;
 
     private void Start()
     {
+        isDisplayingDialogue = false;
         currentDialoguesIndex = 0;
         audioSource = GetComponent<AudioSource>();
         if (GameObject.Find("IntroDialogues"))
@@ -33,12 +35,20 @@ public class DialogueManager : MonoBehaviour
     }
 
     /// Start DialogueDisplay Coroutine 
-    public void StartDialogue(GameObject dialogueObj)
+    public void StartDialogue(GameObject dialogueObj, bool hasNextDialogue)
     {
-        StartCoroutine(DialogueDisplay(dialogueObj));
+        if (!isDisplayingDialogue)
+        {
+            isDisplayingDialogue = true;
+            StartCoroutine(DialogueDisplay(dialogueObj, hasNextDialogue));
+        }
+        else
+        {
+            //Debug.Log("Not able to start dialogue");
+        }
     }
 
-    private IEnumerator DialogueDisplay(GameObject dialogueObj)
+    private IEnumerator DialogueDisplay(GameObject dialogueObj, bool hasNextDialogue)
     {
         OpenDialoguePanel();
 
@@ -46,7 +56,7 @@ public class DialogueManager : MonoBehaviour
     
         for (int i = 0; i < dialoguePiece.dialogues.Length; i++)
         {
-            Debug.Log("currentDialoguesIndex" + currentDialoguesIndex + " " + i);
+            //Debug.Log("currentDialoguesIndex" + currentDialoguesIndex + " " + i);
 
             // play audio
             audioSource.clip = dialoguePiece.audioClips[i]; 
@@ -62,7 +72,7 @@ public class DialogueManager : MonoBehaviour
             {
                 dialogueImage.SetActive(true);
             }
-            Debug.Log(audioSource.clip.length);
+
             yield return new WaitForSeconds(audioSource.clip.length);
             yield return new WaitForSeconds(dialogueWaitingTime);
 
@@ -75,9 +85,13 @@ public class DialogueManager : MonoBehaviour
 
             if ( i == dialoguePiece.dialogues.Length - 1 )
             {
+                isDisplayingDialogue = false;
+
                 if (dialoguePiece.task == null) 
                 {
-                    NextDialoguePiece();
+                    if (hasNextDialogue) {
+                        NextDialoguePiece();
+                    }
                 }
                 else
                 {
@@ -97,7 +111,7 @@ public class DialogueManager : MonoBehaviour
                 dialogueImage = null;
             }
             currentDialoguesIndex++;
-            StartDialogue(dialogues[currentDialoguesIndex]);
+            StartDialogue(dialogues[currentDialoguesIndex], true);
         }
     }
 
@@ -107,16 +121,11 @@ public class DialogueManager : MonoBehaviour
         dialoguePanel.SetActive(true);
     }
 
-    public void CloseDialoguePanel()
-    {
-        dialoguePanel.SetActive(false);
-    }
-
     private IEnumerator StartIntro()
     {
         yield return new WaitForSeconds(introDelayedTime);
 
-        StartDialogue(GameObject.Find("IntroDialogues"));
+        StartDialogue(GameObject.Find("IntroDialogues"), true);
     }
 
 }

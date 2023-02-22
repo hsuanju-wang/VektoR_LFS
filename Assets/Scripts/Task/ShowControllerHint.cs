@@ -20,7 +20,22 @@ public class ShowControllerHint : Task
     {
         // Check status and Change dialogue piece to early activated dialogue
         rightControllerHint.SetActive(false);
-        //leftControllerHint.SetActive(false);
+        if (dialogueManager.isDisplayingDialogue)
+        {
+            StartCoroutine(WaitToDisplayDialogue());
+        }
+        else
+        {
+            base.EndTask();
+        }
+    }
+
+    private IEnumerator WaitToDisplayDialogue()
+    {
+        while (dialogueManager.isDisplayingDialogue)
+        {
+            yield return null;
+        }
         base.EndTask();
     }
 }

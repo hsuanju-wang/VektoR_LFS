@@ -12,6 +12,6 @@ public class ShowGrid : Task
         base.StartTask();
         Valve.VR.OpenVR.Chaperone.ForceBoundsVisible(true);
         base.EndTask();
-        Destroy(this.gameObject);
+        //Destroy(this.gameObject);
     }
 }
