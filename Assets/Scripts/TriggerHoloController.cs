@@ -12,6 +12,7 @@ public class TriggerHoloController : MonoBehaviour
     public GameObject task;
     private float height;
 
+
     // Start is called before the first frame update
     void Start()
     {

@@ -9,10 +9,12 @@ public class ControlButton : MonoBehaviour
 
     //public GameObject dialoguePiece;
     private DialogueManager dialogueManager;
+    private SoundManager soundManager;
 
     void Start()
     {
         dialogueManager = FindObjectOfType<DialogueManager>();
+        soundManager = FindObjectOfType<SoundManager>();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -21,8 +23,19 @@ public class ControlButton : MonoBehaviour
         {
             GetComponent<Collider>().enabled = false;
             LightUpShip();
-            dialogueManager.NextDialoguePiece();
+            StartCoroutine(PlaySounds());
         }
+    }
+
+    private IEnumerator PlaySounds()
+    {
+        float soundLength = soundManager.PlayControllerScan();
+        yield return new WaitForSeconds(soundLength);
+
+        soundLength = soundManager.PlayPowerOn();
+        yield return new WaitForSeconds(soundLength);
+
+        dialogueManager.NextDialoguePiece();
     }
 
     private void LightUpShip()

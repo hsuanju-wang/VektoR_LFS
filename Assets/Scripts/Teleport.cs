@@ -9,10 +9,12 @@ public class Teleport : MonoBehaviour
     public float teleportHeight;
     public float speed;
 
+    private SoundManager soundManager;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        soundManager = FindObjectOfType<SoundManager>();
     }
 
     // Update is called once per frame
@@ -21,10 +23,26 @@ public class Teleport : MonoBehaviour
         
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("hand"))
+        {
+            StartCoroutine(PlaySounds());
+            GetComponent<Collider>().enabled = false;
+        }
+    }
+
+    private IEnumerator PlaySounds()
+    {
+        float soundLength = soundManager.PlayControllerScan();
+        yield return new WaitForSeconds(soundLength);
+
+        StartCoroutine(rise());
+    }
+
     IEnumerator rise()
     {
-        yield return new WaitForSeconds(0.5f); // voice over 
-
+        soundManager.PlayTeleport();
         while (Vector3.Distance(new Vector3(teleport.transform.position.x, teleportHeight, teleport.transform.position.z), teleport.transform.position) > 0.1f)
         {
             float step = speed * Time.deltaTime;
@@ -32,16 +50,7 @@ public class Teleport : MonoBehaviour
             // move sprite towards the target location
             yield return null;
         }
-        
-        SceneManager.LoadScene("Outside");
-    }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("hand"))
-        {
-            StartCoroutine(rise());
-            GetComponent<Collider>().enabled = false;
-        }
+        SceneManager.LoadScene("Outside");
     }
 }
