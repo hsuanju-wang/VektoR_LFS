@@ -8,6 +8,7 @@ public class Teleport : MonoBehaviour
     public GameObject teleport;
     public float teleportHeight;
     public float speed;
+    public float controllerStayTime;
 
     private SoundManager soundManager;
 
@@ -28,6 +29,7 @@ public class Teleport : MonoBehaviour
         if (other.CompareTag("hand"))
         {
             StartCoroutine(PlaySounds());
+            StartCoroutine(CloseController());
             GetComponent<Collider>().enabled = false;
         }
     }
@@ -52,5 +54,11 @@ public class Teleport : MonoBehaviour
         }
 
         SceneManager.LoadScene("Outside");
+    }
+
+    private IEnumerator CloseController()
+    {
+        yield return new WaitForSeconds(controllerStayTime);
+        GetComponent<MeshRenderer>().enabled = false;
     }
 }

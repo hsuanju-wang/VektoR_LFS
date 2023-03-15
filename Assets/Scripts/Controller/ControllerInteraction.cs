@@ -11,10 +11,10 @@ public class ControllerInteraction : MonoBehaviour
     public SteamVR_Action_Boolean leftTriggerClicked;
 
     public SteamVR_Input_Sources inputSource;
-    public GameObject task;
-    public TextMeshProUGUI debugTxt;
+    public Task task;
+    //public TextMeshProUGUI debugTxt;
 
-    public GameObject notInCircleDialogue;
+    public DialoguePiece notInCircleDialogue;
     [HideInInspector] public DialogueManager dialogueManager;
 
 
@@ -32,18 +32,18 @@ public class ControllerInteraction : MonoBehaviour
 
     private void OnTrackpadClicked(SteamVR_Action_Boolean fromAction, SteamVR_Input_Sources fromSource)
     {
-        debugTxt.text = "trackpad was pressed";
+        //debugTxt.text = "trackpad was pressed";
         if (EktoVRManager.S.ekto.IsBootInStartingZone(EKTO_Unity_Plugin.Handedness.LEFT) && EktoVRManager.S.ekto.IsBootInStartingZone(EKTO_Unity_Plugin.Handedness.RIGHT))
         {
             if (!EktoVRManager.S.ekto.IsSystemActivated() && PlayerPrefs.GetString("ShowControllerHint") == "Done")
             {
-                debugTxt.text = "System Activates";
+                //debugTxt.text = "System Activates";
                 EktoVRManager.S.ekto.StartSystem();
-                task.GetComponent<Task>().EndTask();
+                task.EndTask();
             }
             else
             {
-                debugTxt.text = "System already Activates";
+                //debugTxt.text = "System already Activates";
                 //EktoVRManager.S.ekto.StopSystem();
             }
         }
@@ -52,12 +52,10 @@ public class ControllerInteraction : MonoBehaviour
             if (!EktoVRManager.S.ekto.IsSystemActivated())
             {
                 dialogueManager.StartDialogue(notInCircleDialogue);
-                debugTxt.text  = "Boots not in circle";
+                //debugTxt.text  = "Boots not in circle";
             }
-            
         }
         Debug.Log("Trigger was pressed or released");
-
     }
 
 }

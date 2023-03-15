@@ -6,68 +6,65 @@ using TMPro;
 
 public class DialogueManager : MonoBehaviour
 {
-    public GameObject[] dialogues;
-    public int currentDialoguesIndex;
+    public DialoguePiece[] dialogues;
+
+    [Header("Dialogue Settings")]
     public float introDelayedTime;
+    public float dialogueWaitingTime;
 
     [Header("UIs")]
     public TextMeshProUGUI dialogueUITxt;
     public GameObject dialoguePanel;
 
     [Header("Current dialogue info")]
-    public string currentDialgoueTxt;
-    public float dialogueWaitingTime =0f;
-    public DialoguePiece dialoguePiece;
+    public int currentDialoguesIndex;
+    public DialoguePiece currentDialoguePiece;
     public GameObject dialogueImage;
-
-    AudioSource audioSource;
     public bool isDisplayingDialogue;
 
-    private void Start()
+    protected AudioSource audioSource;
+    protected virtual void Start()
     {
         isDisplayingDialogue = false;
         currentDialoguesIndex = 0;
         audioSource = GetComponent<AudioSource>();
-        if (GameObject.Find("IntroDialogues"))
-        {
-            StartCoroutine(StartIntro());
-        }
     }
 
     /// Start DialogueDisplay Coroutine 
-    public void StartDialogue(GameObject dialogueObj)
+    public bool StartDialogue(DialoguePiece dialogPiece)
     {
         if (!isDisplayingDialogue)
         {
             isDisplayingDialogue = true;
-            StartCoroutine(DialogueDisplay(dialogueObj));
+            StartCoroutine(DialogueDisplay(dialogPiece));
+            return true;
         }
         else
         {
-            //Debug.Log("Not able to start dialogue");
+            return false;
+            //Debug.Log("Dialogue is still going on");
         }
     }
 
-    private IEnumerator DialogueDisplay(GameObject dialogueObj)
+    private IEnumerator DialogueDisplay(DialoguePiece dialogPiece)
     {
         OpenDialoguePanel();
 
-        dialoguePiece = dialogueObj.GetComponentInChildren<DialoguePiece>();
+        currentDialoguePiece = dialogPiece.GetComponent<DialoguePiece>();
     
-        for (int i = 0; i < dialoguePiece.dialogues.Length; i++)
+        for (int i = 0; i < currentDialoguePiece.dialogues.Length; i++)
         {
             //Debug.Log("currentDialoguesIndex" + currentDialoguesIndex + " " + i);
 
             // play audio
-            audioSource.clip = dialoguePiece.audioClips[i]; 
+            audioSource.clip = currentDialoguePiece.audioClips[i]; 
             audioSource.Play();
 
             // set UI Text
-            currentDialgoueTxt = dialoguePiece.dialogues[i];
-            dialogueUITxt.text = dialoguePiece.dialogues[i];
+            dialogueUITxt.text = currentDialoguePiece.dialogues[i];
 
             // set images
-            dialogueImage = dialoguePiece.images[i];
+            dialogueImage = currentDialoguePiece.images[i];
             if (dialogueImage != null)
             {
                 dialogueImage.SetActive(true);
@@ -83,26 +80,27 @@ public class DialogueManager : MonoBehaviour
                 dialogueImage = null;
             }
 
-            if ( i == dialoguePiece.dialogues.Length - 1 )
+            if (i == currentDialoguePiece.dialogues.Length - 1) // Last dialogue in dialogue piece 
             {
                 isDisplayingDialogue = false;
 
-                if (dialoguePiece.task == null) 
+                if (currentDialoguePiece.task == null) // Check if has task
                 {
-                    if (dialoguePiece.autoNextDialogue) {
+                    if (currentDialoguePiece.autoNextDialogue) { 
                         NextDialoguePiece();
                     }
                 }
                 else
                 {
-                    dialoguePiece.task.GetComponent<Task>().StartTask();
+                    currentDialoguePiece.task.StartTask();
                 }
             }
         }
     }
 
-    public void NextDialoguePiece()
+    public bool NextDialoguePiece()
     {
+        bool isDialogueStarted = false;
         if (currentDialoguesIndex != dialogues.Length + 1)
         {
             if (dialogueImage != null)
@@ -111,21 +109,15 @@ public class DialogueManager : MonoBehaviour
                 dialogueImage = null;
             }
             currentDialoguesIndex++;
-            StartDialogue(dialogues[currentDialoguesIndex]);
+            isDialogueStarted = StartDialogue(dialogues[currentDialoguesIndex]);
         }
+        return isDialogueStarted;
     }
 
-    private void OpenDialoguePanel()
+    protected void OpenDialoguePanel()
     {
         dialogueUITxt.text = "";
         dialoguePanel.SetActive(true);
-    }
-
-    private IEnumerator StartIntro()
-    {
-        yield return new WaitForSeconds(introDelayedTime);
-
-        StartDialogue(GameObject.Find("IntroDialogues"));
     }
 
 }

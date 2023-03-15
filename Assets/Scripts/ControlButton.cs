@@ -7,14 +7,20 @@ public class ControlButton : MonoBehaviour
     public GameObject lightDim;
     public GameObject lightActive;
 
+    public Material[] materials;
+    public GameObject[] lights;
+
+    public float controllerStayTime;
+
     //public GameObject dialoguePiece;
-    private DialogueManager dialogueManager;
+    private InSpaceshipDM dialogueManager;
     private SoundManager soundManager;
 
     void Start()
     {
-        dialogueManager = FindObjectOfType<DialogueManager>();
+        dialogueManager = FindObjectOfType<InSpaceshipDM>();
         soundManager = FindObjectOfType<SoundManager>();
+        LightOffConsole();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -22,27 +28,48 @@ public class ControlButton : MonoBehaviour
         if (other.CompareTag("hand"))
         {
             GetComponent<Collider>().enabled = false;
-            LightUpShip();
+            StartCoroutine(CloseController());
+            dialogueManager.CloseScanPopup();
             StartCoroutine(PlaySounds());
+            StartCoroutine(LightUpConsole());
         }
     }
 
     private IEnumerator PlaySounds()
     {
-        float soundLength = soundManager.PlayControllerScan();
+        //For test
+        //yield return new WaitForSeconds(4f);
+        float soundLength = soundManager.PlayPowerOn();
         yield return new WaitForSeconds(soundLength);
-
-        soundLength = soundManager.PlayPowerOn();
-        yield return new WaitForSeconds(soundLength);
-
-        dialogueManager.NextDialoguePiece();
+        dialogueManager.StartConsoleDialogues();
     }
 
-    private void LightUpShip()
+    private IEnumerator LightUpConsole()
     {
+        //For test
+        //yield return new WaitForSeconds(4f);
+        foreach (Material material in materials)
+        {
+            //material.shader.GetPropertyCount();
+            material.SetFloat("EmissionStrength", 1);
+            yield return new WaitForSeconds(0.7f);
+        }
         lightDim.SetActive(false);
         lightActive.SetActive(true);
     }
 
-    
+    private void LightOffConsole()
+    {
+        foreach (Material material in materials)
+        {
+            //material.shader.GetPropertyCount();
+            material.SetFloat("EmissionStrength", -1);
+        }
+    }
+
+    private IEnumerator CloseController()
+    {
+        yield return new WaitForSeconds(controllerStayTime);
+        GetComponent<MeshRenderer>().enabled = false;
+    }
 }

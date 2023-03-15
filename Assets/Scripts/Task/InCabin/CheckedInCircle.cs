@@ -4,20 +4,36 @@ using UnityEngine;
 
 public class CheckedInCircle : Task
 {
-    public bool isStartTask = false;
+    public DialoguePiece notInCircleDialogue;
+
+    public bool taskIsEnded;
+
     public override void StartTask()
     {
         base.StartTask();
-        isStartTask = true;
+        taskIsEnded = false;
+        if (EktoVRManager.S.ekto.IsBootInStartingZone(EKTO_Unity_Plugin.Handedness.LEFT) && EktoVRManager.S.ekto.IsBootInStartingZone(EKTO_Unity_Plugin.Handedness.RIGHT))
+        {
+            EndTask();
+        }
+        else
+        {
+            dialogueManager.StartDialogue(notInCircleDialogue);
+        }
     }
 
     private void Update()
     {
-        if (isStartTask && EktoVRManager.S.ekto.IsBootInStartingZone(EKTO_Unity_Plugin.Handedness.LEFT) && EktoVRManager.S.ekto.IsBootInStartingZone(EKTO_Unity_Plugin.Handedness.RIGHT))
+        if (!taskIsEnded && EktoVRManager.S.ekto.IsBootInStartingZone(EKTO_Unity_Plugin.Handedness.LEFT) && EktoVRManager.S.ekto.IsBootInStartingZone(EKTO_Unity_Plugin.Handedness.RIGHT))
         {
-            base.EndTask();
-            isStartTask = false;
+            EndTask();
         }
-        Destroy(this.gameObject);
+    }
+
+    public override void EndTask()
+    {
+        taskIsEnded = true;
+        base.EndTask();
+        //Destroy(this.gameObject);
     }
 }

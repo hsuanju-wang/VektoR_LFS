@@ -4,11 +4,14 @@ using UnityEngine;
 
 public class TriggerHoloController : MonoBehaviour
 {
+    public enum TaskNum { Task1, Task2}
+    public TaskNum taskNum;
+
     public float riseHeight;
     public float speed;
     public GameObject holo_controller;
 
-
+    public InSpaceshipDM dialogueManager;
     public GameObject task;
     private float height;
 
@@ -17,14 +20,8 @@ public class TriggerHoloController : MonoBehaviour
     void Start()
     {
         height = 0;
-        //dialogueManager = FindObjectOfType<DialogueManager>();
+        dialogueManager = FindObjectOfType<InSpaceshipDM>();
         //StartCoroutine(controllerRise());
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
     }
 
     private void OnTriggerEnter(Collider other)
@@ -32,9 +29,18 @@ public class TriggerHoloController : MonoBehaviour
         if (other.CompareTag("foot"))
         {
             GetComponent<Collider>().enabled = false;
+            GetComponent<ParticleSystem>().Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
             StartCoroutine(controllerRise());
+
+            if (taskNum == TaskNum.Task1)
+            {
+                dialogueManager.OpenScanPopup();
+            }
+            else
+            {
+                task.GetComponent<Task>().EndTask();
+            }
             //dialogueManager.NextDialoguePiece();
-            task.GetComponent<Task>().EndTask();
         }
     }
 
@@ -46,7 +52,6 @@ public class TriggerHoloController : MonoBehaviour
             holo_controller.transform.position += new Vector3(0f, speed * Time.deltaTime, 0f);
             yield return null;
         }
-
         //Enable boxcollider
         holo_controller.GetComponent<Collider>().enabled = true;
     }

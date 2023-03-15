@@ -7,6 +7,8 @@ public class ControllerTask : Task
     public bool isTaskStart = false;
     public bool isTaskEnd = false;
 
+    public bool triggerEndTask = false;
+
     public GameObject animationObj;
     public override void StartTask()
     {
@@ -18,10 +20,26 @@ public class ControllerTask : Task
         }
         
     }
+
+    private void Update()
+    {
+        // For Debug
+        if (triggerEndTask && !isTaskEnd)
+        {
+            EndTask();
+            isTaskEnd = true;
+        }
+    }
     public override void EndTask()
     {
         base.EndTask();
         isTaskEnd = true;
 
+        if (animationObj != null)
+        {
+            animationObj.SetActive(false);
+        }
     }
+
+
 }

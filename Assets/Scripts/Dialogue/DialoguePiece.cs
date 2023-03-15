@@ -11,9 +11,14 @@ public class DialoguePiece: MonoBehaviour
 {
     public bool autoNextDialogue;
     public string[] dialogues;
-    public GameObject task;
+    public Task task;
 
     public AudioClip[] audioClips;
     public GameObject[] images;
+
+    private void Start()
+    {
+        task = GetComponentInChildren<Task>();
+    }
 }
 

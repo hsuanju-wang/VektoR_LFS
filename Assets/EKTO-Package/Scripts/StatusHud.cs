@@ -45,7 +45,9 @@ public class StatusHud : MonoBehaviour
                 prevSystemActiveState = false;
                 Debug.Log("System Off!");
                 statusText.text = "Caution: Boots are Disabled and Braked";
-                statusText.enabled = true;
+                statusText.enabled = true; 
+
+                // Boot reactivate
             }
         }
 

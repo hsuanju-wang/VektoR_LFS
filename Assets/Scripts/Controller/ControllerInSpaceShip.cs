@@ -11,12 +11,12 @@ public class ControllerInSpaceShip : MonoBehaviour
     public SteamVR_Action_Boolean leftTriggerClicked;
 
     public SteamVR_Input_Sources inputSource;
-    public TextMeshProUGUI debugTxt;
+    //public TextMeshProUGUI debugTxt;
 
     public GameObject rightControllerTask;
     public GameObject leftControllerTask;
     //public GameObject notInCircleDialogue;
-    [HideInInspector] public DialogueManager dialogueManager;
+    [HideInInspector] public InSpaceshipDM dialogueManager;
 
 
     void OnEnable()
@@ -25,7 +25,7 @@ public class ControllerInSpaceShip : MonoBehaviour
         rightTriggerClicked.AddOnStateDownListener(OnRightTriggerClicked, inputSource);
         leftTriggerClicked.AddOnStateDownListener(OnLeftTriggerClicked, inputSource);
 
-        dialogueManager = GameObject.FindObjectOfType<DialogueManager>();
+        dialogueManager = GameObject.FindObjectOfType<InSpaceshipDM>();
     }
 
     private void OnDisable()
@@ -44,13 +44,13 @@ public class ControllerInSpaceShip : MonoBehaviour
         }
         else
         {
-            EktoVRManager.S.ekto.StopSystem();
+            //EktoVRManager.S.ekto.StopSystem();
         }
     }
 
     private void OnLeftTriggerClicked(SteamVR_Action_Boolean fromAction, SteamVR_Input_Sources fromSource)
     {
-        debugTxt.text = "Left Trigger was pressed";
+        //debugTxt.text = "Left Trigger was pressed";
         Debug.Log("Left Trigger was pressed");
         if (leftControllerTask.GetComponent<ControllerTask>().isTaskStart && !leftControllerTask.GetComponent<ControllerTask>().isTaskEnd)
         {
@@ -61,7 +61,7 @@ public class ControllerInSpaceShip : MonoBehaviour
 
     private void OnRightTriggerClicked(SteamVR_Action_Boolean fromAction, SteamVR_Input_Sources fromSource)
     {
-        debugTxt.text = "RightTrigger was pressed";
+        //debugTxt.text = "RightTrigger was pressed";
         Debug.Log("Right Trigger was pressed");
         if (rightControllerTask.GetComponent<ControllerTask>().isTaskStart && !rightControllerTask.GetComponent<ControllerTask>().isTaskEnd)
         {
