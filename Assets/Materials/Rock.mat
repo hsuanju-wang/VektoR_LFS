@@ -98,6 +98,7 @@ Material:
     m_Floats:
     - EmissionStrength: -1
     - Vector1_245fbb9dcbcb4b3a86a80aab76f77f15: 1
+    - Vector1_d4ef3517ca024ab6a8a9aca59ede67ca: 1
     - _AlphaClip: 0
     - _Blend: 0
     - _BumpScale: 1
