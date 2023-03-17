@@ -6,7 +6,7 @@ public class BootSound : MonoBehaviour
 {
     public AudioSource audioSource;
 
-
+    public bool bootSoundIsOff;
     public bool bootIsMoved;
 
     // Start is called before the first frame update
@@ -27,7 +27,11 @@ public class BootSound : MonoBehaviour
         if (other.CompareTag("floor"))
         {
             Debug.Log("Trigger floor");
-            PlayBootSound();
+            if (!bootSoundIsOff)
+            {
+                PlayBootSound();
+            }
+            
         }
     }
 
