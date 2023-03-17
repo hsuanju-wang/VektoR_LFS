@@ -10,8 +10,7 @@ public class StatusHud : MonoBehaviour
     private bool startFadeout;
     private bool prevSystemActiveState;
 
-
-    public TaskManager taskManager;
+    public BootReactivate bootReactivate;
 
     // Start is called before the first frame update
     void Start()
@@ -21,7 +20,7 @@ public class StatusHud : MonoBehaviour
         startFadeout = false;
         prevSystemActiveState = false;
 
-        taskManager = GameObject.FindObjectOfType<TaskManager>();
+        bootReactivate = GameObject.FindObjectOfType<BootReactivate>();
     }
 
     // Update is called once per frame
@@ -45,9 +44,13 @@ public class StatusHud : MonoBehaviour
                 prevSystemActiveState = false;
                 Debug.Log("System Off!");
                 statusText.text = "Caution: Boots are Disabled and Braked";
-                statusText.enabled = true; 
+                statusText.enabled = true;
 
                 // Boot reactivate
+                if (!bootReactivate)
+                {
+
+                }
             }
         }
 

@@ -8,7 +8,7 @@ public class BootReactivate : MonoBehaviour
     public bool isStartGuide;
 
     [Header("UIs")]
-    public GameObject reactivatePanel;
+    public BootReactivatePanel reactivatePanel;
     public TextMeshProUGUI dialogueUITxt;
 
     private bool isStartCheckInCircle;
@@ -27,17 +27,27 @@ public class BootReactivate : MonoBehaviour
 
     public void StartBootReactivate()
     {
+        reactivatePanel.Show();
 
         if (EktoVRManager.S.ekto.IsBootInStartingZone(EKTO_Unity_Plugin.Handedness.LEFT) && EktoVRManager.S.ekto.IsBootInStartingZone(EKTO_Unity_Plugin.Handedness.RIGHT))
         {
-            dialogueUITxt.text = "";
+            //Activate suit Dialogue
+            
         }
         else
         {
-            dialogueUITxt.text = "";
+            //Step in circle Dialgoue before Activate suit Dialogue
+            reactivatePanel.ShowText("");
         }
-        reactivatePanel.SetActive(true);
+        reactivatePanel.Show();
     }
 
-    
+    public IEnumerator ShowReactivateGuide()
+    {
+        reactivatePanel.Show();
+        yield return new WaitForSeconds(3f);
+
+    }
+
+
 }
