@@ -6,17 +6,23 @@ using TMPro;
 
 public class BootReactivatePanel : MonoBehaviour
 {
-    public GameObject cameraRig;
     public Vector3 offset;
 
     [Header("UI Assets")]
     public TextMeshProUGUI txt;
-    public GameObject bootImage;
+    public Image bootImage;
+    public Image bgImage;
+
+    [Header("Sprite Assets")]
+    public Sprite errorBgSprite;
+    public Sprite successBgSprite;
+    public Sprite errorBootSprite;
+    public Sprite successBootSprite;
 
     // Start is called before the first frame update
     void Start()
     {
-        offset = this.transform.position - cameraRig.transform.position;
+        offset = Camera.main.ScreenToWorldPoint(this.GetComponent<RectTransform>().transform.position) - Camera.main.transform.position;
     }
 
     // Update is called once per frame
@@ -27,15 +33,16 @@ public class BootReactivatePanel : MonoBehaviour
 
     public void Show()
     {
-        this.transform.position = cameraRig.transform.position + offset;
+        this.transform.position = Camera.main.transform.position + offset;
         this.GetComponent<Canvas>().enabled = true;
     }
 
     public void Hide()
     {
         this.GetComponent<Canvas>().enabled = false;
-        ShowBootImage();
         HideText();
+        bgImage.sprite = errorBgSprite;
+        bootImage.sprite = errorBootSprite;
     }
 
     public void HideText()
@@ -51,11 +58,18 @@ public class BootReactivatePanel : MonoBehaviour
 
     public void ShowBootImage()
     {
-        bootImage.SetActive(true);
+        bootImage.gameObject.SetActive(true);
     }
 
     public void HideBootImage()
     {
-        bootImage.SetActive(false);
+        bootImage.gameObject.SetActive(false);
+    }
+
+    public void ShowBootActivated()
+    {
+        ShowText("");
+        bgImage.sprite = successBgSprite;
+        bootImage.sprite = successBootSprite;
     }
 }

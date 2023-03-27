@@ -26,7 +26,7 @@ public class BootSound : MonoBehaviour
     {
         if (other.CompareTag("floor"))
         {
-            Debug.Log("Trigger floor");
+            //Debug.Log("Trigger floor");
             if (!bootSoundIsOff)
             {
                 PlayBootSound();
@@ -37,7 +37,7 @@ public class BootSound : MonoBehaviour
 
     private void PlayBootSound()
     {
-        Debug.Log("Play Left Boot Sound");
+        //Debug.Log("Play Left Boot Sound");
         audioSource.Play();
     }
 

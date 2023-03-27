@@ -33,7 +33,13 @@ public class StatusHud : MonoBehaviour
                 prevSystemActiveState = true;
                 Debug.Log("System On!");
                 statusText.text = "Boots are Enabled and Active!";
-                startFadeout = true;            
+                startFadeout = true;
+
+                // Boot reactivate
+                if (bootReactivate != null)
+                {
+                    bootReactivate.BootReactivated();
+                }
             }
         }
 
@@ -46,11 +52,18 @@ public class StatusHud : MonoBehaviour
                 statusText.text = "Caution: Boots are Disabled and Braked";
                 statusText.enabled = true;
 
+                Debug.Log("Boot reactivate");
+                bootReactivate.StartBootReactivate();
                 // Boot reactivate
-                if (!bootReactivate)
+                if (bootReactivate != null)
                 {
-
+                    Debug.Log("Boot reactivate");
                 }
+            }
+            else
+            {
+                Debug.Log("Boot reactivate");
+                bootReactivate.StartBootReactivate();
             }
         }
 
