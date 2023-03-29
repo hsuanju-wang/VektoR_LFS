@@ -12,10 +12,7 @@ public class ShowControllerHint : Task
     {
         base.StartTask();
         rightControllerHint.SetActive(true);
-        PlayerPrefs.SetString("ShowControllerHint", "Done");
-        errorSuit.SetActive(true);
-        CloseTxt();
-        
+        PlayerPrefs.SetString("ShowControllerHint", "Done");      
     }
 
     public override void EndTask() // Can have status to check if boots are activated early
@@ -35,11 +32,6 @@ public class ShowControllerHint : Task
         base.EndTask();
     }
 
-    private void CloseTxt()
-    {
-        dialogueManager.dialogueUITxt.text = "";
-        dialogueManager.dialogueImage.SetActive(false);
-    }
 
     private IEnumerator ShowSuitActivated()
     {

@@ -7,11 +7,20 @@ public class CheckedInCircle : Task
     public DialoguePiece notInCircleDialogue;
 
     public bool taskIsEnded;
+    public bool taskIsStarted;
+
+    public GameObject errorSuit;
+    public GameObject bigUI;
+    public Task nextTask;
+
+    private AudioSource audioSource;
 
     public override void StartTask()
     {
         base.StartTask();
+        audioSource = GetComponent<AudioSource>();
         taskIsEnded = false;
+        taskIsStarted = false;
         if (EktoVRManager.S.ekto.IsBootInStartingZone(EKTO_Unity_Plugin.Handedness.LEFT) && EktoVRManager.S.ekto.IsBootInStartingZone(EKTO_Unity_Plugin.Handedness.RIGHT))
         {
             EndTask();
@@ -19,12 +28,13 @@ public class CheckedInCircle : Task
         else
         {
             dialogueManager.StartDialogue(notInCircleDialogue);
+            taskIsStarted = true;
         }
     }
 
     private void Update()
     {
-        if (!taskIsEnded && EktoVRManager.S.ekto.IsBootInStartingZone(EKTO_Unity_Plugin.Handedness.LEFT) && EktoVRManager.S.ekto.IsBootInStartingZone(EKTO_Unity_Plugin.Handedness.RIGHT))
+        if (taskIsStarted && !taskIsEnded && EktoVRManager.S.ekto.IsBootInStartingZone(EKTO_Unity_Plugin.Handedness.LEFT) && EktoVRManager.S.ekto.IsBootInStartingZone(EKTO_Unity_Plugin.Handedness.RIGHT))
         {
             EndTask();
         }
@@ -33,7 +43,16 @@ public class CheckedInCircle : Task
     public override void EndTask()
     {
         taskIsEnded = true;
-        base.EndTask();
+        StartCoroutine(ChangeDisplay());
         //Destroy(this.gameObject);
+    }
+
+    public IEnumerator ChangeDisplay()
+    {
+        bigUI.SetActive(false);
+        errorSuit.SetActive(true);
+        audioSource.Play();
+        yield return new WaitForSeconds(audioSource.clip.length);
+        nextTask.StartTask();
     }
 }

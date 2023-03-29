@@ -9,6 +9,7 @@ TagManager:
   - step
   - controllerHint
   - floor
+  - sample
   layers:
   - Default
   - TransparentFX

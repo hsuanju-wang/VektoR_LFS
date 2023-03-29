@@ -10,7 +10,7 @@ public class StatusHud : MonoBehaviour
     private bool startFadeout;
     private bool prevSystemActiveState;
 
-    public BootReactivate bootReactivate;
+    /*public BootReactivate bootReactivate;*/
 
     // Start is called before the first frame update
     void Start()
@@ -20,7 +20,7 @@ public class StatusHud : MonoBehaviour
         startFadeout = false;
         prevSystemActiveState = false;
 
-        bootReactivate = GameObject.FindObjectOfType<BootReactivate>();
+        //bootReactivate = GameObject.FindObjectOfType<BootReactivate>();
     }
 
     // Update is called once per frame
@@ -36,10 +36,10 @@ public class StatusHud : MonoBehaviour
                 startFadeout = true;
 
                 // Boot reactivate
-                if (bootReactivate != null)
+/*                if (bootReactivate != null)
                 {
                     bootReactivate.BootReactivated();
-                }
+                }*/
             }
         }
 
@@ -53,17 +53,17 @@ public class StatusHud : MonoBehaviour
                 statusText.enabled = true;
 
                 Debug.Log("Boot reactivate");
-                bootReactivate.StartBootReactivate();
+/*                bootReactivate.StartBootReactivate();
                 // Boot reactivate
                 if (bootReactivate != null)
                 {
                     Debug.Log("Boot reactivate");
-                }
+                }*/
             }
             else
             {
                 Debug.Log("Boot reactivate");
-                bootReactivate.StartBootReactivate();
+                //bootReactivate.StartBootReactivate();
             }
         }
 
