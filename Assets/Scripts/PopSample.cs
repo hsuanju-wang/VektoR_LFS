@@ -15,7 +15,7 @@ public class PopSample : MonoBehaviour
     {
         m_Rigidbody = GetComponent<Rigidbody>();
         m_MeshRenderer = GetComponent<MeshRenderer>();
-
+ 
     }
 
     public void popOut(){
