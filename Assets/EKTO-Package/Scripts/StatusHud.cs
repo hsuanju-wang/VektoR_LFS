@@ -52,7 +52,7 @@ public class StatusHud : MonoBehaviour
                 statusText.text = "Caution: Boots are Disabled and Braked";
                 statusText.enabled = true;
 
-                Debug.Log("Boot reactivate");
+                //Debug.Log("Boot reactivate");
 /*                bootReactivate.StartBootReactivate();
                 // Boot reactivate
                 if (bootReactivate != null)
@@ -62,7 +62,7 @@ public class StatusHud : MonoBehaviour
             }
             else
             {
-                Debug.Log("Boot reactivate");
+                //Debug.Log("Boot reactivate");
                 //bootReactivate.StartBootReactivate();
             }
         }

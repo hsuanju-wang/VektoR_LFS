@@ -18,7 +18,7 @@ public class PopSample : MonoBehaviour
 
     }
 
-    void popOut(){
+    public void popOut(){
         particles.SetActive(true);
         m_MeshRenderer.enabled = true;
         m_Rigidbody.AddForce( m_ThrustX, m_ThrustY, 0, ForceMode.Impulse);
@@ -32,4 +32,5 @@ public class PopSample : MonoBehaviour
             popOut();
         }
     }
+
 }

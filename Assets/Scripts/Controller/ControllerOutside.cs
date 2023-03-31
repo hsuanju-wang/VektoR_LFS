@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Valve.VR;
+using TMPro;
 
 public class ControllerOutside : MonoBehaviour
 {
@@ -11,15 +12,18 @@ public class ControllerOutside : MonoBehaviour
 
     public SteamVR_Input_Sources inputSource;
 
+    public TextMeshProUGUI txtNum;
     public GameObject scanPanel;
     public bool isCollectOn;
     public GameObject collectObj;
     private bool isScanOn;
+    public int collectedSamples;
     [HideInInspector] public InSpaceshipDM dialogueManager;
 
     private void Start()
     {
         isScanOn = false;
+        collectedSamples = 0;
     }
 
     void OnEnable()
@@ -76,6 +80,8 @@ public class ControllerOutside : MonoBehaviour
         {
             // Animation ??
             collectObj.SetActive(false);
+            collectedSamples++;
+            txtNum.text = collectedSamples.ToString() + "/3";
         }
     }
 }
