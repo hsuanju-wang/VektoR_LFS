@@ -9,10 +9,17 @@ public class OutsideDM : DialogueManager
     {
         base.Start();
         StartCoroutine(StartIntro());
+        StartCoroutine(CloseIntro());
     }
     private IEnumerator StartIntro()
     {
         yield return new WaitForSeconds(introDelayedTime);
         StartDialogue(dialogues[0]);
+    }
+
+    private IEnumerator CloseIntro()
+    {
+        yield return new WaitForSeconds(24f);
+        dialoguePanel.SetActive(false);
     }
 }

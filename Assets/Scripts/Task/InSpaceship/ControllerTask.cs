@@ -9,6 +9,7 @@ public class ControllerTask : Task
 
     public bool triggerEndTask = false;
 
+    public GameObject sampleCollectedHint;
     public GameObject animationObj;
     public override void StartTask()
     {
@@ -17,6 +18,11 @@ public class ControllerTask : Task
         if (animationObj != null)
         {
             animationObj.SetActive(true);
+        }
+
+        if (sampleCollectedHint != null)
+        {
+            sampleCollectedHint.SetActive(true);
         }
         
     }
@@ -34,7 +40,6 @@ public class ControllerTask : Task
     {
         base.EndTask();
         isTaskEnd = true;
-
         if (animationObj != null)
         {
             animationObj.SetActive(false);
