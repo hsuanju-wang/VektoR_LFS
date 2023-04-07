@@ -12,17 +12,15 @@ public class ControllerOutside : MonoBehaviour
 
     public SteamVR_Input_Sources inputSource;
 
+    public ScanHandler scanHandler;
     public TextMeshProUGUI txtNum;
-    public GameObject scanPanel;
     public bool isCollectOn;
     public GameObject collectObj;
-    private bool isScanOn;
     public int collectedSamples;
     [HideInInspector] public InSpaceshipDM dialogueManager;
 
     private void Start()
     {
-        isScanOn = false;
         collectedSamples = 0;
     }
 
@@ -58,7 +56,7 @@ public class ControllerOutside : MonoBehaviour
     {
         //debugTxt.text = "Left Trigger was pressed";
         Debug.Log("Left Trigger was pressed");
-        Scan();
+        scanHandler.Scan();
     }
 
     private void OnRightTriggerClicked(SteamVR_Action_Boolean fromAction, SteamVR_Input_Sources fromSource)
@@ -68,18 +66,14 @@ public class ControllerOutside : MonoBehaviour
         Collect();
     }
 
-    private void Scan()
-    {
-        isScanOn = !isScanOn;
-        scanPanel.SetActive(isScanOn);
-    }
-
     private void Collect()
     {
         if (isCollectOn)
         {
             // Animation ??
             collectObj.SetActive(false);
+            isCollectOn = false;
+            collectObj = null;
             collectedSamples++;
             txtNum.text = collectedSamples.ToString() + "/3";
         }
