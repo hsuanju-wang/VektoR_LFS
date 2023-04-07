@@ -21,7 +21,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: New Material
-  m_Shader: {fileID: 4800000, guid: 51f3377d326d3274cb29f5af0ca773d9, type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: 0cf653917db000f4099a4f04e2a206f7, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 1
@@ -170,6 +170,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
+    - EmissionStrength: 1
     - PixelSnap: 0
     - Vector1_245fbb9dcbcb4b3a86a80aab76f77f15: 0.04
     - Vector1_d4ef3517ca024ab6a8a9aca59ede67ca: 1

@@ -7,36 +7,20 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: RockHiding
-  m_Shader: {fileID: -6465566751694194690, guid: 0cf653917db000f4099a4f04e2a206f7, type: 3}
+  m_Name: Holo_Mat_Scanner
+  m_Shader: {fileID: -6465566751694194690, guid: a857203edf3417d4eb6fe1b248b66820, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
+  m_DoubleSidedGI: 1
   m_CustomRenderQueue: -1
   stringTagMap: {}
   disabledShaderPasses: []
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
-    - Texture2D_52343b76b8f34c2e91b0b402cf2b7963:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - Texture2D_91f8c02a431f4308b428800cefa7b5df:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - Texture2D_98116176718c475ca3b239599d5b53ca:
-        m_Texture: {fileID: 2800000, guid: 28ce40cd8fc6b3744bb3540c7003289f, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - Texture2D_c188744d004b4ef0a30c2a9f37c9c7c9:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - Texture2D_ec50edea71214e07bc4cfb77983db49f:
-        m_Texture: {fileID: 2800000, guid: c642ccce7317ac245b06490a9c4e70b9, type: 3}
+    - Texture2D_9d2e04d130d949e8b650b0912563fd75:
+        m_Texture: {fileID: 2800000, guid: 3ec1d2a3b1274ce4985da782f7600038, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BaseMap:
@@ -96,9 +80,11 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - EmissionStrength: -1
-    - Vector1_245fbb9dcbcb4b3a86a80aab76f77f15: 1
-    - Vector1_d4ef3517ca024ab6a8a9aca59ede67ca: 1
+    - Vector1_095c3e6648f14072b77b3708214ef797: 2.43
+    - Vector1_6b4527c0d74e426c92be29cbc8a52b2c: 0
+    - Vector1_ad652ab71c344960adce2755e0c5daa2: 5.04
+    - Vector1_e83bd59acd1f4b779cc4eed2165087bd: 0.77
+    - Vector1_fd22d06ef6ff4639b170b9e7f68c5cd9: 0
     - _AlphaClip: 0
     - _Blend: 0
     - _BumpScale: 1
@@ -126,14 +112,15 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
-    - Vector2_5a68a335082046e09dc20eeeb64ae333: {r: 0, g: 0, b: 0, a: 0}
-    - Vector2_87395831f82d40a8bcbc0aabaab1f06d: {r: 1, g: 1, b: 1, a: 0}
+    - Color_61575bc3d1b24948bdcc26d2efc54b64: {r: 0.53144133, g: 0.6456949, b: 1.3202999, a: 0}
+    - Color_d01ffa4e906447b89833469ad9b41d3b: {r: 0, g: 0, b: 0, a: 0}
+    - Vector2_d1926337e3454ecd97e770903c3d8729: {r: 0, g: 89.14, b: 0, a: 0}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
   m_BuildTextureStacks: []
---- !u!114 &3476765208688466887
+--- !u!114 &3034563405374674555
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
