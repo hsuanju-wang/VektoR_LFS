@@ -7,6 +7,7 @@ public class ScanHandler : MonoBehaviour
     public Camera playerCamera;
     public Material originalSkybox;
     public Material scanSkybox;
+    public GameObject scannerSphere;
     private bool scannerActive = false;
     int oldMask;
 
@@ -27,9 +28,7 @@ public class ScanHandler : MonoBehaviour
         if (scannerActive)
         {
             //Activate Culling mask
-            int scanLayer = 1 << 10;
-            playerCamera.cullingMask = scanLayer;
-            RenderSettings.skybox = scanSkybox;
+            StartCoroutine(activateScanner());
         }
         else
         {
@@ -38,5 +37,14 @@ public class ScanHandler : MonoBehaviour
             RenderSettings.skybox = originalSkybox;
         }
         scannerActive = !scannerActive;
+    }
+
+    private IEnumerator activateScanner()
+    {
+        Instantiate(scannerSphere);
+        yield return new WaitForSeconds(0.8f);
+        int scanLayer = 1 << 10;
+        playerCamera.cullingMask = scanLayer;
+        RenderSettings.skybox = scanSkybox;
     }
 }
