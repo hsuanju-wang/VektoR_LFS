@@ -6,28 +6,35 @@ using TMPro;
 
 public class ControllerOutside : MonoBehaviour
 {
+    //For Debug
+    public TextMeshPro debugTxt;
+
     public SteamVR_Action_Boolean trackpadClicked;
     public SteamVR_Action_Boolean rightTriggerClicked;
     public SteamVR_Action_Boolean leftTriggerClicked;
 
     public SteamVR_Input_Sources inputSource;
 
+    [Header("Scan Settings")]
     public ScanHandler scanHandler;
-    public TextMeshProUGUI txtNum;
-    public bool isCollectOn;
-    public GameObject collectObj;
-    public int collectedSamples;
+
+    [Header("Collect Settings")]
+    public GameObject laser;
+    public CollectHandler collectHandler;
+
+
     [HideInInspector] public InSpaceshipDM dialogueManager;
 
     private void Start()
     {
-        collectedSamples = 0;
+        
     }
 
     void OnEnable()
     {
         trackpadClicked.AddOnStateDownListener(OnTrackpadClicked, inputSource);
         rightTriggerClicked.AddOnStateDownListener(OnRightTriggerClicked, inputSource);
+        rightTriggerClicked.AddOnStateUpListener(OnRightTriggerReleased, inputSource);
         leftTriggerClicked.AddOnStateDownListener(OnLeftTriggerClicked, inputSource);
 
         dialogueManager = GameObject.FindObjectOfType<InSpaceshipDM>();
@@ -61,12 +68,21 @@ public class ControllerOutside : MonoBehaviour
 
     private void OnRightTriggerClicked(SteamVR_Action_Boolean fromAction, SteamVR_Input_Sources fromSource)
     {
-        //debugTxt.text = "RightTrigger was pressed";
-        Debug.Log("Right Trigger was pressed");
-        Collect();
+        //debugTxt.text = "Right Trigger was pressed";
+        laser.SetActive(true);
+        //Collect();
     }
 
-    private void Collect()
+    private void OnRightTriggerReleased(SteamVR_Action_Boolean fromAction, SteamVR_Input_Sources fromSource)
+    {
+        //debugTxt.text = "Not pressed";
+        laser.SetActive(false);
+        collectHandler.isCollecting = false;
+    }
+
+
+
+/*    private void Collect()
     {
         if (isCollectOn)
         {
@@ -77,5 +93,5 @@ public class ControllerOutside : MonoBehaviour
             collectedSamples++;
             txtNum.text = collectedSamples.ToString() + "/3";
         }
-    }
+    }*/
 }

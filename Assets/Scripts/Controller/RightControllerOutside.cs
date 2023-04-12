@@ -9,8 +9,8 @@ public class RightControllerOutside : MonoBehaviour
     {
         if (other.CompareTag("sample"))
         {
-            controllerInteraction.isCollectOn = true;
-            controllerInteraction.collectObj = other.gameObject;
+            //controllerInteraction.isCollectOn = true;
+            //controllerInteraction.collectObj = other.gameObject;
         }
     }
 
@@ -18,8 +18,8 @@ public class RightControllerOutside : MonoBehaviour
     {
         if (other.CompareTag("sample"))
         {
-            controllerInteraction.isCollectOn = false;
-            controllerInteraction.collectObj = null;
+            //controllerInteraction.isCollectOn = false;
+            //controllerInteraction.collectObj = null;
         }
     }
 }

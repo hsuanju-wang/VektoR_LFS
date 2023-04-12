@@ -73,7 +73,10 @@ namespace Valve.VR.Extras
         public virtual void OnPointerIn(PointerEventArgs e)
         {
             if (PointerIn != null)
+            {
                 PointerIn(this, e);
+                Debug.Log("Pointer in");
+            }
         }
 
         public virtual void OnPointerClick(PointerEventArgs e)
