@@ -41,7 +41,7 @@ public class ScanHandler : MonoBehaviour
 
     private IEnumerator activateScanner()
     {
-        Instantiate(scannerSphere);
+        Instantiate(scannerSphere, new Vector3 (playerCamera.transform.position.x, 0f, playerCamera.transform.position.z), Quaternion.identity);
         yield return new WaitForSeconds(0.8f);
         int scanLayer = 1 << 10;
         playerCamera.cullingMask = scanLayer;
