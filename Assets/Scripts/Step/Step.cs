@@ -17,6 +17,7 @@ public class Step : MonoBehaviour
     {
         currentStepIndex = 0;
         dialogueManager = FindObjectOfType<InSpaceshipDM>();
+        steps = GameObject.FindGameObjectsWithTag("step");
     }
 
     // Update is called once per frame
@@ -42,7 +43,7 @@ public class Step : MonoBehaviour
         else // last step, show task 1 step
         {
             //task.GetComponent<ShowTask>().ShowTaskStep();
-            task1Step.SetActive(true);
+            //task1Step.SetActive(true);
         }
     }
 
@@ -50,6 +51,14 @@ public class Step : MonoBehaviour
     {
         yield return new WaitForSeconds(footPrintCloseTime);
         closingStep.SetActive(false);
+    }
+
+    public void CloseAllFootPtint()
+    {
+        foreach (GameObject f in steps)
+        {
+            f.SetActive(false);
+        }
     }
 
 }
