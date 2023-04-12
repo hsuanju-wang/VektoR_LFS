@@ -1604,7 +1604,7 @@
     },
     "m_Name": "Dissolve_completion",
     "m_DefaultReferenceName": "Vector1_c31b517ab10e43c3a115297e05968ecd",
-    "m_OverrideReferenceName": "",
+    "m_OverrideReferenceName": "Dissolve_completion",
     "m_GeneratePropertyBlock": true,
     "m_Precision": 0,
     "overrideHLSLDeclaration": false,
