@@ -5,21 +5,21 @@ using TMPro;
 
 public class CollectHandler : MonoBehaviour
 {
+    /// <summary>
+    /// This class handles the interaction of collecting the samples. 
+    /// </summary>
+    
     public static CollectHandler s;
     public TextMeshProUGUI txtNum;
     public int collectedSamples;
 
     public Material originalMat;
     public Material dissolveMat;
-    //public Material originalMatInScanMode;
 
     public bool isCollecting;
     public float duration = 3.0f;
 
-    //private SampleHandler sampleHandler;
-    //private ScanHandler scanHandler;
 
-    // Start is called before the first frame update
     private void Awake()
     {
         if (s != null && s != this)
@@ -36,8 +36,12 @@ public class CollectHandler : MonoBehaviour
     {
         collectedSamples = 0;
         isCollecting = false;
-        //sampleHandler.GetComponent<SampleHandler>();
-        //scanHandler.GetComponent<ScanHandler>();
+    }
+
+    // Called by Laser.cs: If the laser collides with the sample.
+    public void StartDissolveSample(GameObject sample)
+    {
+        StartCoroutine(DissolveSample(sample));
     }
 
     private IEnumerator DissolveSample(GameObject sample)
@@ -59,15 +63,10 @@ public class CollectHandler : MonoBehaviour
         {
             Collect(sample);
         }
-        else
+        else // Sample Started redissolve if trigger held less then 3f
         {
             StartCoroutine(RedissolveSample(triggerHeldTime, sample));
         }
-    }
-
-    public void StartDissolveSample(GameObject sample)
-    {
-        StartCoroutine(DissolveSample(sample));
     }
 
     private IEnumerator RedissolveSample( float prevTriggerHeldTime, GameObject sample)

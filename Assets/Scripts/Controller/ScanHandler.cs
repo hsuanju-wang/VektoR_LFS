@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class ScanHandler : MonoBehaviour
 {
+    /// <summary>
+    /// This class handles the interaction of scanning. 
+    /// </summary>
+
     public static ScanHandler s;
 
     public Camera playerCamera;
@@ -30,11 +34,6 @@ public class ScanHandler : MonoBehaviour
     void Start()
     {
         oldMask = playerCamera.cullingMask;
-    }
-
-    void Update()
-    {
-
     }
 
     public void Scan()
@@ -67,7 +66,8 @@ public class ScanHandler : MonoBehaviour
         RenderSettings.skybox = originalSkybox;
         scannerObjects.SetActive(false);
 
-        if (ControllerOutside.s.triggerClicked)
+        //When deactivating the scanner, if the player is holding the rightTrigger, turn on the laser.
+        if (ControllerOutside.s.isRTriggerClicked)
         {
             ControllerOutside.s.LaserOn();
         }

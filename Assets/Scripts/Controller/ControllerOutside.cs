@@ -6,9 +6,12 @@ using TMPro;
 
 public class ControllerOutside : MonoBehaviour
 {
+    /// <summary>
+    /// This class handles the all the interaction on the controllers: triggers, trackpad.
+    /// </summary>
+    
     public static ControllerOutside s;
     
-    public TextMeshPro debugTxt;
     public SteamVR_Action_Boolean trackpadClicked;
     public SteamVR_Action_Boolean rightTriggerClicked;
     public SteamVR_Action_Boolean leftTriggerClicked;
@@ -18,8 +21,7 @@ public class ControllerOutside : MonoBehaviour
     [Header("Collect Settings")]
     public GameObject laser;
 
-    [HideInInspector] public InSpaceshipDM dialogueManager;
-    [HideInInspector] public bool triggerClicked = false;
+    [HideInInspector] public bool isRTriggerClicked = false;
     private void Awake()
     {
         if (s != null && s != this)
@@ -38,8 +40,6 @@ public class ControllerOutside : MonoBehaviour
         rightTriggerClicked.AddOnStateDownListener(OnRightTriggerClicked, inputSource);
         rightTriggerClicked.AddOnStateUpListener(OnRightTriggerReleased, inputSource);
         leftTriggerClicked.AddOnStateDownListener(OnLeftTriggerClicked, inputSource);
-
-        dialogueManager = GameObject.FindObjectOfType<InSpaceshipDM>();
     }
 
     private void OnDisable()
@@ -63,27 +63,23 @@ public class ControllerOutside : MonoBehaviour
 
     private void OnLeftTriggerClicked(SteamVR_Action_Boolean fromAction, SteamVR_Input_Sources fromSource)
     {
-        //debugTxt.text = "Left Trigger was pressed";
-        Debug.Log("Left Trigger was pressed");
+        //Debug.Log("Left Trigger was pressed");
         ScanHandler.s.Scan();
     }
 
     private void OnRightTriggerClicked(SteamVR_Action_Boolean fromAction, SteamVR_Input_Sources fromSource)
     {
-        //debugTxt.text = "Right Trigger was pressed";
-        triggerClicked = true;
-        if (!ScanHandler.s.scannerActive)
+        isRTriggerClicked = true;
+        if (!ScanHandler.s.scannerActive) // Turn on the laser if the player when scanner is not active
         {
             laser.SetActive(true);
         }
-        //Collect();
     }
 
     private void OnRightTriggerReleased(SteamVR_Action_Boolean fromAction, SteamVR_Input_Sources fromSource)
     {
-        //debugTxt.text = "Not pressed";
         laser.SetActive(false);
-        triggerClicked = false;
+        isRTriggerClicked = false;
         CollectHandler.s.isCollecting = false;
     }
 

@@ -2,8 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LaserPointer : MonoBehaviour
+public class Laser : MonoBehaviour
 {
+    /// <summary>
+    /// This class handles the trigger of laser and samples. 
+    /// </summary>
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("sample"))
