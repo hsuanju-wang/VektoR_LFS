@@ -4,15 +4,13 @@ using UnityEngine;
 
 public class LaserPointer : MonoBehaviour
 {
-    public CollectHandler collectHandler;
-
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("sample"))
         {
             Debug.Log("sample trigger");
-            collectHandler.isCollecting = true;
-            collectHandler.StartDissolveSample(other.gameObject);
+            CollectHandler.s.isCollecting = true;
+            CollectHandler.s.StartDissolveSample(other.gameObject);
         }
     }
 
@@ -21,7 +19,7 @@ public class LaserPointer : MonoBehaviour
         if (other.CompareTag("sample"))
         {
             Debug.Log("sample trigger exit");
-            collectHandler.isCollecting = false;
+            CollectHandler.s.isCollecting = false;
         }
     }
 }

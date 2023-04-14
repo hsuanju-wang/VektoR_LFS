@@ -10,6 +10,7 @@ TagManager:
   - controllerHint
   - floor
   - sample
+  - sampleInScanMode
   layers:
   - Default
   - TransparentFX

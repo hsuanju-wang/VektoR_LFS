@@ -4,20 +4,34 @@ using UnityEngine;
 
 public class ScanHandler : MonoBehaviour
 {
+    public static ScanHandler s;
+
     public Camera playerCamera;
     public Material originalSkybox;
     public Material scanSkybox;
     public GameObject scannerSphere;
-    private bool scannerActive = false;
+    public GameObject scannerObjects;
+
+    public bool scannerActive = false;
     int oldMask;
 
-    // Start is called before the first frame update
+    private void Awake()
+    {
+        if (s != null && s != this)
+        {
+            Destroy(this);
+        }
+        else
+        {
+            s = this;
+        }
+    }
+
     void Start()
     {
         oldMask = playerCamera.cullingMask;
     }
 
-    // Update is called once per frame
     void Update()
     {
 
@@ -25,18 +39,12 @@ public class ScanHandler : MonoBehaviour
 
     public void Scan()
     {
-        if (scannerActive)
+        if (!scannerActive)
         {
             //Activate Culling mask
             StartCoroutine(activateScanner());
+            scannerActive = true;
         }
-        else
-        {
-            //Deactivate Culling mask
-            playerCamera.cullingMask = oldMask;
-            RenderSettings.skybox = originalSkybox;
-        }
-        scannerActive = !scannerActive;
     }
 
     private IEnumerator activateScanner()
@@ -46,5 +54,23 @@ public class ScanHandler : MonoBehaviour
         int scanLayer = 1 << 10;
         playerCamera.cullingMask = scanLayer;
         RenderSettings.skybox = scanSkybox;
+        scannerObjects.SetActive(true);
+
+        yield return new WaitForSeconds(3f);
+        DeActivateScanner();
+    }
+
+    private void DeActivateScanner()
+    {
+        //Deactivate Culling mask
+        playerCamera.cullingMask = oldMask;
+        RenderSettings.skybox = originalSkybox;
+        scannerObjects.SetActive(false);
+
+        if (ControllerOutside.s.triggerClicked)
+        {
+            ControllerOutside.s.LaserOn();
+        }
+        scannerActive = false;
     }
 }

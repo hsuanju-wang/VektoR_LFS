@@ -6,28 +6,30 @@ using TMPro;
 
 public class ControllerOutside : MonoBehaviour
 {
-    //For Debug
+    public static ControllerOutside s;
+    
     public TextMeshPro debugTxt;
-
     public SteamVR_Action_Boolean trackpadClicked;
     public SteamVR_Action_Boolean rightTriggerClicked;
     public SteamVR_Action_Boolean leftTriggerClicked;
 
     public SteamVR_Input_Sources inputSource;
 
-    [Header("Scan Settings")]
-    public ScanHandler scanHandler;
-
     [Header("Collect Settings")]
     public GameObject laser;
-    public CollectHandler collectHandler;
-
 
     [HideInInspector] public InSpaceshipDM dialogueManager;
-
-    private void Start()
+    [HideInInspector] public bool triggerClicked = false;
+    private void Awake()
     {
-        
+        if (s != null && s != this)
+        {
+            Destroy(this);
+        }
+        else
+        {
+            s = this;
+        }
     }
 
     void OnEnable()
@@ -63,13 +65,17 @@ public class ControllerOutside : MonoBehaviour
     {
         //debugTxt.text = "Left Trigger was pressed";
         Debug.Log("Left Trigger was pressed");
-        scanHandler.Scan();
+        ScanHandler.s.Scan();
     }
 
     private void OnRightTriggerClicked(SteamVR_Action_Boolean fromAction, SteamVR_Input_Sources fromSource)
     {
         //debugTxt.text = "Right Trigger was pressed";
-        laser.SetActive(true);
+        triggerClicked = true;
+        if (!ScanHandler.s.scannerActive)
+        {
+            laser.SetActive(true);
+        }
         //Collect();
     }
 
@@ -77,21 +83,12 @@ public class ControllerOutside : MonoBehaviour
     {
         //debugTxt.text = "Not pressed";
         laser.SetActive(false);
-        collectHandler.isCollecting = false;
+        triggerClicked = false;
+        CollectHandler.s.isCollecting = false;
     }
 
-
-
-/*    private void Collect()
+    public void LaserOn()
     {
-        if (isCollectOn)
-        {
-            // Animation ??
-            collectObj.SetActive(false);
-            isCollectOn = false;
-            collectObj = null;
-            collectedSamples++;
-            txtNum.text = collectedSamples.ToString() + "/3";
-        }
-    }*/
+        laser.SetActive(true);
+    }
 }

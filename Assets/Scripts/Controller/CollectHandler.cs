@@ -5,30 +5,40 @@ using TMPro;
 
 public class CollectHandler : MonoBehaviour
 {
+    public static CollectHandler s;
     public TextMeshProUGUI txtNum;
     public int collectedSamples;
 
     public Material originalMat;
     public Material dissolveMat;
-    float duration = 3.0f;
-    
+    //public Material originalMatInScanMode;
 
-    //float triggerHeldTime;
     public bool isCollecting;
+    public float duration = 3.0f;
+
+    //private SampleHandler sampleHandler;
+    //private ScanHandler scanHandler;
 
     // Start is called before the first frame update
+    private void Awake()
+    {
+        if (s != null && s != this)
+        {
+            Destroy(this);
+        }
+        else
+        {
+            s = this;
+        }
+    }
+
     void Start()
     {
         collectedSamples = 0;
         isCollecting = false;
+        //sampleHandler.GetComponent<SampleHandler>();
+        //scanHandler.GetComponent<ScanHandler>();
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
 
     private IEnumerator DissolveSample(GameObject sample)
     {
