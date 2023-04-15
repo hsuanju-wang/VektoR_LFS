@@ -17,7 +17,11 @@ public class Step : MonoBehaviour
     {
         currentStepIndex = 0;
         dialogueManager = FindObjectOfType<InSpaceshipDM>();
-        steps = GameObject.FindGameObjectsWithTag("step");
+        //steps = GameObject.FindGameObjectsWithTag("step");
+        for (int i = 1; i < steps.Length; i++)
+        {
+            steps[i].gameObject.SetActive(false);
+        }
     }
 
     // Update is called once per frame

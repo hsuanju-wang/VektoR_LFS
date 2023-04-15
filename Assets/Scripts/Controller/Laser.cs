@@ -11,7 +11,7 @@ public class Laser : MonoBehaviour
     {
         if (other.CompareTag("sample"))
         {
-            Debug.Log("sample trigger");
+            //Debug.Log("sample trigger");
             CollectHandler.s.isCollecting = true;
             CollectHandler.s.StartDissolveSample(other.gameObject);
         }
@@ -21,7 +21,7 @@ public class Laser : MonoBehaviour
     {
         if (other.CompareTag("sample"))
         {
-            Debug.Log("sample trigger exit");
+            //Debug.Log("sample trigger exit");
             CollectHandler.s.isCollecting = false;
         }
     }

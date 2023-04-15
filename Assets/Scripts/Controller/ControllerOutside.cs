@@ -21,6 +21,9 @@ public class ControllerOutside : MonoBehaviour
     [Header("Collect Settings")]
     public GameObject laser;
 
+    [Header("Task for Tutorial")]
+    public GameObject leftControllerTask;
+
     [HideInInspector] public bool isRTriggerClicked = false;
     private void Awake()
     {
@@ -64,7 +67,18 @@ public class ControllerOutside : MonoBehaviour
     private void OnLeftTriggerClicked(SteamVR_Action_Boolean fromAction, SteamVR_Input_Sources fromSource)
     {
         //Debug.Log("Left Trigger was pressed");
-        ScanHandler.s.Scan();
+        if (!OutsideDM.s.dialogueIsEnd)
+        {
+            if (leftControllerTask.GetComponent<ControllerTask>().isTaskStart && !leftControllerTask.GetComponent<ControllerTask>().isTaskEnd)
+            {
+                ScanHandler.s.Scan();
+                leftControllerTask.GetComponent<Task>().EndTask();
+            }
+        }
+        else
+        {
+            ScanHandler.s.Scan();
+        }
     }
 
     private void OnRightTriggerClicked(SteamVR_Action_Boolean fromAction, SteamVR_Input_Sources fromSource)

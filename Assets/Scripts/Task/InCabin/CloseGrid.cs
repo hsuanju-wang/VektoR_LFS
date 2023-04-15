@@ -10,6 +10,9 @@ public class CloseGrid : Task
     public GameObject[] progressImg;
     public TextMeshProUGUI dialogueUITxt;
 
+    public AudioClip gridAudioClip;
+    public AudioSource audioSource;
+
     public override void StartTask()
     {
         base.StartTask();
@@ -25,6 +28,8 @@ public class CloseGrid : Task
 
     public IEnumerator ShowProgress()
     {
+        audioSource.clip = gridAudioClip;
+        audioSource.Play();
         dialogueUITxt.text = "";
         for (int i = 0; i < progressImg.Length; i++)
         {

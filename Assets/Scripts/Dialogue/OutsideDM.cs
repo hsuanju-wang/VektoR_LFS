@@ -4,12 +4,27 @@ using UnityEngine;
 
 public class OutsideDM : DialogueManager
 {
+    public static OutsideDM s;
+
+    public bool dialogueIsEnd = false;
+
+    private void Awake()
+    {
+        if (s != null && s != this)
+        {
+            Destroy(this);
+        }
+        else
+        {
+            s = this;
+        }
+    }
     // Start is called before the first frame update
     protected override void Start()
     {
         base.Start();
         StartCoroutine(StartIntro());
-        StartCoroutine(CloseIntro());
+        //StartCoroutine(CloseIntro());
     }
     private IEnumerator StartIntro()
     {
@@ -17,9 +32,14 @@ public class OutsideDM : DialogueManager
         StartDialogue(dialogues[0]);
     }
 
-    private IEnumerator CloseIntro()
+/*    private IEnumerator CloseIntro()
     {
         yield return new WaitForSeconds(24f);
+        dialoguePanel.SetActive(false);
+    }*/
+
+    public void CloseDialogueUI()
+    {
         dialoguePanel.SetActive(false);
     }
 }

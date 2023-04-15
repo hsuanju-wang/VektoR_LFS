@@ -19,6 +19,7 @@ public class CollectHandler : MonoBehaviour
     public bool isCollecting;
     public float duration = 3.0f;
 
+    public GameObject rightControllerTask;
 
     private void Awake()
     {
@@ -84,8 +85,26 @@ public class CollectHandler : MonoBehaviour
 
     private void Collect( GameObject sample)
     {
-        Destroy(sample);
+        sample.SetActive(false);
+        SampleHandler.s.CloseSampleInScanMode(sample);
         collectedSamples++;
         txtNum.text = collectedSamples.ToString() + "/3";
+        OutsideSM.s.PlayCollectSound();
+
+        if (collectedSamples == 3)
+        {
+            EndHandler.s.End();
+            EktoVRManager.S.ekto.StopSystem();
+        }
+
+        if (collectedSamples == 1)
+        {
+            if (rightControllerTask.GetComponent<ControllerTask>().isTaskStart && !rightControllerTask.GetComponent<ControllerTask>().isTaskEnd)
+            {
+                rightControllerTask.GetComponent<Task>().EndTask();
+                OutsideDM.s.CloseDialogueUI();
+                OutsideDM.s.dialogueIsEnd = true;
+            }
+        }
     }
 }

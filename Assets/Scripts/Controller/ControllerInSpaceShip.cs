@@ -13,8 +13,8 @@ public class ControllerInSpaceShip : MonoBehaviour
     public SteamVR_Input_Sources inputSource;
     //public TextMeshProUGUI debugTxt;
 
-    public GameObject rightControllerTask;
-    public GameObject leftControllerTask;
+    //public GameObject rightControllerTask;
+    //public GameObject leftControllerTask;
     //public GameObject notInCircleDialogue;
     [HideInInspector] public InSpaceshipDM dialogueManager;
 
@@ -22,8 +22,8 @@ public class ControllerInSpaceShip : MonoBehaviour
     void OnEnable()
     {
         trackpadClicked.AddOnStateDownListener(OnTrackpadClicked, inputSource);
-        rightTriggerClicked.AddOnStateDownListener(OnRightTriggerClicked, inputSource);
-        leftTriggerClicked.AddOnStateDownListener(OnLeftTriggerClicked, inputSource);
+        //rightTriggerClicked.AddOnStateDownListener(OnRightTriggerClicked, inputSource);
+        //leftTriggerClicked.AddOnStateDownListener(OnLeftTriggerClicked, inputSource);
 
         dialogueManager = GameObject.FindObjectOfType<InSpaceshipDM>();
     }
@@ -31,8 +31,8 @@ public class ControllerInSpaceShip : MonoBehaviour
     private void OnDisable()
     {
         trackpadClicked.RemoveOnStateDownListener(OnTrackpadClicked, inputSource);
-        rightTriggerClicked.RemoveOnStateDownListener(OnRightTriggerClicked, inputSource);
-        leftTriggerClicked.RemoveOnStateDownListener(OnLeftTriggerClicked, inputSource);
+        //rightTriggerClicked.RemoveOnStateDownListener(OnRightTriggerClicked, inputSource);
+        //leftTriggerClicked.RemoveOnStateDownListener(OnLeftTriggerClicked, inputSource);
     }
 
     private void OnTrackpadClicked(SteamVR_Action_Boolean fromAction, SteamVR_Input_Sources fromSource)
@@ -48,7 +48,7 @@ public class ControllerInSpaceShip : MonoBehaviour
         }
     }
 
-    private void OnLeftTriggerClicked(SteamVR_Action_Boolean fromAction, SteamVR_Input_Sources fromSource)
+/*    private void OnLeftTriggerClicked(SteamVR_Action_Boolean fromAction, SteamVR_Input_Sources fromSource)
     {
         //debugTxt.text = "Left Trigger was pressed";
         Debug.Log("Left Trigger was pressed");
@@ -57,9 +57,9 @@ public class ControllerInSpaceShip : MonoBehaviour
             leftControllerTask.GetComponent<Task>().EndTask();
         }
 
-    }
+    }*/
 
-    private void OnRightTriggerClicked(SteamVR_Action_Boolean fromAction, SteamVR_Input_Sources fromSource)
+/*    private void OnRightTriggerClicked(SteamVR_Action_Boolean fromAction, SteamVR_Input_Sources fromSource)
     {
         //debugTxt.text = "RightTrigger was pressed";
         Debug.Log("Right Trigger was pressed");
@@ -67,5 +67,5 @@ public class ControllerInSpaceShip : MonoBehaviour
         {
             rightControllerTask.GetComponent<Task>().EndTask();
         }
-    }
+    }*/
 }

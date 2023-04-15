@@ -7,9 +7,9 @@ public class ControllerTask : Task
     public bool isTaskStart = false;
     public bool isTaskEnd = false;
 
-    public bool triggerEndTask = false;
+    public bool triggerEndTask = false;// For Debug without controller in Inspector
 
-    public GameObject sampleCollectedHint;
+    public GameObject tutorialSample;
     public GameObject animationObj;
     public override void StartTask()
     {
@@ -20,11 +20,11 @@ public class ControllerTask : Task
             animationObj.SetActive(true);
         }
 
-        if (sampleCollectedHint != null)
+        if (tutorialSample != null)
         {
-            sampleCollectedHint.SetActive(true);
+            tutorialSample.SetActive(true);
         }
-        
+
     }
 
     private void Update()
