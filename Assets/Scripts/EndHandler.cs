@@ -6,7 +6,7 @@ public class EndHandler : MonoBehaviour
 {
     public static EndHandler s;
     public GameObject endJellyFish;
-    public GameObject endPlants;
+    public GameObject[] endPlants;
     public Transform player;
 
     public GameObject target;
@@ -32,7 +32,7 @@ public class EndHandler : MonoBehaviour
         Credit.s.Show();
         endJellyFish.transform.position = player.position;
         endJellyFish.SetActive(true);
-        endPlants.SetActive(true);
+        StartCoroutine(growLayerGrass());
     }
 
     void Start()
@@ -52,6 +52,15 @@ public class EndHandler : MonoBehaviour
             go.transform.Rotate(Vector3.up, angle * i);
             go.transform.position = target.transform.position - (go.transform.forward * radius);
             // OR  go.GetComponent<NavMeshAgent>().Warp(target.transform.position-(go.transform.forward*radius));
+        }
+    }
+
+    private IEnumerator growLayerGrass()
+    {
+        for(int i = 0; i< endPlants.Length; i++)
+        {
+            endPlants[i].SetActive(true);
+            yield return new WaitForSeconds(2f);
         }
     }
 }

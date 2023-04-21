@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: GrassGrow_Start
-  m_Shader: {fileID: -6465566751694194690, guid: fbbbfa253e93ba24c8a666699cbef112, type: 3}
+  m_Name: Tentacle_v2_glow
+  m_Shader: {fileID: -6465566751694194690, guid: 1fd4089c1ee10a84a900fe798ca6f6be, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -19,16 +19,28 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
-    - Texture2D_7c6265e39a334f1fbb001c930861cd97:
+    - Texture2D_0653a07e350047d483551cb6c2834ff7:
+        m_Texture: {fileID: 2800000, guid: c590db5d85a841345a6df467c7d8f753, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Texture2D_52343b76b8f34c2e91b0b402cf2b7963:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - Texture2D_9dbe19bd84604fafb4036ed8061ef7c2:
-        m_Texture: {fileID: 0}
+    - Texture2D_91f8c02a431f4308b428800cefa7b5df:
+        m_Texture: {fileID: 2800000, guid: ea9009f20193dda4da2e0aefe7c029e2, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - Texture2D_cbbb612b943e42b59a2a844bba970282:
-        m_Texture: {fileID: 0}
+    - Texture2D_98116176718c475ca3b239599d5b53ca:
+        m_Texture: {fileID: 2800000, guid: d5f6a12b5183a7742a8aa26434cdbedb, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Texture2D_c188744d004b4ef0a30c2a9f37c9c7c9:
+        m_Texture: {fileID: 2800000, guid: 0d4319a1cbf180c45a9d7ad8f491b2e0, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Texture2D_ec50edea71214e07bc4cfb77983db49f:
+        m_Texture: {fileID: 2800000, guid: 3d82cf73f1eec5d47b38d99b782edd78, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BaseMap:
@@ -88,15 +100,13 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - Vector1_1: 0.46
-    - Vector1_255619c44d1948f68260df1a8e43888e: 0.65
-    - Vector1_5535a1eadf3746859393005bc5c6ab93: 1.48
+    - EmissionStrength: 1
+    - Vector1_245fbb9dcbcb4b3a86a80aab76f77f15: 0.58
     - _AlphaClip: 0
     - _Blend: 0
     - _BumpScale: 1
     - _ClearCoatMask: 0
     - _ClearCoatSmoothness: 0
-    - _Clip: 0.895
     - _Cull: 2
     - _Cutoff: 0.5
     - _DetailAlbedoMapScale: 1
@@ -106,34 +116,30 @@ Material:
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
-    - _Grow: 0
     - _Metallic: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.005
     - _QueueOffset: 0
     - _ReceiveShadows: 1
-    - _Scale: -0.19
     - _Smoothness: 0.5
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _Surface: 0
-    - _WindSpeed: 1.54
-    - _WindStrength: 0.06
+    - _WindSpeed: 1
+    - _WindStrength: 0.12
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
-    - Color_73f7cb48150b433694c2d6889d96cea3: {r: 0.8301887, g: 0.49687472, b: 0.15402867, a: 0}
-    - Color_ae3f7376b414469ab8957b3edf601fc8: {r: 10.014426, g: 4.932314, b: 2.0469732, a: 0}
-    - Color_b0aae1b877ab4451998725a2d7878e29: {r: 0.43529412, g: 0.3591149, b: 0.14901963, a: 0}
-    - Color_b82532541474479085d02dcc19656ba1: {r: 7.1545362, g: 6.530852, b: 1.5357906, a: 0}
+    - Vector2_5a68a335082046e09dc20eeeb64ae333: {r: 0, g: 0, b: 0, a: 0}
+    - Vector2_87395831f82d40a8bcbc0aabaab1f06d: {r: 1, g: 1, b: 0, a: 0}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
     - _WindDirection: {r: 1, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []
---- !u!114 &8668155195050216240
+--- !u!114 &7442167385823587564
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
