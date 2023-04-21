@@ -7,6 +7,7 @@ public class OutsideDM : DialogueManager
     public static OutsideDM s;
 
     public bool dialogueIsEnd = false;
+    public AudioClip sampleCollectedClip;
 
     private void Awake()
     {
@@ -42,4 +43,11 @@ public class OutsideDM : DialogueManager
     {
         dialoguePanel.SetActive(false);
     }
+
+    public void PlaySampleCollected()
+    {
+        audioSource.clip = sampleCollectedClip;
+        audioSource.Play();
+    }
+    
 }

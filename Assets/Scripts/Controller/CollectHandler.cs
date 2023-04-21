@@ -21,6 +21,8 @@ public class CollectHandler : MonoBehaviour
 
     public GameObject rightControllerTask;
 
+    
+
     private void Awake()
     {
         if (s != null && s != this)
@@ -91,12 +93,6 @@ public class CollectHandler : MonoBehaviour
         txtNum.text = collectedSamples.ToString() + "/3";
         OutsideSM.s.PlayCollectSound();
 
-        if (collectedSamples == 3)
-        {
-            EndHandler.s.End();
-            EktoVRManager.S.ekto.StopSystem();
-        }
-
         if (collectedSamples == 1)
         {
             if (rightControllerTask.GetComponent<ControllerTask>().isTaskStart && !rightControllerTask.GetComponent<ControllerTask>().isTaskEnd)
@@ -105,6 +101,15 @@ public class CollectHandler : MonoBehaviour
                 OutsideDM.s.CloseDialogueUI();
                 OutsideDM.s.dialogueIsEnd = true;
             }
+        }
+        else if (collectedSamples == 2)
+        {
+            OutsideDM.s.PlaySampleCollected();
+        }
+        else if (collectedSamples == 3)
+        {
+            EndHandler.s.End();
+            EktoVRManager.S.ekto.StopSystem();
         }
     }
 }
