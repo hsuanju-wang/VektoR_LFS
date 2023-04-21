@@ -392,6 +392,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_ThrustX: 1
   m_ThrustY: 1
+  maxY: 10
+  minY: 5
 --- !u!54 &71290915
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -5365,6 +5367,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_ThrustX: 1
   m_ThrustY: 1
+  maxY: 10
+  minY: 5
 --- !u!54 &115698798
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -5633,6 +5637,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_ThrustX: 1
   m_ThrustY: 1
+  maxY: 10
+  minY: 5
 --- !u!54 &135388457
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -5857,6 +5863,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_ThrustX: 1
   m_ThrustY: 1
+  maxY: 10
+  minY: 5
 --- !u!54 &189106498
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -11665,6 +11673,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_ThrustX: 1
   m_ThrustY: 1
+  maxY: 10
+  minY: 5
 --- !u!54 &372003104
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -12221,6 +12231,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_ThrustX: 1
   m_ThrustY: 1
+  maxY: 10
+  minY: 5
 --- !u!54 &502664332
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -12973,6 +12985,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_ThrustX: 1
   m_ThrustY: 1
+  maxY: 10
+  minY: 5
 --- !u!54 &580285319
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -13106,6 +13120,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_ThrustX: 1
   m_ThrustY: 1
+  maxY: 10
+  minY: 5
 --- !u!54 &618060688
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -13268,6 +13284,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_ThrustX: 1
   m_ThrustY: 1
+  maxY: 10
+  minY: 5
 --- !u!54 &679522892
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -13621,6 +13639,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_ThrustX: 1
   m_ThrustY: 1
+  maxY: 10
+  minY: 5
 --- !u!54 &710492579
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -15066,6 +15086,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_ThrustX: 1
   m_ThrustY: 1
+  maxY: 10
+  minY: 5
 --- !u!54 &955191521
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -15369,6 +15391,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_ThrustX: 1
   m_ThrustY: 1
+  maxY: 10
+  minY: 5
 --- !u!54 &1012268453
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -15767,6 +15791,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_ThrustX: 1
   m_ThrustY: 1
+  maxY: 10
+  minY: 5
 --- !u!54 &1049690661
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -16801,6 +16827,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_ThrustX: 1
   m_ThrustY: 1
+  maxY: 10
+  minY: 5
 --- !u!54 &1180287612
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -17249,6 +17277,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_ThrustX: 1
   m_ThrustY: 1
+  maxY: 10
+  minY: 5
 --- !u!54 &1217025357
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -17868,6 +17898,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_ThrustX: 1
   m_ThrustY: 1
+  maxY: 10
+  minY: 5
 --- !u!54 &1259451879
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -18240,6 +18272,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_ThrustX: 1
   m_ThrustY: 1
+  maxY: 10
+  minY: 5
 --- !u!54 &1326437497
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -19187,6 +19221,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_ThrustX: 1
   m_ThrustY: 1
+  maxY: 10
+  minY: 5
 --- !u!54 &1458790182
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -19565,6 +19601,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_ThrustX: 1
   m_ThrustY: 1
+  maxY: 10
+  minY: 5
 --- !u!54 &1488311479
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -19756,6 +19794,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_ThrustX: 1
   m_ThrustY: 1
+  maxY: 10
+  minY: 5
 --- !u!54 &1516118055
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -21389,6 +21429,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_ThrustX: 1
   m_ThrustY: 1
+  maxY: 10
+  minY: 5
 --- !u!54 &1617494720
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -22248,6 +22290,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_ThrustX: 1
   m_ThrustY: 1
+  maxY: 10
+  minY: 5
 --- !u!54 &1804313739
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -22580,6 +22624,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_ThrustX: 1
   m_ThrustY: 1
+  maxY: 10
+  minY: 5
 --- !u!54 &1879469434
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -23483,6 +23529,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_ThrustX: 1
   m_ThrustY: 1
+  maxY: 10
+  minY: 5
 --- !u!54 &1985080161
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -24115,6 +24163,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_ThrustX: 1
   m_ThrustY: 1
+  maxY: 10
+  minY: 5
 --- !u!54 &2067735905
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -24332,6 +24382,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_ThrustX: 1
   m_ThrustY: 1
+  maxY: 10
+  minY: 5
 --- !u!54 &2091763974
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -29177,6 +29229,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_ThrustX: 1
   m_ThrustY: 1
+  maxY: 10
+  minY: 5
 --- !u!54 &2105237030
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -29313,6 +29367,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_ThrustX: 1
   m_ThrustY: 1
+  maxY: 10
+  minY: 5
 --- !u!54 &2126629267
 Rigidbody:
   m_ObjectHideFlags: 0
