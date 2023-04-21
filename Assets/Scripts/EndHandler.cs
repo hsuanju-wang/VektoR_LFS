@@ -6,6 +6,7 @@ public class EndHandler : MonoBehaviour
 {
     public static EndHandler s;
     public GameObject endJellyFish;
+    public GameObject endPlants;
     public Transform player;
 
     public GameObject target;
@@ -31,6 +32,7 @@ public class EndHandler : MonoBehaviour
         Credit.s.Show();
         endJellyFish.transform.position = player.position;
         endJellyFish.SetActive(true);
+        endPlants.SetActive(true);
     }
 
     void Start()
