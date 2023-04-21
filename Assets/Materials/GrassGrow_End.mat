@@ -1,18 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-1268333157674048364
-MonoBehaviour:
-  m_ObjectHideFlags: 11
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  version: 4
 --- !u!21 &2100000
 Material:
   serializedVersion: 6
@@ -20,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Obsidian_2
-  m_Shader: {fileID: -6465566751694194690, guid: bc5225a8bf7a0674a926d09ad437550b, type: 3}
+  m_Name: GrassGrow_End
+  m_Shader: {fileID: -6465566751694194690, guid: fbbbfa253e93ba24c8a666699cbef112, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -32,6 +19,18 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - Texture2D_7c6265e39a334f1fbb001c930861cd97:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Texture2D_9dbe19bd84604fafb4036ed8061ef7c2:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Texture2D_cbbb612b943e42b59a2a844bba970282:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _BaseMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -89,14 +88,15 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - Vector1_1: 0.45
-    - Vector1_255619c44d1948f68260df1a8e43888e: 0.4
-    - Vector1_5535a1eadf3746859393005bc5c6ab93: 0.5
+    - Vector1_1: 0.7
+    - Vector1_255619c44d1948f68260df1a8e43888e: 0.44
+    - Vector1_5535a1eadf3746859393005bc5c6ab93: 1.19
     - _AlphaClip: 0
     - _Blend: 0
     - _BumpScale: 1
     - _ClearCoatMask: 0
     - _ClearCoatSmoothness: 0
+    - _Clip: 0.895
     - _Cull: 2
     - _Cutoff: 0.5
     - _DetailAlbedoMapScale: 1
@@ -106,24 +106,43 @@ Material:
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
+    - _Grow: 1
     - _Metallic: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.005
     - _QueueOffset: 0
     - _ReceiveShadows: 1
+    - _Scale: -0.19
     - _Smoothness: 0.5
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _Surface: 0
+    - _WindSpeed: 1.54
+    - _WindStrength: 0.06
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
-    - Color_ae3f7376b414469ab8957b3edf601fc8: {r: 32.125504, g: 14.523779, b: 8.578013, a: 0}
-    - Color_b0aae1b877ab4451998725a2d7878e29: {r: 0, g: 0, b: 0, a: 0}
-    - Color_b82532541474479085d02dcc19656ba1: {r: 18.196081, g: 6.192384, b: 2.4769533, a: 0}
+    - Color_73f7cb48150b433694c2d6889d96cea3: {r: 0.16426365, g: 0.35258946, b: 0.46226418, a: 0}
+    - Color_ae3f7376b414469ab8957b3edf601fc8: {r: 2.1445034, g: 5.0027137, b: 8.031376, a: 0}
+    - Color_b0aae1b877ab4451998725a2d7878e29: {r: 0.08490565, g: 0.059807748, b: 0.059807748, a: 0}
+    - Color_b82532541474479085d02dcc19656ba1: {r: 1.2384764, g: 9.098041, b: 7.5820713, a: 0}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
+    - _WindDirection: {r: 1, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []
+--- !u!114 &8668155195050216240
+MonoBehaviour:
+  m_ObjectHideFlags: 11
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 4
