@@ -9,6 +9,9 @@ public class Rig : EktoEventListener
     public GameObject rightBoot;
     public GameObject hip;
 
+    public Material glowMaterial;
+    public Material normalMaterial;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -30,20 +33,24 @@ public class Rig : EktoEventListener
 
         if (EktoVRManager.S.ekto.IsBootInStartingZone(Handedness.LEFT) || EktoVRManager.S.ekto.IsSystemActivated())
         {
-            leftBoot.GetComponentInChildren<Renderer>().material.color = Color.green;
+            //leftBoot.GetComponentInChildren<Renderer>().material.color = Color.green;
+            leftBoot.GetComponentInChildren<Renderer>().material = glowMaterial;
         }
         else
         {
-            leftBoot.GetComponentInChildren<Renderer>().material.color = Color.white;
+            //leftBoot.GetComponentInChildren<Renderer>().material.color = Color.white;
+            leftBoot.GetComponentInChildren<Renderer>().material = normalMaterial;
         }
 
         if (EktoVRManager.S.ekto.IsBootInStartingZone(Handedness.RIGHT) || EktoVRManager.S.ekto.IsSystemActivated())
         {
-            rightBoot.GetComponentInChildren<Renderer>().material.color = Color.green;
+            //rightBoot.GetComponentInChildren<Renderer>().material.color = Color.green;
+            rightBoot.GetComponentInChildren<Renderer>().material = glowMaterial;
         }
         else
         {
-            rightBoot.GetComponentInChildren<Renderer>().material.color = Color.white;
+            //rightBoot.GetComponentInChildren<Renderer>().material.color = Color.white;
+            rightBoot.GetComponentInChildren<Renderer>().material = normalMaterial;
         }
         if (EktoVRManager.S.ekto.IsHipInStartingZone())
         {

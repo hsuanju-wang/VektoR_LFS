@@ -7,6 +7,7 @@ public class SampleHandler : MonoBehaviour
     public static SampleHandler s;
     public GameObject[] sample;
     public GameObject[] sampleInScanMode;
+    public GameObject[] grass;
 
     private void Awake()
     {
@@ -36,5 +37,11 @@ public class SampleHandler : MonoBehaviour
         int i = System.Array.IndexOf(sample, collectedSample);
         sampleInScanMode[i].SetActive(false);
         collectedSample.gameObject.SetActive(false);
+    }
+
+    public void GrassGrow(GameObject collectedSample)
+    {
+        int i = System.Array.IndexOf(sample, collectedSample);
+        grass[i].SetActive(true);
     }
 }

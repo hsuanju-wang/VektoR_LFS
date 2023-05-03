@@ -39,10 +39,10 @@ public class Step : MonoBehaviour
             currentStepIndex++;
             steps[currentStepIndex].SetActive(true);
 
-            if (currentStepIndex != steps.Length - 2) // second last step, close popup;
+/*            if (currentStepIndex != steps.Length - 2) // second last step, close popup;
             {
                 dialogueManager.CloseFirstStepPopup();
-            }
+            }*/
         }
         else // last step, show task 1 step
         {

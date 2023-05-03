@@ -18,9 +18,6 @@ public class ControllerOutside : MonoBehaviour
 
     public SteamVR_Input_Sources inputSource;
 
-    [Header("Collect Settings")]
-    public GameObject laser;
-
     [Header("Task for Tutorial")]
     public GameObject leftControllerTask;
 
@@ -84,21 +81,23 @@ public class ControllerOutside : MonoBehaviour
     private void OnRightTriggerClicked(SteamVR_Action_Boolean fromAction, SteamVR_Input_Sources fromSource)
     {
         isRTriggerClicked = true;
-        if (!ScanHandler.s.scannerActive) // Turn on the laser if the player when scanner is not active
+        if (!ScanHandler.s.scannerActive) // Turn on the laser and collect Panel if the player when scanner is not active
         {
-            laser.SetActive(true);
+            CollectHandler.s.collectPanel.SetActive(true);
+            CollectHandler.s.laser.SetActive(true);
         }
     }
 
     private void OnRightTriggerReleased(SteamVR_Action_Boolean fromAction, SteamVR_Input_Sources fromSource)
     {
-        laser.SetActive(false);
+        CollectHandler.s.laser.SetActive(false);
+        CollectHandler.s.collectPanel.SetActive(false);
         isRTriggerClicked = false;
         CollectHandler.s.isCollecting = false;
     }
 
     public void LaserOn()
     {
-        laser.SetActive(true);
+        CollectHandler.s.laser.SetActive(true);
     }
 }

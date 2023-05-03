@@ -11,6 +11,10 @@ public class CollectHandler : MonoBehaviour
     
     public static CollectHandler s;
     public TextMeshProUGUI txtNum;
+    public GameObject collectPanel;
+    public GameObject laser;
+
+
     public int collectedSamples;
 
     public Material originalMat;
@@ -87,12 +91,16 @@ public class CollectHandler : MonoBehaviour
 
     private void Collect( GameObject sample)
     {
-        sample.SetActive(false);
-        SampleHandler.s.CloseSampleInScanMode(sample);
+        sample.SetActive(false); // close collected sample
+        SampleHandler.s.CloseSampleInScanMode(sample); // close collected sample in scan mode
+        SampleHandler.s.GrassGrow(sample); // grow grass
+
+        // Change collected UI on controller
         collectedSamples++;
         txtNum.text = collectedSamples.ToString() + "/3";
         OutsideSM.s.PlayCollectSound();
 
+        // First sample collected is for tutorial 
         if (collectedSamples == 1)
         {
             if (rightControllerTask.GetComponent<ControllerTask>().isTaskStart && !rightControllerTask.GetComponent<ControllerTask>().isTaskEnd)

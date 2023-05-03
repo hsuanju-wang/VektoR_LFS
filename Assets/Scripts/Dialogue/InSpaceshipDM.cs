@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class InSpaceshipDM : DialogueManager
 {
@@ -8,7 +9,11 @@ public class InSpaceshipDM : DialogueManager
     public GameObject firstStepPopup;
     public GameObject scanPopup;
     public AudioClip firstStepAudioClip;
+    public AudioClip firstStepAudioClip2;
     public AudioClip scanAudioClip;
+
+    public TextMeshProUGUI firstPopupTxt;
+    public string firstPopupDialogue2;
 
     protected override void Start()
     {
@@ -20,8 +25,23 @@ public class InSpaceshipDM : DialogueManager
     private IEnumerator OpenIntroPopUp()
     {
         yield return new WaitForSeconds(introDelayedTime);
-        OpenPopUp(firstStepPopup, firstStepAudioClip);
+        firstStepPopup.SetActive(true);
+        audioSource.clip = firstStepAudioClip;
+        audioSource.Play();
+        yield return new WaitForSeconds(audioSource.clip.length);
+
+        firstPopupTxt.text = firstPopupDialogue2;
+        audioSource.clip = firstStepAudioClip2;
+        audioSource.Play();
+        yield return new WaitForSeconds(audioSource.clip.length);
+
+
+        yield return new WaitForSeconds(5f);
+        CloseFirstStepPopup();
+        //OpenPopUp(firstStepPopup, firstStepAudioClip);
     }
+
+
 
     private void OpenPopUp(GameObject popup, AudioClip popUpAudioClip)
     {
