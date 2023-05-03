@@ -17,6 +17,7 @@ public class Laser : MonoBehaviour
         if (other.CompareTag("sample"))
         {
             //Debug.Log("sample trigger");
+            this.GetComponent<MeshRenderer>().material = hoverMaterial;
             CollectHandler.s.isCollecting = true;
             CollectHandler.s.StartDissolveSample(other.gameObject);
         }
@@ -27,6 +28,7 @@ public class Laser : MonoBehaviour
         if (other.CompareTag("sample"))
         {
             //Debug.Log("sample trigger exit");
+            this.GetComponent<MeshRenderer>().material = normalMaterial;
             CollectHandler.s.isCollecting = false;
         }
     }

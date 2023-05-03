@@ -9512,6 +9512,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 391308175127487356, guid: a7a8738cd74dfff44aa8ca7130911e4d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.21
+      objectReference: {fileID: 0}
     - target: {fileID: 531936686408666383, guid: a7a8738cd74dfff44aa8ca7130911e4d, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -9531,6 +9535,10 @@ PrefabInstance:
     - target: {fileID: 1684832222657421672, guid: a7a8738cd74dfff44aa8ca7130911e4d, type: 3}
       propertyPath: m_TagString
       value: foot
+      objectReference: {fileID: 0}
+    - target: {fileID: 1990819918421681791, guid: a7a8738cd74dfff44aa8ca7130911e4d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1990819918441918756, guid: a7a8738cd74dfff44aa8ca7130911e4d, type: 3}
       propertyPath: m_IsActive
@@ -9808,6 +9816,10 @@ PrefabInstance:
       propertyPath: m_PlayOnAwake
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7967211738813371674, guid: a7a8738cd74dfff44aa8ca7130911e4d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.21
+      objectReference: {fileID: 0}
     - target: {fileID: 8655375360981603015, guid: a7a8738cd74dfff44aa8ca7130911e4d, type: 3}
       propertyPath: m_TagString
       value: foot
@@ -10009,6 +10021,11 @@ PrefabInstance:
 --- !u!1 &1851889731 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1991538447979688461, guid: a7a8738cd74dfff44aa8ca7130911e4d, type: 3}
+  m_PrefabInstance: {fileID: 1851889730}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1851889732 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1990819918421681791, guid: a7a8738cd74dfff44aa8ca7130911e4d, type: 3}
   m_PrefabInstance: {fileID: 1851889730}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1851889742 stripped
@@ -10850,6 +10867,34 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5311897298660805235, guid: 4509edc751d3e7e4d9e9636dbca43b57, type: 3}
+      propertyPath: glowingButton
+      value: 
+      objectReference: {fileID: 1851889732}
+    - target: {fileID: 5311897299523060248, guid: 4509edc751d3e7e4d9e9636dbca43b57, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5311897300199297965, guid: 4509edc751d3e7e4d9e9636dbca43b57, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5311897300400101661, guid: 4509edc751d3e7e4d9e9636dbca43b57, type: 3}
+      propertyPath: m_text
+      value: Boots activated
+      objectReference: {fileID: 0}
+    - target: {fileID: 5311897300400101661, guid: 4509edc751d3e7e4d9e9636dbca43b57, type: 3}
+      propertyPath: m_fontSize
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5311897300400101661, guid: 4509edc751d3e7e4d9e9636dbca43b57, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5311897300400101663, guid: 4509edc751d3e7e4d9e9636dbca43b57, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6660552519760709281, guid: 4509edc751d3e7e4d9e9636dbca43b57, type: 3}
       propertyPath: cam
       value: 

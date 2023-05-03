@@ -11,6 +11,8 @@ public class StatusHudVektoR : MonoBehaviour
     public GameObject bootBreakUI;
     public GameObject bootActivateUI;
 
+    public GameObject glowingButton;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -30,6 +32,7 @@ public class StatusHudVektoR : MonoBehaviour
                 Debug.Log("System On!");
                 bootBreakUI.SetActive(false);
                 bootActivateUI.SetActive(true);
+                glowingButton.SetActive(false);
                 startFadeout = true;
             }
         }
@@ -42,6 +45,7 @@ public class StatusHudVektoR : MonoBehaviour
                 Debug.Log("System Off!");
                 bootActivateUI.SetActive(false);
                 bootBreakUI.SetActive(true);
+                glowingButton.SetActive(true);
             }
         }
 
@@ -50,7 +54,6 @@ public class StatusHudVektoR : MonoBehaviour
             startFadeout = false;
             StartCoroutine(Fadeout());
         }
-
     }
     public IEnumerator Fadeout()
     {
@@ -58,6 +61,7 @@ public class StatusHudVektoR : MonoBehaviour
         yield return new WaitForSeconds(3);
         bootActivateUI.SetActive(false);
         bootBreakUI.SetActive(false);
+        glowingButton.SetActive(false);
     }
 }
 

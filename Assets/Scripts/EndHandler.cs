@@ -53,7 +53,7 @@ public class EndHandler : MonoBehaviour
         endJellyFish.transform.position = player.position;
         endJellyFish.SetActive(true);
 
-        yield return new WaitForSeconds(15f);
+        yield return new WaitForSeconds(18f);
         StartCoroutine(FadeBlack());
          
     }
