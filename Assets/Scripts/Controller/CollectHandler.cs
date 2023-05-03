@@ -117,7 +117,6 @@ public class CollectHandler : MonoBehaviour
         else if (collectedSamples == 3)
         {
             EndHandler.s.End();
-            EktoVRManager.S.ekto.StopSystem();
         }
     }
 }

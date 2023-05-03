@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EndHandler : MonoBehaviour
 {
@@ -9,10 +10,10 @@ public class EndHandler : MonoBehaviour
     public GameObject[] endPlants;
     public Transform player;
 
-    public GameObject target;
-    public GameObject cloneFrom;
-    public int amount;
-    public float radius;
+    [Header("End fade black values")]
+    public Image blackEndScreen;
+    public float duration;
+    private float startTime = 0;
 
     private void Awake()
     {
@@ -26,41 +27,61 @@ public class EndHandler : MonoBehaviour
         }
     }
 
+    void Start()
+    {
+        //End();
+    }
+
     public void End()
     {
         OutsideSM.s.PlayEndSound();
-        Credit.s.Show();
-        endJellyFish.transform.position = player.position;
-        endJellyFish.SetActive(true);
-        StartCoroutine(growLayerGrass());
+        StartCoroutine(StartEnd());
     }
 
-    void Start()
+    public IEnumerator StartEnd()
     {
-        Surround(target, cloneFrom, amount, radius);
-    }
+        yield return new WaitForSeconds(2f);
+        //StartCoroutine(growLayerGrass());
 
-    // this function replicate the object surrounding the target
-    public void Surround(GameObject target, GameObject prefab, int amount, float radius)
-    {
-        float angle = 360f / amount;
-
-        for (int i = 0; i < amount; i++)
-        {
-            GameObject go = Instantiate(prefab) as GameObject;
-
-            go.transform.Rotate(Vector3.up, angle * i);
-            go.transform.position = target.transform.position - (go.transform.forward * radius);
-            // OR  go.GetComponent<NavMeshAgent>().Warp(target.transform.position-(go.transform.forward*radius));
-        }
-    }
-
-    private IEnumerator growLayerGrass()
-    {
-        for(int i = 0; i< endPlants.Length; i++)
+        for (int i = 0; i < endPlants.Length; i++)
         {
             endPlants[i].SetActive(true);
             yield return new WaitForSeconds(2f);
         }
+
+        Credit.s.Show();
+        endJellyFish.transform.position = player.position;
+        endJellyFish.SetActive(true);
+
+        yield return new WaitForSeconds(15f);
+        StartCoroutine(FadeBlack());
+         
     }
+
+    private IEnumerator FadeBlack()
+    {
+        while (startTime < duration)
+        {
+            startTime += Time.deltaTime;
+            blackEndScreen.color = new Color(0, 0, 0, Mathf.Lerp(0, 1, startTime / duration));
+            yield return null;
+        }
+
+        EndApp();
+    }
+
+    private void EndApp()
+    {
+        EktoVRManager.S.ekto.StopSystem();
+        Application.Quit();
+    }
+
+/*    private IEnumerator growLayerGrass()
+    {
+        for(int i = 0; i< endPlants.Length; i++)
+        {
+            endPlants[i].SetActive(true);
+            yield return new WaitForSeconds(3f);
+        }
+    }*/
 }
