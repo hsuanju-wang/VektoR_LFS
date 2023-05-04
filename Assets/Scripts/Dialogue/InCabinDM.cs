@@ -5,22 +5,15 @@ using UnityEngine.UI;
 
 public class InCabinDM : DialogueManager
 {
-    [Header("Background")]
-    public Sprite bgSprite;
+    [Header("Bg settings Before First Dialogue Starts")]
+    public Sprite blueUISprite;
     public Image bgImage;
     public GameObject lockedScreenImgs;
 
-    // Start is called before the first frame update
-    protected override void Start()
-    {
-        base.Start();
-        StartCoroutine(StartIntroInCabin());
-    }
-
-    private IEnumerator StartIntroInCabin()
+    protected override IEnumerator StartFirstDialogue()
     {
         yield return new WaitForSeconds(introDelayedTime);
-        bgImage.sprite = bgSprite;
+        bgImage.sprite = blueUISprite;
         lockedScreenImgs.SetActive(false);
         StartDialogue(dialogues[0]);
     }

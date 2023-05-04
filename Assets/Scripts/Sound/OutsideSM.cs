@@ -5,10 +5,14 @@ using UnityEngine;
 public class OutsideSM : MonoBehaviour
 {
     public static OutsideSM s;
-    private AudioSource audioSource;
+    public AudioSource audioSource;
+    public AudioSource audioSourceDialogue;
+
     public AudioClip scanSound;
     public AudioClip collectSound;
     public AudioClip endSound;
+
+    public AudioClip sampleCollectedClip;
 
     private void Awake()
     {
@@ -45,5 +49,17 @@ public class OutsideSM : MonoBehaviour
     public void PlayEndSound()
     {
         PlaySound(endSound);
+    }
+
+    public void PlaySampleCollected()
+    {
+        audioSourceDialogue.clip = sampleCollectedClip;
+        audioSourceDialogue.Play();
+    }
+
+    public void PlayEndDialogue()
+    {
+        audioSource.clip = sampleCollectedClip;
+        audioSource.Play();
     }
 }
