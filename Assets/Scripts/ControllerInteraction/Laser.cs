@@ -28,20 +28,16 @@ public class Laser : MonoBehaviour
     {
         if (other.CompareTag("sample"))
         {
-            //Debug.Log("sample trigger");
-            HoverOn();
             CollectHandler.s.isCollecting = true;
             CollectHandler.s.StartDissolveSample(other.gameObject);
         }
     }
 
-    // Dont know the reason: this couldn't be triggered when sample disabled
     private void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("sample"))
         {
-            Debug.Log("sample trigger exit");
-            HoverOff();
+            //Debug.Log("sample trigger exit");
             CollectHandler.s.isCollecting = false;
         }
     }
@@ -57,15 +53,5 @@ public class Laser : MonoBehaviour
     {
         this.GetComponent<MeshRenderer>().enabled = false;
         this.GetComponent<CapsuleCollider>().enabled = false;
-    }
-
-    public void HoverOff()
-    {
-        this.GetComponent<MeshRenderer>().material = normalMaterial;
-    }
-
-    public void HoverOn()
-    {
-        this.GetComponent<MeshRenderer>().material = hoverMaterial;
     }
 }

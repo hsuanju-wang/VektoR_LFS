@@ -959,11 +959,11 @@ GameObject:
   - component: {fileID: 6660552519760709286}
   - component: {fileID: 6660552519760709287}
   - component: {fileID: 6660552519760709284}
-  - component: {fileID: 6660552519760709281}
   - component: {fileID: 5311897298660805235}
+  - component: {fileID: 6149430841391640967}
   m_Layer: 5
   m_Name: NewStatusHud
-  m_TagString: Untagged
+  m_TagString: NewStatusHud
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1051,27 +1051,6 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &6660552519760709281
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6660552519760709290}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 95679716c66fa02478f433d64713e135, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cam: {fileID: 0}
-  offset: 1
-  delayTime: 0.5
-  moveSpeed: 5
-  moveLerpLimit: 0.02
-  maxMovementAllowed: 0.1
-  rotateSpeed: 10
-  rotateLerpLimit: 1
-  maxRotationAllowed: 10
 --- !u!114 &5311897298660805235
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1087,3 +1066,24 @@ MonoBehaviour:
   bootBreakUI: {fileID: 5311897300199297965}
   bootActivateUI: {fileID: 5311897299523060248}
   glowingButton: {fileID: 0}
+--- !u!114 &6149430841391640967
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6660552519760709290}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75cd21b8f9e8ed847af67d2e4c292060, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cam: {fileID: 0}
+  offset: 1
+  delayTime: 0.5
+  moveSpeed: 5
+  moveLerpLimit: 0.02
+  maxMovementAllowed: 0.1
+  rotateSpeed: 10
+  rotateLerpLimit: 1
+  maxRotationAllowed: 10

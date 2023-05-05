@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3517817430893308551}
   - component: {fileID: 4950092442484974011}
   m_Layer: 5
-  m_Name: bgUIImg
+  m_Name: BgUIImg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -189,7 +189,7 @@ GameObject:
   - component: {fileID: 3557056881182888543}
   - component: {fileID: 3557056881182888542}
   m_Layer: 5
-  m_Name: dialogueUITxt
+  m_Name: DialogueUITxt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -323,7 +323,7 @@ GameObject:
   - component: {fileID: 3557056882636140533}
   - component: {fileID: 3557056882636140532}
   m_Layer: 5
-  m_Name: bgImg
+  m_Name: BgImg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using EKTO_Unity_Plugin;
+using UnityEngine.SceneManagement;
 
 public class NewStatusHud : MonoBehaviour
 {
@@ -11,12 +12,21 @@ public class NewStatusHud : MonoBehaviour
     public GameObject bootBreakUI;
     public GameObject bootActivateUI;
     public GameObject glowingButton;
+    void Awake()
+    {
+        GameObject[] objs = GameObject.FindGameObjectsWithTag("NewStatusHud");
 
+        if (objs.Length > 1)
+        {
+            Destroy(this.gameObject);
+        }
+
+        DontDestroyOnLoad(this.gameObject);
+    }
 
     // Start is called before the first frame update
     void Start()
     {
-        //bootBreakUI.SetActive(true);
         startFadeout = false;
         prevSystemActiveState = EktoVRManager.S.ekto.IsSystemActivated();
     }
@@ -24,6 +34,11 @@ public class NewStatusHud : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (glowingButton == null)
+        {
+            glowingButton = GameObject.FindGameObjectWithTag("GlowingButton");
+        }
+
         if (EktoVRManager.S.ekto.IsSystemActivated())
         {
             if (prevSystemActiveState == false)
@@ -32,7 +47,7 @@ public class NewStatusHud : MonoBehaviour
                 Debug.Log("System On!");
                 bootBreakUI.SetActive(false);
                 bootActivateUI.SetActive(true);
-                glowingButton.SetActive(false);
+                glowingButton.GetComponent<MeshRenderer>().enabled = false;
                 startFadeout = true;
             }
         }
@@ -45,7 +60,7 @@ public class NewStatusHud : MonoBehaviour
                 Debug.Log("System Off!");
                 bootActivateUI.SetActive(false);
                 bootBreakUI.SetActive(true);
-                glowingButton.SetActive(true);
+                glowingButton.GetComponent<MeshRenderer>().enabled = true;
             }
         }
 
@@ -61,20 +76,7 @@ public class NewStatusHud : MonoBehaviour
         yield return new WaitForSeconds(3);
         bootActivateUI.SetActive(false);
         bootBreakUI.SetActive(false);
-        glowingButton.SetActive(false);
+        glowingButton.GetComponent<MeshRenderer>().enabled = false;
     }
 }
 
-/*public override void OnSystemActivated()
-{
-    Debug.Log("System On!");
-    statusText.text = "Boots are Enabled and Active!";
-    startFadeout = true;
-}
-
-public override void OnSystemDeactivated(string deactivationReason)
-{
-    Debug.Log("System Off!");
-    statusText.text = "Caution: Boots are Disabled and Braked";
-    statusText.enabled = true;
-}*/

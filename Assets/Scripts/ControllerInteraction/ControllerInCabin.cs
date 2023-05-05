@@ -12,7 +12,6 @@ public class ControllerInCabin : MonoBehaviour
     [Header("Show Success Suit quest")]
     public ShowSuccessSuit quest;
 
-    public GameObject newStatusHud;
     void OnEnable()
     {
         trackpadClicked.AddOnStateDownListener(OnTrackpadClicked, inputSource);
@@ -27,16 +26,10 @@ public class ControllerInCabin : MonoBehaviour
     {
         if (!EktoVRManager.S.ekto.IsSystemActivated())
         {
-            if (quest.isDone)
-            {
-                EktoVRManager.S.ekto.StartSystem();
-            }
-
-            if (quest.isStarted)
+            if (quest.isStarted && !quest.isDone)
             {
                 EktoVRManager.S.ekto.StartSystem();
                 quest.EndQuest();
-                newStatusHud.SetActive(true);
             }
         }
         else

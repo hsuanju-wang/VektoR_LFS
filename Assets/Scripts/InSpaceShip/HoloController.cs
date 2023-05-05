@@ -4,17 +4,25 @@ using UnityEngine;
 
 public class HoloController : MonoBehaviour
 {
-    public Quest quest;
+    public FinishTask1 quest;
     public float controllerStayTime;
-    private void OnTriggerEnter(Collider other)
+    private bool isControllerClosed = false;
+
+    private void OnTriggerStay(Collider other)
     {
         if (other.CompareTag("hand"))
         {
-            GetComponent<Collider>().enabled = false;
-            StartCoroutine(CloseController());
-            quest.EndQuest();
+            if (quest.isStarted && !isControllerClosed)
+            {
+                isControllerClosed = true;
+                GetComponent<Collider>().enabled = false;
+                StartCoroutine(CloseController());
+                quest.EndQuest();
+            }
+
         }
     }
+
     private IEnumerator CloseController()
     {
         yield return new WaitForSeconds(controllerStayTime);

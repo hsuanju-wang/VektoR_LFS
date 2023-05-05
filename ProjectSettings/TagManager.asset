@@ -11,6 +11,8 @@ TagManager:
   - floor
   - sample
   - sampleInScanMode
+  - NewStatusHud
+  - GlowingButton
   layers:
   - Default
   - TransparentFX

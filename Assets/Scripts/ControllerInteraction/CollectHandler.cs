@@ -89,7 +89,6 @@ public class CollectHandler : MonoBehaviour
     private void Collect( GameObject sample)
     {
         sample.SetActive(false); // close collected sample
-        Laser.s.HoverOff();
         SampleHandler.s.CloseSampleInScanMode(sample); // close collected sample in scan mode
         SampleHandler.s.GrassGrow(sample); // grow grass
 
